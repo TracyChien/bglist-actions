@@ -24,6 +24,8 @@ jobs:
         run: npm install
 
       - name: Build data
+        env:
+          BGG_TOKEN: ${{ secrets.BGG_TOKEN }}
         run: npm run build-data
 
       - name: Commit and push if changed

@@ -131,20 +131,26 @@ const ids = [...new Set(records.map((r) => r.BGGID).filter(Boolean))];
 const xmlParser = new XMLParser({ ignoreAttributes: false, attributeNamePrefix: '' });
 const bggData = {};
 
+const BGG_HEADERS = {
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+  'Accept': 'text/xml,application/xml,*/*',
+};
+
 for (let i = 0; i < ids.length; i += 20) {
   const chunk = ids.slice(i, i + 20);
   const url = `https://boardgamegeek.com/xmlapi2/thing?id=${chunk.join(',')}&stats=1`;
   console.log(`查詢 BGG (${i + 1}~${i + chunk.length}/${ids.length})...`);
   let xml = '';
-  for (let attempt = 0; attempt < 4; attempt++) {
+  for (let attempt = 0; attempt < 5; attempt++) {
     try {
-      const res = await fetch(url);
+      const res = await fetch(url, { headers: BGG_HEADERS });
       xml = await res.text();
       if (xml.includes('<item')) break;
+      console.warn(`第 ${attempt + 1} 次嘗試: HTTP ${res.status}，回應前 200 字: ${xml.slice(0, 200).replace(/\n/g, ' ')}`);
     } catch (e) {
-      console.warn('查詢失敗，稍後重試:', e.message);
+      console.warn(`第 ${attempt + 1} 次嘗試失敗: ${e.message}`);
     }
-    await sleep(3000);
+    await sleep(6000);
   }
   if (xml.includes('<item')) {
     const doc = xmlParser.parse(xml);
@@ -155,7 +161,7 @@ for (let i = 0; i < ids.length; i += 20) {
   } else {
     console.warn(`這批 id 查不到資料: ${chunk.join(',')}`);
   }
-  if (i + 20 < ids.length) await sleep(5000); // 官方文件建議的請求間隔
+  if (i + 20 < ids.length) await sleep(6000); // 官方文件建議的請求間隔
 }
 
 function extractItem(item) {

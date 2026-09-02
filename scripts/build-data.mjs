@@ -135,6 +135,12 @@ const BGG_HEADERS = {
   'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
   'Accept': 'text/xml,application/xml,*/*',
 };
+if (process.env.BGG_TOKEN) {
+  BGG_HEADERS['Authorization'] = `Bearer ${process.env.BGG_TOKEN}`;
+  console.log('已帶入 BGG_TOKEN 授權標頭');
+} else {
+  console.warn('未設定 BGG_TOKEN 環境變數 —— BGG 從 2025/7 起 XML API 需要註冊授權，沒有 token 幾乎必定收到 401。');
+}
 
 for (let i = 0; i < ids.length; i += 20) {
   const chunk = ids.slice(i, i + 20);

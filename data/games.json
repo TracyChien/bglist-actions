@@ -1,6 +1,1214 @@
 {
-  "updatedAt": null,
-  "count": 0,
-  "missingBggIds": [],
-  "games": []
+  "updatedAt": "2026-09-02T08:05:44.768Z",
+  "count": 55,
+  "missingBggIds": [
+    "88922",
+    "128882",
+    "67919",
+    "131357",
+    "256804",
+    "811",
+    "268275",
+    "37728",
+    "204734",
+    "239188",
+    "271460",
+    "254640",
+    "260605",
+    "300300",
+    "9220",
+    "302098",
+    "316287",
+    "302312",
+    "63268",
+    "432",
+    "7806",
+    "822",
+    "277085",
+    "313301",
+    "293296",
+    "300905",
+    "163930",
+    "173346",
+    "286422",
+    "346913",
+    "377061",
+    "232353",
+    "270513",
+    "399088",
+    "21763",
+    "245503",
+    "411435",
+    "174078",
+    "385761",
+    "291453",
+    "433074",
+    "237792",
+    "319095",
+    "205398",
+    "365258",
+    "423792",
+    "242529",
+    "420087",
+    "454103",
+    "432456",
+    "286735"
+  ],
+  "games": [
+    {
+      "bggid": "88922",
+      "name": "妙探尋兇",
+      "player": "3~4",
+      "age": "",
+      "time": "15",
+      "publisher": "",
+      "category": "心機遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        3,
+        4
+      ],
+      "timeRange": [
+        15,
+        15
+      ]
+    },
+    {
+      "bggid": "",
+      "name": "政治風暴",
+      "player": "3~5",
+      "age": "",
+      "time": "30",
+      "publisher": "",
+      "category": "心機遊戲",
+      "image": "https://pic.pimg.tw/mj9981168/1491008721-1117196336_wn.jpg",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        3,
+        5
+      ],
+      "timeRange": [
+        30,
+        30
+      ]
+    },
+    {
+      "bggid": "128882",
+      "name": "阿瓦隆",
+      "player": "5~10",
+      "age": "",
+      "time": "20~30",
+      "publisher": "",
+      "category": "陣營遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        5,
+        10
+      ],
+      "timeRange": [
+        20,
+        30
+      ]
+    },
+    {
+      "bggid": "67919",
+      "name": "風聲",
+      "player": "6~9",
+      "age": "",
+      "time": "30~60",
+      "publisher": "",
+      "category": "陣營遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        6,
+        9
+      ],
+      "timeRange": [
+        30,
+        60
+      ]
+    },
+    {
+      "bggid": "131357",
+      "name": "政變",
+      "player": "3-6",
+      "age": "",
+      "time": "15",
+      "publisher": "",
+      "category": "心機遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        3,
+        6
+      ],
+      "timeRange": [
+        15,
+        15
+      ]
+    },
+    {
+      "bggid": "256804",
+      "name": "爆炸貓咪",
+      "player": "2~10",
+      "age": "",
+      "time": "15",
+      "publisher": "",
+      "category": "心機遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        2,
+        10
+      ],
+      "timeRange": [
+        15,
+        15
+      ]
+    },
+    {
+      "bggid": "811",
+      "name": "拉密六人 Rummikub XP Mini",
+      "player": "2~6",
+      "age": "",
+      "time": "30",
+      "publisher": "",
+      "category": "策略遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        2,
+        6
+      ],
+      "timeRange": [
+        30,
+        30
+      ]
+    },
+    {
+      "bggid": "268275",
+      "name": "夜市人蔘",
+      "player": "2~6",
+      "age": "",
+      "time": "10~15",
+      "publisher": "",
+      "category": "家庭遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        2,
+        6
+      ],
+      "timeRange": [
+        10,
+        15
+      ]
+    },
+    {
+      "bggid": "37728",
+      "name": "We Will Rock You",
+      "player": "4~12",
+      "age": "",
+      "time": "15-30",
+      "publisher": "",
+      "category": "派對遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        4,
+        12
+      ],
+      "timeRange": [
+        15,
+        30
+      ]
+    },
+    {
+      "bggid": "204734",
+      "name": "籤籤入扣",
+      "player": "2~99",
+      "age": "",
+      "time": "300",
+      "publisher": "",
+      "category": "派對遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        2,
+        99
+      ],
+      "timeRange": [
+        300,
+        300
+      ]
+    },
+    {
+      "bggid": "239188",
+      "name": "推理事件簿",
+      "player": "1~4",
+      "age": "",
+      "time": "60~90",
+      "publisher": "",
+      "category": "策略遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        1,
+        4
+      ],
+      "timeRange": [
+        60,
+        90
+      ]
+    },
+    {
+      "bggid": "271460",
+      "name": "UNO Flip",
+      "player": "2~10",
+      "age": "",
+      "time": "30",
+      "publisher": "",
+      "category": "卡牌遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        2,
+        10
+      ],
+      "timeRange": [
+        30,
+        30
+      ]
+    },
+    {
+      "bggid": "254640",
+      "name": "Just One",
+      "player": "3~7",
+      "age": "",
+      "time": "20",
+      "publisher": "",
+      "category": "派對遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        3,
+        7
+      ],
+      "timeRange": [
+        20,
+        20
+      ]
+    },
+    {
+      "bggid": "260605",
+      "name": "駱駝大賽",
+      "player": "3~8",
+      "age": "",
+      "time": "30~45",
+      "publisher": "",
+      "category": "派對遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        3,
+        8
+      ],
+      "timeRange": [
+        30,
+        45
+      ]
+    },
+    {
+      "bggid": "300300",
+      "name": "推理事件簿1400",
+      "player": "1~4",
+      "age": "",
+      "time": "60~90",
+      "publisher": "",
+      "category": "策略遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        1,
+        4
+      ],
+      "timeRange": [
+        60,
+        90
+      ]
+    },
+    {
+      "bggid": "9220",
+      "name": "矮人礦坑",
+      "player": "3-10",
+      "age": "",
+      "time": "30",
+      "publisher": "",
+      "category": "陣營遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        3,
+        10
+      ],
+      "timeRange": [
+        30,
+        30
+      ]
+    },
+    {
+      "bggid": "302098",
+      "name": "推理事件簿1900",
+      "player": "1~4",
+      "age": "",
+      "time": "60~90",
+      "publisher": "",
+      "category": "策略遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        1,
+        4
+      ],
+      "timeRange": [
+        60,
+        90
+      ]
+    },
+    {
+      "bggid": "316287",
+      "name": "亞瑟傳奇",
+      "player": "4~10",
+      "age": "",
+      "time": "30",
+      "publisher": "",
+      "category": "陣營遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        4,
+        10
+      ],
+      "timeRange": [
+        30,
+        30
+      ]
+    },
+    {
+      "bggid": "302312",
+      "name": "推理事件簿2400",
+      "player": "1~4",
+      "age": "",
+      "time": "60~90",
+      "publisher": "",
+      "category": "策略遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        1,
+        4
+      ],
+      "timeRange": [
+        60,
+        90
+      ]
+    },
+    {
+      "bggid": "63268",
+      "name": "嗒寶: 小小兵",
+      "player": "2~8",
+      "age": "",
+      "time": "15",
+      "publisher": "",
+      "category": "兒童遊戲",
+      "image": "https://img.gokids.com.tw/GoodPic/03/big/171084089030303.jpg",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        2,
+        8
+      ],
+      "timeRange": [
+        15,
+        15
+      ]
+    },
+    {
+      "bggid": "432",
+      "name": "誰是牛頭王",
+      "player": "2~10",
+      "age": "",
+      "time": "45",
+      "publisher": "",
+      "category": "卡牌遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        2,
+        10
+      ],
+      "timeRange": [
+        45,
+        45
+      ]
+    },
+    {
+      "bggid": "7806",
+      "name": "封王King up",
+      "player": "3~6",
+      "age": "",
+      "time": "30",
+      "publisher": "",
+      "category": "心機遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        3,
+        6
+      ],
+      "timeRange": [
+        30,
+        30
+      ]
+    },
+    {
+      "bggid": "822",
+      "name": "卡卡頌3.0",
+      "player": "2~5",
+      "age": "",
+      "time": "30~45",
+      "publisher": "",
+      "category": "策略遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        2,
+        5
+      ],
+      "timeRange": [
+        30,
+        45
+      ]
+    },
+    {
+      "bggid": "277085",
+      "name": "情書(6人版)",
+      "player": "2~6",
+      "age": "",
+      "time": "20",
+      "publisher": "",
+      "category": "心機遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        2,
+        6
+      ],
+      "timeRange": [
+        20,
+        20
+      ]
+    },
+    {
+      "bggid": "313301",
+      "name": "推理事件簿-恩怨千年",
+      "player": "1~4",
+      "age": "",
+      "time": "60~90",
+      "publisher": "",
+      "category": "策略遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        1,
+        4
+      ],
+      "timeRange": [
+        60,
+        90
+      ]
+    },
+    {
+      "bggid": "293296",
+      "name": "璀璨寶石",
+      "player": "2~4",
+      "age": "",
+      "time": "30",
+      "publisher": "",
+      "category": "策略遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        2,
+        4
+      ],
+      "timeRange": [
+        30,
+        30
+      ]
+    },
+    {
+      "bggid": "300905",
+      "name": "腦洞量表",
+      "player": "2~9",
+      "age": "",
+      "time": "30",
+      "publisher": "",
+      "category": "派對遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        2,
+        9
+      ],
+      "timeRange": [
+        30,
+        30
+      ]
+    },
+    {
+      "bggid": "163930",
+      "name": "出包魔法師",
+      "player": "2~5",
+      "age": "",
+      "time": "30",
+      "publisher": "",
+      "category": "家庭遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        2,
+        5
+      ],
+      "timeRange": [
+        30,
+        30
+      ]
+    },
+    {
+      "bggid": "173346",
+      "name": "七大奇蹟：對決",
+      "player": "2",
+      "age": "",
+      "time": "30",
+      "publisher": "",
+      "category": "策略遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        2,
+        2
+      ],
+      "timeRange": [
+        30,
+        30
+      ]
+    },
+    {
+      "bggid": "",
+      "name": "關係同步卡A Couple Minutes",
+      "player": "2",
+      "age": "",
+      "time": "60~90",
+      "publisher": "",
+      "category": "家庭遊戲",
+      "image": "https://shoplineimg.com/6037452b4bf8b200305d7ed6/60770d3eca65df8d40ba7b80/800x.png",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        2,
+        2
+      ],
+      "timeRange": [
+        60,
+        90
+      ]
+    },
+    {
+      "bggid": "286422",
+      "name": "換言一新",
+      "player": "2~6",
+      "age": "",
+      "time": "20~40",
+      "publisher": "",
+      "category": "家庭遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        2,
+        6
+      ],
+      "timeRange": [
+        20,
+        40
+      ]
+    },
+    {
+      "bggid": "346913",
+      "name": "電波畫家",
+      "player": "3~8",
+      "age": "",
+      "time": "15~40",
+      "publisher": "",
+      "category": "派對遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        3,
+        8
+      ],
+      "timeRange": [
+        15,
+        40
+      ]
+    },
+    {
+      "bggid": "377061",
+      "name": "胡鬧咖啡館",
+      "player": "2~4",
+      "age": "",
+      "time": "30",
+      "publisher": "",
+      "category": "策略遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        2,
+        4
+      ],
+      "timeRange": [
+        30,
+        30
+      ]
+    },
+    {
+      "bggid": "232353",
+      "name": "密弒派對",
+      "player": "2~6",
+      "age": "",
+      "time": "30",
+      "publisher": "",
+      "category": "派對遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        2,
+        6
+      ],
+      "timeRange": [
+        30,
+        30
+      ]
+    },
+    {
+      "bggid": "270513",
+      "name": "依樣畫葫蘆",
+      "player": "3~8",
+      "age": "",
+      "time": "30",
+      "publisher": "",
+      "category": "派對遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        3,
+        8
+      ],
+      "timeRange": [
+        30,
+        30
+      ]
+    },
+    {
+      "bggid": "399088",
+      "name": "UNO Show 'Em No Mercy",
+      "player": "2~10",
+      "age": "",
+      "time": "30",
+      "publisher": "",
+      "category": "卡牌遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        2,
+        10
+      ],
+      "timeRange": [
+        30,
+        30
+      ]
+    },
+    {
+      "bggid": "21763",
+      "name": "開膛手傑克MR. Jack",
+      "player": "2",
+      "age": "",
+      "time": "30",
+      "publisher": "",
+      "category": "策略遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        2,
+        2
+      ],
+      "timeRange": [
+        30,
+        30
+      ]
+    },
+    {
+      "bggid": "245503",
+      "name": "舞動魔咒",
+      "player": "3~8",
+      "age": "",
+      "time": "15",
+      "publisher": "",
+      "category": "派對遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        3,
+        8
+      ],
+      "timeRange": [
+        15,
+        15
+      ]
+    },
+    {
+      "bggid": "411435",
+      "name": "胡鬧咖啡館-甜點時間擴充",
+      "player": "2~4",
+      "age": "",
+      "time": "30",
+      "publisher": "",
+      "category": "策略遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        2,
+        4
+      ],
+      "timeRange": [
+        30,
+        30
+      ]
+    },
+    {
+      "bggid": "174078",
+      "name": "福爾摩斯大對決",
+      "player": "2",
+      "age": "",
+      "time": "20~30",
+      "publisher": "",
+      "category": "策略遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        2,
+        2
+      ],
+      "timeRange": [
+        20,
+        30
+      ]
+    },
+    {
+      "bggid": "385761",
+      "name": "遙遠之地",
+      "player": "2~5",
+      "age": "",
+      "time": "15~30",
+      "publisher": "",
+      "category": "策略遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        2,
+        5
+      ],
+      "timeRange": [
+        15,
+        30
+      ]
+    },
+    {
+      "bggid": "291453",
+      "name": "SCOUT",
+      "player": "2~5",
+      "age": "",
+      "time": "15",
+      "publisher": "",
+      "category": "卡牌遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        2,
+        5
+      ],
+      "timeRange": [
+        15,
+        15
+      ]
+    },
+    {
+      "bggid": "433074",
+      "name": "與貓的距離",
+      "player": "2~6",
+      "age": "",
+      "time": "15~40",
+      "publisher": "",
+      "category": "卡牌遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        2,
+        6
+      ],
+      "timeRange": [
+        15,
+        40
+      ]
+    },
+    {
+      "bggid": "237792",
+      "name": "拉密 變臉版",
+      "player": "2~4",
+      "age": "",
+      "time": "20~45",
+      "publisher": "",
+      "category": "策略遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        2,
+        4
+      ],
+      "timeRange": [
+        20,
+        45
+      ]
+    },
+    {
+      "bggid": "319095",
+      "name": "原色碰撞",
+      "player": "2~4",
+      "age": "",
+      "time": "20~40",
+      "publisher": "",
+      "category": "卡牌遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        2,
+        4
+      ],
+      "timeRange": [
+        20,
+        40
+      ]
+    },
+    {
+      "bggid": "205398",
+      "name": "榮耀之城 修訂版(Citadels)",
+      "player": "2~8",
+      "age": "",
+      "time": "30~60",
+      "publisher": "",
+      "category": "策略遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        2,
+        8
+      ],
+      "timeRange": [
+        30,
+        60
+      ]
+    },
+    {
+      "bggid": "365258",
+      "name": "世界奇觀",
+      "player": "1~5",
+      "age": "",
+      "time": "50~70",
+      "publisher": "",
+      "category": "策略遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        1,
+        5
+      ],
+      "timeRange": [
+        50,
+        70
+      ]
+    },
+    {
+      "bggid": "423792",
+      "name": "問非所答",
+      "player": "3~20",
+      "age": "",
+      "time": "20~30",
+      "publisher": "",
+      "category": "派對遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        3,
+        20
+      ],
+      "timeRange": [
+        20,
+        30
+      ]
+    },
+    {
+      "bggid": "242529",
+      "name": "超感官同步",
+      "player": "2~8",
+      "age": "",
+      "time": "30~45",
+      "publisher": "",
+      "category": "派對遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        2,
+        8
+      ],
+      "timeRange": [
+        30,
+        45
+      ]
+    },
+    {
+      "bggid": "420087",
+      "name": "Flip 7",
+      "player": "3~18",
+      "age": "",
+      "time": "20",
+      "publisher": "",
+      "category": "派對遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        3,
+        18
+      ],
+      "timeRange": [
+        20,
+        20
+      ]
+    },
+    {
+      "bggid": "454103",
+      "name": "搞怪運動會",
+      "player": "2~6",
+      "age": "",
+      "time": "30",
+      "publisher": "",
+      "category": "派對遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        2,
+        6
+      ],
+      "timeRange": [
+        30,
+        30
+      ]
+    },
+    {
+      "bggid": "432456",
+      "name": "DNUP",
+      "player": "2~5",
+      "age": "",
+      "time": "15~20",
+      "publisher": "",
+      "category": "派對遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        2,
+        5
+      ],
+      "timeRange": [
+        15,
+        20
+      ]
+    },
+    {
+      "bggid": "",
+      "name": "美人大戰",
+      "player": "3~6",
+      "age": "",
+      "time": "45",
+      "publisher": "",
+      "category": "陣營遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        3,
+        6
+      ],
+      "timeRange": [
+        45,
+        45
+      ]
+    },
+    {
+      "bggid": "286735",
+      "name": "吸爆鬆餅",
+      "player": "2~8",
+      "age": "",
+      "time": "20~40",
+      "publisher": "",
+      "category": "派對遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        2,
+        8
+      ],
+      "timeRange": [
+        20,
+        40
+      ]
+    },
+    {
+      "bggid": "",
+      "name": "深刻認識一個人",
+      "player": "2~8",
+      "age": "",
+      "time": "30",
+      "publisher": "",
+      "category": "派對遊戲",
+      "image": "",
+      "description": "",
+      "note": "",
+      "expansions": [],
+      "playerRange": [
+        2,
+        8
+      ],
+      "timeRange": [
+        30,
+        30
+      ]
+    }
+  ]
 }

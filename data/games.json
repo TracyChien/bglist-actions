@@ -1,10 +1,12 @@
 {
-  "updatedAt": "2026-09-09T07:19:55.898Z",
+  "updatedAt": "2026-09-09T09:12:27.938Z",
   "count": 54,
   "missingBggIds": [],
   "games": [
     {
       "bggid": "88922",
+      "link": "",
+      "rulebook": "",
       "name": "妙探尋兇",
       "player": "3~4",
       "age": "8+",
@@ -26,6 +28,8 @@
     },
     {
       "bggid": "158818",
+      "link": "",
+      "rulebook": "",
       "name": "政治風暴",
       "player": "3~5",
       "age": "14+",
@@ -53,6 +57,8 @@
     },
     {
       "bggid": "128882",
+      "link": "",
+      "rulebook": "",
       "name": "阿瓦隆",
       "player": "5~10",
       "age": "13+",
@@ -90,6 +96,8 @@
     },
     {
       "bggid": "67919",
+      "link": "",
+      "rulebook": "",
       "name": "風聲",
       "player": "6~9",
       "age": "15+",
@@ -111,6 +119,8 @@
     },
     {
       "bggid": "131357",
+      "link": "",
+      "rulebook": "",
       "name": "政變",
       "player": "3-6",
       "age": "13+",
@@ -168,6 +178,8 @@
     },
     {
       "bggid": "256804",
+      "link": "",
+      "rulebook": "",
       "name": "爆炸貓咪",
       "player": "2~10",
       "age": "7+",
@@ -210,6 +222,8 @@
     },
     {
       "bggid": "811",
+      "link": "",
+      "rulebook": "",
       "name": "拉密六人 Rummikub XP Mini",
       "player": "2~6",
       "age": "8+",
@@ -237,6 +251,8 @@
     },
     {
       "bggid": "268275",
+      "link": "",
+      "rulebook": "",
       "name": "夜市人蔘",
       "player": "2~6",
       "age": "",
@@ -258,6 +274,8 @@
     },
     {
       "bggid": "37728",
+      "link": "",
+      "rulebook": "",
       "name": "We Will Rock You",
       "player": "4~12",
       "age": "8+",
@@ -279,6 +297,8 @@
     },
     {
       "bggid": "204734",
+      "link": "",
+      "rulebook": "",
       "name": "籤籤入扣",
       "player": "2~99",
       "age": "8+",
@@ -300,6 +320,8 @@
     },
     {
       "bggid": "239188",
+      "link": "",
+      "rulebook": "",
       "name": "推理事件簿",
       "player": "1~4",
       "age": "12+",
@@ -372,6 +394,8 @@
     },
     {
       "bggid": "271460",
+      "link": "",
+      "rulebook": "",
       "name": "UNO Flip",
       "player": "2~10",
       "age": "7+",
@@ -393,6 +417,8 @@
     },
     {
       "bggid": "254640",
+      "link": "",
+      "rulebook": "",
       "name": "Just One",
       "player": "3~7",
       "age": "8+",
@@ -450,6 +476,8 @@
     },
     {
       "bggid": "260605",
+      "link": "",
+      "rulebook": "https://punchboardgame.pixnet.net/blog/posts/9491268317",
       "name": "駱駝大賽",
       "player": "3~8",
       "age": "8+",
@@ -477,6 +505,8 @@
     },
     {
       "bggid": "300300",
+      "link": "",
+      "rulebook": "",
       "name": "推理事件簿1400",
       "player": "1~4",
       "age": "12+",
@@ -504,6 +534,8 @@
     },
     {
       "bggid": "9220",
+      "link": "",
+      "rulebook": "",
       "name": "矮人礦坑",
       "player": "3-10",
       "age": "8+",
@@ -621,6 +653,8 @@
     },
     {
       "bggid": "302098",
+      "link": "",
+      "rulebook": "",
       "name": "推理事件簿1900",
       "player": "1~4",
       "age": "12+",
@@ -648,6 +682,8 @@
     },
     {
       "bggid": "316287",
+      "link": "",
+      "rulebook": "https://punchboardgame.pixnet.net/blog/posts/9560727357",
       "name": "亞瑟傳奇",
       "player": "4~10",
       "age": "14+",
@@ -669,6 +705,8 @@
     },
     {
       "bggid": "302312",
+      "link": "",
+      "rulebook": "",
       "name": "推理事件簿2400",
       "player": "1~4",
       "age": "12+",
@@ -701,6 +739,8 @@
     },
     {
       "bggid": "63268",
+      "link": "",
+      "rulebook": "",
       "name": "嗒寶: 小小兵",
       "player": "2~8",
       "age": "6+",
@@ -722,6 +762,8 @@
     },
     {
       "bggid": "432",
+      "link": "",
+      "rulebook": "",
       "name": "誰是牛頭王",
       "player": "2~10",
       "age": "8+",
@@ -769,6 +811,8 @@
     },
     {
       "bggid": "7806",
+      "link": "",
+      "rulebook": "",
       "name": "封王King up",
       "player": "3~6",
       "age": "8+",
@@ -796,6 +840,8 @@
     },
     {
       "bggid": "822",
+      "link": "",
+      "rulebook": "",
       "name": "卡卡頌3.0",
       "player": "2~5",
       "age": "7+",
@@ -1818,6 +1864,8 @@
     },
     {
       "bggid": "277085",
+      "link": "",
+      "rulebook": "",
       "name": "情書(6人版)",
       "player": "2~6",
       "age": "10+",
@@ -1839,6 +1887,8 @@
     },
     {
       "bggid": "313301",
+      "link": "",
+      "rulebook": "",
       "name": "推理事件簿-恩怨千年",
       "player": "1~4",
       "age": "12+",
@@ -1860,6 +1910,8 @@
     },
     {
       "bggid": "293296",
+      "link": "",
+      "rulebook": "",
       "name": "璀璨寶石",
       "player": "2~4",
       "age": "10+",
@@ -1887,6 +1939,8 @@
     },
     {
       "bggid": "300905",
+      "link": "",
+      "rulebook": "",
       "name": "腦洞量表",
       "player": "2~9",
       "age": "14+",
@@ -1908,6 +1962,8 @@
     },
     {
       "bggid": "163930",
+      "link": "",
+      "rulebook": "https://punchboardgame.pixnet.net/blog/posts/9439474444",
       "name": "出包魔法師",
       "player": "2~5",
       "age": "7+",
@@ -1929,6 +1985,8 @@
     },
     {
       "bggid": "173346",
+      "link": "",
+      "rulebook": "",
       "name": "七大奇蹟：對決",
       "player": "2",
       "age": "10+",
@@ -1986,6 +2044,8 @@
     },
     {
       "bggid": "",
+      "link": "https://shop.womany.net/products/a-couple-minutes",
+      "rulebook": "",
       "name": "關係同步卡A Couple Minutes",
       "player": "2",
       "age": "",
@@ -2007,6 +2067,8 @@
     },
     {
       "bggid": "286422",
+      "link": "",
+      "rulebook": "",
       "name": "換言一新",
       "player": "2~6",
       "age": "14+",
@@ -2028,6 +2090,8 @@
     },
     {
       "bggid": "346913",
+      "link": "",
+      "rulebook": "",
       "name": "電波畫家",
       "player": "3~8",
       "age": "8+",
@@ -2055,6 +2119,8 @@
     },
     {
       "bggid": "377061",
+      "link": "",
+      "rulebook": "https://punchboardgame.pixnet.net/blog/posts/9576247716",
       "name": "胡鬧咖啡館",
       "player": "2~4",
       "age": "8+",
@@ -2142,6 +2208,8 @@
     },
     {
       "bggid": "232353",
+      "link": "",
+      "rulebook": "",
       "name": "密弒派對",
       "player": "2~6",
       "age": "8+",
@@ -2163,6 +2231,8 @@
     },
     {
       "bggid": "270513",
+      "link": "",
+      "rulebook": "",
       "name": "依樣畫葫蘆",
       "player": "3~8",
       "age": "8+",
@@ -2184,6 +2254,8 @@
     },
     {
       "bggid": "399088",
+      "link": "",
+      "rulebook": "",
       "name": "UNO Show 'Em No Mercy",
       "player": "2~10",
       "age": "7+",
@@ -2211,6 +2283,8 @@
     },
     {
       "bggid": "21763",
+      "link": "",
+      "rulebook": "https://punchboardgame.pixnet.net/blog/posts/9453130175",
       "name": "開膛手傑克MR. Jack",
       "player": "2",
       "age": "9+",
@@ -2248,6 +2322,8 @@
     },
     {
       "bggid": "245503",
+      "link": "",
+      "rulebook": "",
       "name": "舞動魔咒",
       "player": "3~8",
       "age": "8+",
@@ -2269,6 +2345,8 @@
     },
     {
       "bggid": "174078",
+      "link": "",
+      "rulebook": "https://punchboardgame.pixnet.net/blog/posts/9460780157",
       "name": "福爾摩斯大對決",
       "player": "2",
       "age": "10+",
@@ -2301,6 +2379,8 @@
     },
     {
       "bggid": "385761",
+      "link": "",
+      "rulebook": "https://punchboardgame.pixnet.net/blog/posts/9577347984",
       "name": "遙遠之地",
       "player": "2~5",
       "age": "10+",
@@ -2338,6 +2418,8 @@
     },
     {
       "bggid": "291453",
+      "link": "",
+      "rulebook": "https://punchboardgame.pixnet.net/blog/posts/9574273348",
       "name": "SCOUT",
       "player": "2~5",
       "age": "9+",
@@ -2359,6 +2441,8 @@
     },
     {
       "bggid": "433074",
+      "link": "",
+      "rulebook": "http://punchboardgame.pixnet.net/blog/posts/9577781368",
       "name": "與貓的距離",
       "player": "2~6",
       "age": "8+",
@@ -2380,6 +2464,8 @@
     },
     {
       "bggid": "237792",
+      "link": "",
+      "rulebook": "",
       "name": "拉密 變臉版",
       "player": "2~4",
       "age": "8+",
@@ -2401,6 +2487,8 @@
     },
     {
       "bggid": "319095",
+      "link": "",
+      "rulebook": "",
       "name": "原色碰撞",
       "player": "2~4",
       "age": "8+",
@@ -2428,6 +2516,8 @@
     },
     {
       "bggid": "205398",
+      "link": "",
+      "rulebook": "https://punchboardgame.pixnet.net/blog/posts/9561315606",
       "name": "榮耀之城 修訂版(Citadels)",
       "player": "2~8",
       "age": "10+",
@@ -2455,6 +2545,8 @@
     },
     {
       "bggid": "365258",
+      "link": "",
+      "rulebook": "https://punchboardgame.pixnet.net/blog/posts/9576886788",
       "name": "世界奇觀",
       "player": "1~5",
       "age": "12+",
@@ -2512,6 +2604,8 @@
     },
     {
       "bggid": "423792",
+      "link": "",
+      "rulebook": "https://punchboardgame.pixnet.net/blog/posts/9578142718",
       "name": "問非所答",
       "player": "3~20",
       "age": "10+",
@@ -2533,6 +2627,8 @@
     },
     {
       "bggid": "242529",
+      "link": "",
+      "rulebook": "https://punchboardgame.pixnet.net/blog/posts/9578143972",
       "name": "超感官同步",
       "player": "2~8",
       "age": "14+",
@@ -2575,6 +2671,8 @@
     },
     {
       "bggid": "420087",
+      "link": "",
+      "rulebook": "https://punchboardgame.pixnet.net/blog/posts/870552021604824025",
       "name": "Flip 7",
       "player": "3~18",
       "age": "8+",
@@ -2596,6 +2694,8 @@
     },
     {
       "bggid": "454103",
+      "link": "",
+      "rulebook": "",
       "name": "搞怪運動會",
       "player": "2~6",
       "age": "6+",
@@ -2617,6 +2717,8 @@
     },
     {
       "bggid": "432456",
+      "link": "",
+      "rulebook": "https://punchboardgame.pixnet.net/blog/posts/893380819178026227",
       "name": "DNUP",
       "player": "2~5",
       "age": "8+",
@@ -2638,6 +2740,8 @@
     },
     {
       "bggid": "",
+      "link": "https://punchboardgame.pixnet.net/blog/posts/936118675310703555",
+      "rulebook": "https://punchboardgame.pixnet.net/blog/posts/936118675310703555",
       "name": "美人大戰",
       "player": "3~6",
       "age": "",
@@ -2659,6 +2763,8 @@
     },
     {
       "bggid": "286735",
+      "link": "",
+      "rulebook": "https://punchboardgame.pixnet.net/blog/posts/9568929776",
       "name": "吸爆鬆餅",
       "player": "2~8",
       "age": "13+",
@@ -2696,6 +2802,8 @@
     },
     {
       "bggid": "",
+      "link": "https://lyt.com.tw/more-than-words-waagger",
+      "rulebook": "",
       "name": "深刻認識一個人",
       "player": "2~8",
       "age": "",

@@ -264,6 +264,8 @@
       <tr><td>NAME</td><td>你想顯示的遊戲名稱（必填）。</td></tr>
       <tr><td>PLAYER / AGE / PLAYTIME / PUBLISHER / GAMETYPE</td><td>手動填寫時會覆蓋自動帶出的資料。GAMETYPE 請填「派對遊戲／陣營遊戲／策略遊戲／心機遊戲／卡牌遊戲／兒童遊戲／家庭遊戲」其中之一。</td></tr>
       <tr><td>IMGUR</td><td>自訂圖片網址（任何圖床都可以），優先於 BGGID 抓到的圖。</td></tr>
+      <tr><td>LINK</td><td>沒有 BGGID 的遊戲（例如台灣設計、BGG 上查不到的），可以填一個你自己的介紹網站連結，遊戲名稱會直接連過去。有 BGGID 時仍優先連到 BGG 頁面。</td></tr>
+      <tr><td>RULEBOOK</td><td>線上規則書連結（PDF、圖片、網頁都可以），卡片上會多一個「規則書」按鈕。</td></tr>
       <tr><td>DESCRIPTION</td><td>你自己寫的遊戲簡介，會顯示在卡片上。這個清單不會使用 BGG 自動抓到的簡介，簡介一律以這欄為準，不填就不顯示。</td></tr>
       <tr><td>OWN</td><td>你擁有的擴充，用頓號「、」分開填 BGGID 或名稱關鍵字，畫面上該擴充就會打勾。</td></tr>
       <tr><td>NOTE</td><td>自訂備註，顯示在簡介下方。</td></tr>
@@ -416,7 +418,12 @@
       </div>` : '';
     const titleInner = g.bggid
       ? `<a href="https://boardgamegeek.com/boardgame/${g.bggid}" target="_blank" rel="noopener">${escapeHtml(g.name)}</a>`
-      : escapeHtml(g.name);
+      : g.link
+        ? `<a href="${escapeHtml(g.link)}" target="_blank" rel="noopener">${escapeHtml(g.name)}</a>`
+        : escapeHtml(g.name);
+    const rulebookHtml = g.rulebook
+      ? `<a class="btn" style="display:inline-block; padding:5px 12px; font-size:11px; align-self:flex-start; text-decoration:none;" href="${escapeHtml(g.rulebook)}" target="_blank" rel="noopener">📖 規則書</a>`
+      : '';
 
     return `<div class="card">
       <span class="cat-tag" style="background:${st.bg};color:${st.text};border-color:${st.border};transform:rotate(${rot})">${catLabel}</span>
@@ -425,6 +432,7 @@
         <h3>${titleInner}</h3>
         <div class="meta-row">${metaBits.join('')}</div>
         ${g.publisher ? `<div class="publisher">出版：${escapeHtml(g.publisher)}</div>` : ''}
+        ${rulebookHtml}
         ${descHtml}
         ${noteHtml}
         ${expHtml}

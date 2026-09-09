@@ -237,6 +237,8 @@ function buildGame(rec) {
 
   return {
     bggid: rec.BGGID || '',
+    link: checkImgur(rec.LINK) || '',
+    rulebook: checkImgur(rec.RULEBOOK) || '',
     name, player, age, time, publisher, category, image,
     description: rec.DESCRIPTION || '',
     note: rec.NOTE || '',

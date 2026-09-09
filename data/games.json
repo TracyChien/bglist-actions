@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-09T06:52:27.421Z",
-  "count": 55,
+  "updatedAt": "2026-09-09T07:19:55.898Z",
+  "count": 54,
   "missingBggIds": [],
   "games": [
     {
@@ -25,17 +25,23 @@
       ]
     },
     {
-      "bggid": "",
+      "bggid": "158818",
       "name": "政治風暴",
       "player": "3~5",
-      "age": "",
+      "age": "14+",
       "time": "30",
-      "publisher": "",
+      "publisher": "(Unknown)",
       "category": "心機遊戲",
-      "image": "https://pic.pimg.tw/mj9981168/1491008721-1117196336_wn.jpg",
-      "description": "",
+      "image": "https://cf.geekdo-images.com/xi6raaHz3rT9B8hHdOW5hA__original/img/GgFz9zVVqbJqbaFVE24F5wgxOT4=/0x0/filters:format(jpeg)/pic2010235.jpg",
+      "description": "馬來西亞熱銷紙牌遊戲POLITIKO，曾被CNN和其他媒體大力報導，經台灣設計團隊與馬來西亞合作，改版成為台灣版的紙牌遊戲：政治風暴。享受當台灣政黨領袖的刺激感！ 用政治陰謀，政績，競選成為台灣執政黨！",
       "note": "",
-      "expansions": [],
+      "expansions": [
+        {
+          "id": "158954",
+          "name": "Politiko: Sabah & Sarawak Expansion Set",
+          "owned": false
+        }
+      ],
       "playerRange": [
         3,
         5
@@ -65,7 +71,7 @@
         {
           "id": "132195",
           "name": "The Resistance: Avalon Promo Cards",
-          "owned": false
+          "owned": true
         },
         {
           "id": "302961",
@@ -138,7 +144,7 @@
         {
           "id": "148931",
           "name": "Coup: Reformation",
-          "owned": false
+          "owned": true
         },
         {
           "id": "217578",
@@ -332,7 +338,7 @@
         {
           "id": "249811",
           "name": "Chronicles of Crime: Noir",
-          "owned": false
+          "owned": true
         },
         {
           "id": "290955",
@@ -352,7 +358,7 @@
         {
           "id": "258089",
           "name": "Chronicles of Crime: Welcome to Redview",
-          "owned": false
+          "owned": true
         }
       ],
       "playerRange": [
@@ -484,7 +490,7 @@
         {
           "id": "313301",
           "name": "Chronicles of Crime: The Millennium Series – Chronicles of Time Expansion",
-          "owned": false
+          "owned": true
         }
       ],
       "playerRange": [
@@ -628,7 +634,7 @@
         {
           "id": "313301",
           "name": "Chronicles of Crime: The Millennium Series – Chronicles of Time Expansion",
-          "owned": false
+          "owned": true
         }
       ],
       "playerRange": [
@@ -681,7 +687,7 @@
         {
           "id": "313301",
           "name": "Chronicles of Crime: The Millennium Series – Chronicles of Time Expansion",
-          "owned": false
+          "owned": true
         }
       ],
       "playerRange": [
@@ -1936,7 +1942,7 @@
         {
           "id": "309116",
           "name": "7 Wonders Duel: Agora",
-          "owned": false
+          "owned": true
         },
         {
           "id": "348601",
@@ -1946,7 +1952,7 @@
         {
           "id": "202976",
           "name": "7 Wonders Duel: Pantheon",
-          "owned": false
+          "owned": true
         },
         {
           "id": "310215",
@@ -2056,7 +2062,7 @@
       "publisher": "Korea Boardgames",
       "category": "策略遊戲",
       "image": "https://cf.geekdo-images.com/LdK5ItPPwIHKUITxh3vqxA__original/img/gKSzzvUhpCYH1PjIzSYo9ffxSoM=/0x0/filters:format(jpeg)/pic7275386.jpg",
-      "description": "",
+      "description": "擴充 甜點時間",
       "note": "",
       "expansions": [
         {
@@ -2102,7 +2108,7 @@
         {
           "id": "411435",
           "name": "Coffee Rush: Piece of Cake",
-          "owned": false
+          "owned": true
         },
         {
           "id": "457292",
@@ -2191,7 +2197,7 @@
         {
           "id": "450636",
           "name": "UNO: Show ‘em No Mercy – Expansion Pack",
-          "owned": false
+          "owned": true
         }
       ],
       "playerRange": [
@@ -2262,27 +2268,6 @@
       ]
     },
     {
-      "bggid": "411435",
-      "name": "胡鬧咖啡館-甜點時間擴充",
-      "player": "2~4",
-      "age": "8+",
-      "time": "30",
-      "publisher": "Korea Boardgames",
-      "category": "策略遊戲",
-      "image": "https://cf.geekdo-images.com/AK0XaFXem8Pdeu3dU4kggA__original/img/dUllxooyRFmFxRUQj9_2HGyX-U8=/0x0/filters:format(jpeg)/pic7968971.jpg",
-      "description": "",
-      "note": "",
-      "expansions": [],
-      "playerRange": [
-        2,
-        4
-      ],
-      "timeRange": [
-        30,
-        30
-      ]
-    },
-    {
       "bggid": "174078",
       "name": "福爾摩斯大對決",
       "player": "2",
@@ -2334,7 +2319,7 @@
         {
           "id": "425029",
           "name": "Faraway: People From Below",
-          "owned": false
+          "owned": true
         },
         {
           "id": "451708",
@@ -2508,7 +2493,7 @@
         {
           "id": "406746",
           "name": "World Wonders: Mundo Wonders Pack",
-          "owned": false
+          "owned": true
         },
         {
           "id": "476781",

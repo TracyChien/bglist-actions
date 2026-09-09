@@ -451,7 +451,7 @@
 
   function renderLegend(){
     document.getElementById('legendList').innerHTML = CATEGORIES.map(c=>`
-      <div class="cat-legend"><span class="dot" style="background:${c.style.bg}"></span>
+      <div class="cat-legend"><span class="dot" style="background:${CAT_MAP[c.key].style.bg}"></span>
       <div><b>${c.key}</b> <span style="color:rgba(0,0,0,.55)">(${c.en})</span><br>${c.desc}</div></div>`).join('');
   }
   function openHelp(){ document.getElementById('helpModal').classList.add('open'); }

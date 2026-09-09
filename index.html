@@ -395,10 +395,11 @@
       <div class="desc">
         <span class="d-short" id="${descId}-s">${escapeHtml(shortDesc)}</span>
         <span class="d-full" id="${descId}-f" style="display:none;">${escapeHtml(g.description)}</span>
-        ${g.description.length>90 ? `<button class="more-btn" onclick="
-            document.getElementById('${descId}-s').style.display='none';
-            document.getElementById('${descId}-f').style.display='inline';
-            this.style.display='none';">展開全文 →</button>`:''}
+        ${g.description.length>90 ? `<button class="more-btn" id="${descId}-btn" onclick="
+            var s=document.getElementById('${descId}-s'), f=document.getElementById('${descId}-f'), b=document.getElementById('${descId}-btn');
+            if(f.style.display==='none'){ s.style.display='none'; f.style.display='inline'; b.textContent='收合 ↑'; }
+            else { s.style.display='inline'; f.style.display='none'; b.textContent='展開全文 →'; }
+            ">展開全文 →</button>`:''}
       </div>` : '';
     const noteHtml = g.note ? `<div class="note">📌 ${escapeHtml(g.note)}</div>` : '';
     const expId = 'e'+Math.random().toString(36).slice(2);

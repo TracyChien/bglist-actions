@@ -238,7 +238,7 @@ function buildGame(rec) {
   return {
     bggid: rec.BGGID || '',
     name, player, age, time, publisher, category, image,
-    description: (bgg && bgg.description) || '',
+    description: rec.DESCRIPTION || '',
     note: rec.NOTE || '',
     expansions, playerRange, timeRange,
   };

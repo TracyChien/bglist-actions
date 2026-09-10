@@ -263,6 +263,56 @@ function buildGame(rec) {
 const games = records.map(buildGame);
 const missing = ids.filter((id) => !bggData[id]);
 
+// ---------------------------------------------------------------
+// 4. 讀取「遊玩紀錄」分頁（選填），統計每款遊戲的遊玩次數
+// ---------------------------------------------------------------
+const playCounts = {}; // bggid -> count
+const playCountsByName = {}; // normalized name -> count
+const lastPlayed = {}; // bggid -> latest date string
+const lastPlayedByName = {};
+
+function normName(s) {
+  return (s || '').trim().toLowerCase();
+}
+
+if (config.playLogCsvUrl) {
+  try {
+    console.log('讀取遊玩紀錄 CSV:', config.playLogCsvUrl);
+    const logRes = await fetch(config.playLogCsvUrl);
+    if (!logRes.ok) throw new Error('HTTP ' + logRes.status);
+    const logText = await logRes.text();
+    const logRows = parseCsv(logText);
+    if (logRows.length > 1) {
+      const logHeaders = logRows[0].map((h) => (h || '').trim().toUpperCase());
+      for (let i = 1; i < logRows.length; i++) {
+        const r = logRows[i];
+        if (!r.some((c) => c && c.trim())) continue;
+        const rec = {};
+        logHeaders.forEach((h, idx) => { rec[h] = (r[idx] || '').trim(); });
+        if (!rec.NAME && !rec.BGGID) continue;
+        if (rec.BGGID) {
+          playCounts[rec.BGGID] = (playCounts[rec.BGGID] || 0) + 1;
+          if (!lastPlayed[rec.BGGID] || rec.DATE > lastPlayed[rec.BGGID]) lastPlayed[rec.BGGID] = rec.DATE;
+        } else {
+          const n = normName(rec.NAME);
+          playCountsByName[n] = (playCountsByName[n] || 0) + 1;
+          if (!lastPlayedByName[n] || rec.DATE > lastPlayedByName[n]) lastPlayedByName[n] = rec.DATE;
+        }
+      }
+      console.log(`解析到遊玩紀錄，共涵蓋 ${Object.keys(playCounts).length + Object.keys(playCountsByName).length} 個相異遊戲`);
+    }
+  } catch (e) {
+    console.warn('讀取遊玩紀錄失敗，略過統計:', e.message);
+  }
+}
+
+for (const g of games) {
+  const byId = g.bggid ? playCounts[g.bggid] : undefined;
+  const byName = playCountsByName[normName(g.name)];
+  g.playCount = (byId || 0) + (byName || 0);
+  g.lastPlayed = (g.bggid && lastPlayed[g.bggid]) || lastPlayedByName[normName(g.name)] || null;
+}
+
 const output = {
   updatedAt: new Date().toISOString(),
   count: games.length,

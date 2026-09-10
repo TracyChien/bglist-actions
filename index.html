@@ -268,6 +268,7 @@
       <option value="player_asc">人數：少→多</option>
       <option value="time_asc">時間：短→長</option>
       <option value="rating_desc">評分：高→低</option>
+      <option value="playcount_desc">遊玩次數：多→少</option>
       <option value="name">名稱排序</option>
     </select>
     <div class="view-toggle">
@@ -320,6 +321,9 @@
       <tr><td>OWN</td><td>你擁有的擴充，用頓號「、」分開填 BGGID 或名稱關鍵字，畫面上該擴充就會打勾。</td></tr>
       <tr><td>NOTE</td><td>自訂備註，顯示在簡介下方。</td></tr>
     </table>
+
+    <h3>遊玩紀錄（統計遊玩次數）</h3>
+    <p>如果 Google Sheet 裡有另一個「PlayLog」分頁記錄每次遊玩，這裡會自動統計每款遊戲被玩過幾次，顯示在卡片上（已玩 X 次、上次遊玩日期），也可以用排序選單依「遊玩次數：多→少」排序。分頁欄位建議：<code>DATE</code>（日期）、<code>NAME</code>（遊戲名稱，跟主清單一致）、<code>BGGID</code>（選填但強烈建議，比對更準確）、<code>PLAYERS</code>、<code>NOTE</code>。</p>
 
     <h3>類別分類參考</h3>
     <div id="legendList"></div>
@@ -476,6 +480,8 @@
     if(g.age) metaBits.push(`<span>年齡 <b>${escapeHtml(g.age)}</b></span>`);
     if(g.time) metaBits.push(`<span>時間 <b>${escapeHtml(g.time)}</b></span>`);
     if(g.bggRating) metaBits.push(`<span>評分 <b>${g.bggRating}</b></span>`);
+    if(g.playCount) metaBits.push(`<span>已玩 <b>${g.playCount}</b> 次</span>`);
+    if(g.lastPlayed) metaBits.push(`<span>上次 <b>${escapeHtml(g.lastPlayed)}</b></span>`);
     if(g.bggWeight) metaBits.push(`<span>複雜度 <b>${g.bggWeight}/5</b></span>`);
     const descId = 'd'+Math.random().toString(36).slice(2);
     const shortDesc = g.description.length > 90 ? g.description.slice(0,90)+'…' : g.description;
@@ -549,6 +555,9 @@
         break;
       case 'rating_desc':
         arr.sort((a,b)=> (b.bggRating||0) - (a.bggRating||0));
+        break;
+      case 'playcount_desc':
+        arr.sort((a,b)=> (b.playCount||0) - (a.playCount||0));
         break;
       case 'name':
         arr.sort((a,b)=> collator.compare(a.name, b.name));

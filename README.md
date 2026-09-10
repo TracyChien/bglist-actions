@@ -17,7 +17,7 @@ data/games.json                  ← 產生出來的資料（一開始是空的�
 
 ## 設定步驟
 
-1. **改 `config.json`**：把 `csvUrl` 換成你自己 Google Sheet 發布成 CSV 的網址（`檔案 → 共用 → 發布到網路`，格式選 CSV）。
+1. **改 `config.json`**：把 `csvUrl` 換成你自己 Google Sheet 發布成 CSV 的網址（`檔案 → 共用 → 發布到網路`，格式選 CSV）。選填：如果有另外建「PlayLog」分頁記錄遊玩紀錄，把該分頁也發布成 CSV，網址填到 `playLogCsvUrl`。
 2. **開權限**：repo 的 `Settings → Actions → General → Workflow permissions`，選「Read and write permissions」並存檔（Action 需要這個權限才能把抓好的資料寫回 repo）。
 3. **開 GitHub Pages**：`Settings → Pages`，Source 選 `Deploy from a branch`，Branch 選 `main`、資料夾選 `/ (root)`。
 4. **手動跑第一次**：到 `Actions` 分頁，左側選 `Update board game data`，右邊按 `Run workflow`。等 1～2 分鐘跑完，`data/games.json` 就會被自動 commit 回 repo。
@@ -53,6 +53,7 @@ data/games.json                  ← 產生出來的資料（一開始是空的�
 - 一款遊戲可以同時屬於多個分類
 - 資料超過 3 天沒更新會提示
 - 手機版篩選列預設收合，可展開
+- 選填：讀取「PlayLog」遊玩紀錄分頁，統計每款遊戲的遊玩次數與最後遊玩日期，可依此排序
 
 ## 疑難排解
 

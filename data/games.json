@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-09T20:29:11.709Z",
+  "updatedAt": "2026-09-10T06:48:31.709Z",
   "count": 54,
   "missingBggIds": [],
   "games": [
@@ -12,10 +12,14 @@
       "age": "8+",
       "time": "15",
       "publisher": "ASS Altenburger Spielkarten",
-      "category": "心機遊戲",
+      "categories": [
+        "心機遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/CG061D2bot2RpmX12-c07g__original/img/SKwLbKQu1wAS2vETCheBXbgJy-Q=/0x0/filters:format(jpeg)/pic924298.jpg",
       "description": "",
       "note": "",
+      "bggRating": 5.9,
+      "bggWeight": 1.3,
       "expansions": [],
       "playerRange": [
         3,
@@ -35,10 +39,14 @@
       "age": "14+",
       "time": "30",
       "publisher": "(Unknown)",
-      "category": "心機遊戲",
+      "categories": [
+        "心機遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/xi6raaHz3rT9B8hHdOW5hA__original/img/GgFz9zVVqbJqbaFVE24F5wgxOT4=/0x0/filters:format(jpeg)/pic2010235.jpg",
       "description": "馬來西亞熱銷紙牌遊戲POLITIKO，曾被CNN和其他媒體大力報導，經台灣設計團隊與馬來西亞合作，改版成為台灣版的紙牌遊戲：政治風暴。享受當台灣政黨領袖的刺激感！ 用政治陰謀，政績，競選成為台灣執政黨！",
       "note": "",
+      "bggRating": 6.7,
+      "bggWeight": null,
       "expansions": [
         {
           "id": "158954",
@@ -64,20 +72,24 @@
       "age": "13+",
       "time": "20~30",
       "publisher": "Indie Boards & Cards",
-      "category": "陣營遊戲",
+      "categories": [
+        "陣營遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/LPa6rsGcv8S0-OeNjCOAEQ__original/img/AF8HHaIad1re-eg3kd9mlm2j_ss=/0x0/filters:format(jpeg)/pic1398895.jpg",
       "description": "",
       "note": "",
+      "bggRating": 7.5,
+      "bggWeight": 1.7,
       "expansions": [
-        {
-          "id": "441810",
-          "name": "The Resistance: Avalon – Ekskalibur Promo Card",
-          "owned": false
-        },
         {
           "id": "132195",
           "name": "The Resistance: Avalon Promo Cards",
           "owned": true
+        },
+        {
+          "id": "441810",
+          "name": "The Resistance: Avalon – Ekskalibur Promo Card",
+          "owned": false
         },
         {
           "id": "302961",
@@ -103,10 +115,14 @@
       "age": "15+",
       "time": "30~60",
       "publisher": "Arclight Games",
-      "category": "陣營遊戲",
+      "categories": [
+        "陣營遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/fFxl3l28aEiQ4kuTLfFmeA__original/img/VFlxMxWR-xOfEcVrraCUsWDJtZ4=/0x0/filters:format(jpeg)/pic745949.jpg",
       "description": "",
       "note": "",
+      "bggRating": 7,
+      "bggWeight": 2.4,
       "expansions": [],
       "playerRange": [
         6,
@@ -126,11 +142,20 @@
       "age": "13+",
       "time": "15",
       "publisher": "Indie Boards & Cards",
-      "category": "心機遊戲",
+      "categories": [
+        "心機遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/MWhSY_GOe2-bmlQ2rntSVg__original/img/ayAAWBK1rAEumARNmROsOtvqW-4=/0x0/filters:format(jpeg)/pic2016054.jpg",
       "description": "含擴充 改革 抵抗組織",
       "note": "",
+      "bggRating": 7,
+      "bggWeight": 1.4,
       "expansions": [
+        {
+          "id": "148931",
+          "name": "Coup: Reformation",
+          "owned": true
+        },
         {
           "id": "374732",
           "name": "Coup: Bureaucrat Promo Card",
@@ -150,11 +175,6 @@
           "id": "186524",
           "name": "Coup: Jester Promo Card",
           "owned": false
-        },
-        {
-          "id": "148931",
-          "name": "Coup: Reformation",
-          "owned": true
         },
         {
           "id": "217578",
@@ -185,10 +205,14 @@
       "age": "7+",
       "time": "15",
       "publisher": "Exploding Kittens",
-      "category": "心機遊戲",
+      "categories": [
+        "心機遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/TTsbFSWQjf6ALCmct9Q02g__original/img/X5tRRwzB7DK-hkna5VocAS6Kx0w=/0x0/filters:format(png)/pic5940391.png",
       "description": "派對版",
       "note": "",
+      "bggRating": 7,
+      "bggWeight": 1.1,
       "expansions": [
         {
           "id": "312667",
@@ -229,10 +253,14 @@
       "age": "8+",
       "time": "30",
       "publisher": "(Unknown)",
-      "category": "策略遊戲",
+      "categories": [
+        "策略遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/LeaLDlTTmeN639MfuflcMw__original/img/fusGQFpm4srwqhM8CDlEDzh0NyQ=/0x0/filters:format(jpeg)/pic2286966.jpg",
       "description": "",
       "note": "",
+      "bggRating": 6.5,
+      "bggWeight": 1.7,
       "expansions": [
         {
           "id": "169466",
@@ -258,10 +286,14 @@
       "age": "",
       "time": "10~15",
       "publisher": "(Self-Published)",
-      "category": "家庭遊戲",
+      "categories": [
+        "家庭遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/2L8_mVnTIfYqrPI6z8SEkg__original/img/dhaeS1mWK-jvc7c60-ovzxfdPK0=/0x0/filters:format(jpeg)/pic6961662.jpg",
       "description": "",
       "note": "",
+      "bggRating": 6,
+      "bggWeight": 1.3,
       "expansions": [],
       "playerRange": [
         2,
@@ -281,10 +313,14 @@
       "age": "8+",
       "time": "15-30",
       "publisher": "asmodee",
-      "category": "派對遊戲",
+      "categories": [
+        "派對遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/Y55vSPrIyR0TzP7vM0luHw__original/img/Wn0ITgyFk7f0xEX9AH3zIP-5hsc=/0x0/filters:format(jpeg)/pic1638726.jpg",
       "description": "",
       "note": "",
+      "bggRating": 6.3,
+      "bggWeight": 1.1,
       "expansions": [],
       "playerRange": [
         4,
@@ -304,10 +340,14 @@
       "age": "8+",
       "time": "300",
       "publisher": "Broadway Toys LTD",
-      "category": "派對遊戲",
+      "categories": [
+        "派對遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/CFYHrg61ph-Et4YQkedWnA__original/img/v0uO6tolsMEc7GXdv1L0SJv9IfQ=/0x0/filters:format(jpeg)/pic3107661.jpg",
       "description": "",
       "note": "",
+      "bggRating": 6.5,
+      "bggWeight": 1,
       "expansions": [],
       "playerRange": [
         2,
@@ -327,11 +367,25 @@
       "age": "12+",
       "time": "60~90",
       "publisher": "Lucky Duck Games",
-      "category": "策略遊戲",
+      "categories": [
+        "策略遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/1BMyuEwK0zV9005oYinYLw__original/img/3OigysLof9HIk4jvV79Cm-tb-gY=/0x0/filters:format(jpeg)/pic4317519.jpg",
       "description": "含擴充 黑幕、紅景鎮迷蹤",
       "note": "",
+      "bggRating": 7.5,
+      "bggWeight": 2.1,
       "expansions": [
+        {
+          "id": "249811",
+          "name": "Chronicles of Crime: Noir",
+          "owned": true
+        },
+        {
+          "id": "258089",
+          "name": "Chronicles of Crime: Welcome to Redview",
+          "owned": true
+        },
         {
           "id": "275455",
           "name": "Chronicles of Crime: Dice Tower 2019 Promo Cards",
@@ -358,11 +412,6 @@
           "owned": false
         },
         {
-          "id": "249811",
-          "name": "Chronicles of Crime: Noir",
-          "owned": true
-        },
-        {
           "id": "290955",
           "name": "Chronicles of Crime: Tantrum House 2019 Promo Card",
           "owned": false
@@ -376,11 +425,6 @@
           "id": "372832",
           "name": "Chronicles of Crime: Tantrum House 2021 Promo Cards",
           "owned": false
-        },
-        {
-          "id": "258089",
-          "name": "Chronicles of Crime: Welcome to Redview",
-          "owned": true
         }
       ],
       "playerRange": [
@@ -401,10 +445,14 @@
       "age": "7+",
       "time": "30",
       "publisher": "Mattel, Inc.",
-      "category": "卡牌遊戲",
+      "categories": [
+        "卡牌遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/8IO6sl0jN5IylDDRAOK8GQ__original/img/scsSPfbOuxIedcBNjC4EtGb_MEc=/0x0/filters:format(jpeg)/pic8214042.jpg",
       "description": "",
       "note": "",
+      "bggRating": 6.3,
+      "bggWeight": 1.2,
       "expansions": [],
       "playerRange": [
         2,
@@ -424,10 +472,14 @@
       "age": "8+",
       "time": "20",
       "publisher": "Repos Production",
-      "category": "派對遊戲",
+      "categories": [
+        "派對遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/74haNunMBn85beBi-yIKwA__original/img/hA22qL6nZxchA8FMTIfhLMcI53I=/0x0/filters:format(png)/pic8669313.png",
       "description": "",
       "note": "",
+      "bggRating": 7.6,
+      "bggWeight": 1,
       "expansions": [
         {
           "id": "286086",
@@ -483,10 +535,14 @@
       "age": "8+",
       "time": "30~45",
       "publisher": "eggertspiele",
-      "category": "派對遊戲",
+      "categories": [
+        "派對遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/qnR2V3YsW963_JaVznBjsw__original/img/8F0hZUlnJ6X924xYr8u5wtamtng=/0x0/filters:format(jpeg)/pic8584959.jpg",
       "description": "",
       "note": "",
+      "bggRating": 7.5,
+      "bggWeight": 1.5,
       "expansions": [
         {
           "id": "293240",
@@ -512,10 +568,14 @@
       "age": "12+",
       "time": "60~90",
       "publisher": "Lucky Duck Games",
-      "category": "策略遊戲",
+      "categories": [
+        "策略遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/oyTU673yivJK4wM6DsEb1A__original/img/vhUthenkAIHpkRpUukYtrHrPc0c=/0x0/filters:format(jpeg)/pic5201597.jpg",
       "description": "",
       "note": "",
+      "bggRating": 7.7,
+      "bggWeight": 2,
       "expansions": [
         {
           "id": "313301",
@@ -541,10 +601,14 @@
       "age": "8+",
       "time": "30",
       "publisher": "AMIGO",
-      "category": "陣營遊戲",
+      "categories": [
+        "陣營遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/oeN-MHAJKsC2KCI3avKj9w__original/img/TgwkFfJF5IrhjwNm8OVwdn34sJE=/0x0/filters:format(jpeg)/pic8679622.jpg",
       "description": "",
       "note": "",
+      "bggRating": 6.5,
+      "bggWeight": 1.3,
       "expansions": [
         {
           "id": "204573",
@@ -660,10 +724,14 @@
       "age": "12+",
       "time": "60~90",
       "publisher": "Lucky Duck Games",
-      "category": "策略遊戲",
+      "categories": [
+        "策略遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/bw-oJglzKtyINyubb8_4ew__original/img/smwoYD6I0NTZxN8SempHdsxNCJE=/0x0/filters:format(jpeg)/pic6154871.jpg",
       "description": "",
       "note": "",
+      "bggRating": 7.9,
+      "bggWeight": 1.9,
       "expansions": [
         {
           "id": "313301",
@@ -689,10 +757,14 @@
       "age": "14+",
       "time": "30",
       "publisher": "Indie Boards & Cards",
-      "category": "陣營遊戲",
+      "categories": [
+        "陣營遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/IwEAO-GRsYdO6WeA0uWtFg__original/img/awIRlc4ZJx_RObIxXz-M2j0f2_8=/0x0/filters:format(jpeg)/pic5578189.jpg",
       "description": "",
       "note": "",
+      "bggRating": 7.3,
+      "bggWeight": 1.9,
       "expansions": [],
       "playerRange": [
         4,
@@ -712,20 +784,24 @@
       "age": "12+",
       "time": "60~90",
       "publisher": "Lucky Duck Games",
-      "category": "策略遊戲",
+      "categories": [
+        "策略遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/BcxPqYR__rEx7FGmX4AfHQ__original/img/hkdtWfTrE5i8JHoZqEIkQeiKb2U=/0x0/filters:format(jpeg)/pic5240836.jpg",
       "description": "",
       "note": "",
+      "bggRating": 7.6,
+      "bggWeight": 2.2,
       "expansions": [
-        {
-          "id": "381331",
-          "name": "Chronicles of Crime: 2400 – Man vs. Meeple 2022 Promo Cards",
-          "owned": false
-        },
         {
           "id": "313301",
           "name": "Chronicles of Crime: The Millennium Series – Chronicles of Time Expansion",
           "owned": true
+        },
+        {
+          "id": "381331",
+          "name": "Chronicles of Crime: 2400 – Man vs. Meeple 2022 Promo Cards",
+          "owned": false
         }
       ],
       "playerRange": [
@@ -746,10 +822,14 @@
       "age": "6+",
       "time": "15",
       "publisher": "Blue Orange Games",
-      "category": "兒童遊戲",
+      "categories": [
+        "兒童遊戲"
+      ],
       "image": "https://img.gokids.com.tw/GoodPic/03/big/171084089030303.jpg",
       "description": "小小兵版",
       "note": "",
+      "bggRating": 6.5,
+      "bggWeight": 1,
       "expansions": [],
       "playerRange": [
         2,
@@ -769,10 +849,14 @@
       "age": "8+",
       "time": "45",
       "publisher": "AMIGO",
-      "category": "卡牌遊戲",
+      "categories": [
+        "卡牌遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/WuOY1XAIJQ-RGAmT_apW_w__original/img/06TSBC2s-cwbxfPmy_pf7n5p-jM=/0x0/filters:format(jpeg)/pic8632998.jpg",
       "description": "",
       "note": "",
+      "bggRating": 7,
+      "bggWeight": 1.2,
       "expansions": [
         {
           "id": "20030",
@@ -818,10 +902,14 @@
       "age": "8+",
       "time": "30",
       "publisher": "AURUM, Inc.",
-      "category": "心機遊戲",
+      "categories": [
+        "心機遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/A8AHAeoWNgnGyjyIyjkJeA__original/img/zL5Lh1ck2z_GWAt38aj1gzKY-vE=/0x0/filters:format(jpeg)/pic8672625.jpg",
       "description": "",
       "note": "",
+      "bggRating": 6.4,
+      "bggWeight": 1.2,
       "expansions": [
         {
           "id": "57883",
@@ -847,10 +935,14 @@
       "age": "7+",
       "time": "30~45",
       "publisher": "Hans im Glück",
-      "category": "策略遊戲",
+      "categories": [
+        "策略遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/peUgu3A20LRmAXAMyDQfpQ__original/img/bP18m_PYjyFOv1IBGgMOteQUneA=/0x0/filters:format(jpeg)/pic8621446.jpg",
       "description": "含卡卡頌2.0德國城堡擴充、卡卡頌2.0主教堂與餐館擴充、卡卡頌2.0小豬與建築師擴充",
       "note": "",
+      "bggRating": 7.4,
+      "bggWeight": 1.9,
       "expansions": [
         {
           "id": "167903",
@@ -1871,10 +1963,14 @@
       "age": "10+",
       "time": "20",
       "publisher": "Z-Man Games",
-      "category": "心機遊戲",
+      "categories": [
+        "心機遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/V7WQjhAh0AatPXTYOrXtCQ__original/img/peOFPtAkzWUSpOSVTJu3pTDv2ck=/0x0/filters:format(png)/pic4766499.png",
       "description": "",
       "note": "",
+      "bggRating": 7.5,
+      "bggWeight": 1.1,
       "expansions": [],
       "playerRange": [
         2,
@@ -1894,10 +1990,14 @@
       "age": "12+",
       "time": "60~90",
       "publisher": "Lucky Duck Games",
-      "category": "策略遊戲",
+      "categories": [
+        "策略遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/opEwknoTQRx-6hpXfD9ZiQ__original/img/Tb3rYk3_5y9e1Uej_zBBJpy8HHw=/0x0/filters:format(jpeg)/pic5672781.jpg",
       "description": "",
       "note": "",
+      "bggRating": 7.9,
+      "bggWeight": 3,
       "expansions": [],
       "playerRange": [
         1,
@@ -1917,10 +2017,14 @@
       "age": "10+",
       "time": "30",
       "publisher": "Space Cowboys",
-      "category": "策略遊戲",
+      "categories": [
+        "策略遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/2thZjcw0ZvrsP09PDz002Q__original/img/2UIhoNUKWD5BxIZ6JPd4vmlPOzY=/0x0/filters:format(jpeg)/pic5585867.jpg",
       "description": "漫威版",
       "note": "",
+      "bggRating": 7.6,
+      "bggWeight": 1.8,
       "expansions": [
         {
           "id": "369960",
@@ -1946,10 +2050,14 @@
       "age": "14+",
       "time": "30",
       "publisher": "Cocktail Games",
-      "category": "派對遊戲",
+      "categories": [
+        "派對遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/0LVOOyXtNNyFhyj7tFaKCQ__original/img/P8h6npX36CQrxXua-8UWYocpc44=/0x0/filters:format(jpeg)/pic5212719.jpg",
       "description": "",
       "note": "",
+      "bggRating": 7.4,
+      "bggWeight": 1.1,
       "expansions": [],
       "playerRange": [
         2,
@@ -1969,10 +2077,14 @@
       "age": "7+",
       "time": "30",
       "publisher": "Korea Boardgames",
-      "category": "家庭遊戲",
+      "categories": [
+        "家庭遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/ExKZ4I1R5sx-F65Gj-wDFA__original/img/Oczx2KpPZSQgJZeTG2D51LAh16g=/0x0/filters:format(png)/pic2428651.png",
       "description": "",
       "note": "",
+      "bggRating": 6.6,
+      "bggWeight": 1.6,
       "expansions": [],
       "playerRange": [
         2,
@@ -1992,10 +2104,14 @@
       "age": "10+",
       "time": "30",
       "publisher": "Repos Production",
-      "category": "策略遊戲",
+      "categories": [
+        "策略遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/zdagMskTF7wJBPjX74XsRw__original/img/Ju836WNSaW7Mab9Vjq2TJ_FqhWQ=/0x0/filters:format(jpeg)/pic2576399.jpg",
       "description": "含擴充市政廣場、萬神殿",
       "note": "",
+      "bggRating": 8.1,
+      "bggWeight": 2.2,
       "expansions": [
         {
           "id": "309116",
@@ -2003,14 +2119,14 @@
           "owned": true
         },
         {
-          "id": "348601",
-          "name": "7 Wonders Duel: Agora – Tu Quoque Fili Promo Card",
-          "owned": false
-        },
-        {
           "id": "202976",
           "name": "7 Wonders Duel: Pantheon",
           "owned": true
+        },
+        {
+          "id": "348601",
+          "name": "7 Wonders Duel: Agora – Tu Quoque Fili Promo Card",
+          "owned": false
         },
         {
           "id": "310215",
@@ -2051,10 +2167,14 @@
       "age": "",
       "time": "60~90",
       "publisher": "",
-      "category": "家庭遊戲",
+      "categories": [
+        "家庭遊戲"
+      ],
       "image": "https://shoplineimg.com/6037452b4bf8b200305d7ed6/60770d3eca65df8d40ba7b80/800x.png",
       "description": "",
       "note": "",
+      "bggRating": null,
+      "bggWeight": null,
       "expansions": [],
       "playerRange": [
         2,
@@ -2074,10 +2194,14 @@
       "age": "14+",
       "time": "20~40",
       "publisher": "Gemblo Company",
-      "category": "家庭遊戲",
+      "categories": [
+        "家庭遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/B6jDU1wG9VX3jto_kUtfVA__original/img/Lcz5l0FuMEXTKmB6t7csvWhbwq8=/0x0/filters:format(png)/pic4905289.png",
       "description": "",
       "note": "",
+      "bggRating": 7.3,
+      "bggWeight": 1,
       "expansions": [],
       "playerRange": [
         2,
@@ -2097,10 +2221,14 @@
       "age": "8+",
       "time": "15~40",
       "publisher": "Maddish Island",
-      "category": "派對遊戲",
+      "categories": [
+        "派對遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/WpI70e_sTc6o9qvb-Y2oOA__original/img/uyNjWjbwhCe9aPeHhDGJ9ArHMlM=/0x0/filters:format(jpeg)/pic6403159.jpg",
       "description": "",
       "note": "",
+      "bggRating": 7.1,
+      "bggWeight": null,
       "expansions": [
         {
           "id": "346934",
@@ -2126,11 +2254,20 @@
       "age": "8+",
       "time": "30",
       "publisher": "Korea Boardgames",
-      "category": "策略遊戲",
+      "categories": [
+        "策略遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/LdK5ItPPwIHKUITxh3vqxA__original/img/gKSzzvUhpCYH1PjIzSYo9ffxSoM=/0x0/filters:format(jpeg)/pic7275386.jpg",
       "description": "擴充 甜點時間",
       "note": "",
+      "bggRating": 7.1,
+      "bggWeight": 1.8,
       "expansions": [
+        {
+          "id": "411435",
+          "name": "Coffee Rush: Piece of Cake",
+          "owned": true
+        },
         {
           "id": "440981",
           "name": "커피 러시 프로모: 크리스마스 2 (Coffee Rush: Christmas Promo Cards 2)",
@@ -2172,11 +2309,6 @@
           "owned": false
         },
         {
-          "id": "411435",
-          "name": "Coffee Rush: Piece of Cake",
-          "owned": true
-        },
-        {
           "id": "457292",
           "name": "커피 러시 프로모: 댕푸치노 (Coffee Rush Promo: Puppuccino)",
           "owned": false
@@ -2215,10 +2347,14 @@
       "age": "8+",
       "time": "30",
       "publisher": "Playroom Entertainment",
-      "category": "派對遊戲",
+      "categories": [
+        "派對遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/KZulVMzmOkWi9cUmMwvzSw__original/img/Aiqu24tklWOOY2a25MmS9KOkv4o=/0x0/filters:format(jpeg)/pic4167796.jpg",
       "description": "",
       "note": "",
+      "bggRating": 6.7,
+      "bggWeight": 1.2,
       "expansions": [],
       "playerRange": [
         2,
@@ -2238,10 +2374,14 @@
       "age": "8+",
       "time": "30",
       "publisher": "Happy Baobab",
-      "category": "派對遊戲",
+      "categories": [
+        "派對遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/_OIknpODN-vkxTP28ZlKQg__original/img/nTG4XgQYj7Tu8wqpOTqaKuMgmXU=/0x0/filters:format(png)/pic4916738.png",
       "description": "",
       "note": "",
+      "bggRating": 6.5,
+      "bggWeight": 1,
       "expansions": [],
       "playerRange": [
         3,
@@ -2261,10 +2401,14 @@
       "age": "7+",
       "time": "30",
       "publisher": "Mattel, Inc.",
-      "category": "卡牌遊戲",
+      "categories": [
+        "卡牌遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/BrmN9uBYLBf9qzlqtQUhTg__original/img/Wz1TpseAsLyzf065Wfl5RHDmuYc=/0x0/filters:format(jpeg)/pic7762353.jpg",
       "description": "",
       "note": "",
+      "bggRating": 6.1,
+      "bggWeight": 1.4,
       "expansions": [
         {
           "id": "450636",
@@ -2290,10 +2434,14 @@
       "age": "9+",
       "time": "30",
       "publisher": "Hurrican",
-      "category": "策略遊戲",
+      "categories": [
+        "策略遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/CDdF4xOQJsNK0gX8-tBdCQ__original/img/d18QDvd0PyfMsipVpHPajZCFPsE=/0x0/filters:format(jpeg)/pic3066125.jpg",
       "description": "",
       "note": "",
+      "bggRating": 7,
+      "bggWeight": 2.2,
       "expansions": [
         {
           "id": "30362",
@@ -2329,10 +2477,14 @@
       "age": "8+",
       "time": "15",
       "publisher": "Buzzy Games",
-      "category": "派對遊戲",
+      "categories": [
+        "派對遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/L-fkWs8wBQjBCAizYMD6Zw__original/img/U9IDG6SYEavFk2ahPJVv5VRTiEU=/0x0/filters:format(jpeg)/pic4982602.jpg",
       "description": "",
       "note": "",
+      "bggRating": 5.8,
+      "bggWeight": 1,
       "expansions": [],
       "playerRange": [
         3,
@@ -2352,10 +2504,14 @@
       "age": "10+",
       "time": "20~30",
       "publisher": "Devir",
-      "category": "策略遊戲",
+      "categories": [
+        "策略遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/EAUE93YGXVFJW1FwftPRgw__original/img/9TYKoOA5S-tLuCjJJoysf23yBEI=/0x0/filters:format(jpeg)/pic2431481.jpg",
       "description": "",
       "note": "",
+      "bggRating": 6.7,
+      "bggWeight": 1.8,
       "expansions": [
         {
           "id": "292615",
@@ -2386,20 +2542,24 @@
       "age": "10+",
       "time": "15~30",
       "publisher": "Catch Up Games",
-      "category": "策略遊戲",
+      "categories": [
+        "策略遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/u1cwi9BWSKsPxSkVO0BzbA__original/img/jTY6_PRF6FrUgInfMajzobVy0S8=/0x0/filters:format(png)/pic7570101.png",
       "description": "",
       "note": "",
+      "bggRating": 7.5,
+      "bggWeight": 1.9,
       "expansions": [
-        {
-          "id": "471430",
-          "name": "Faraway: Beyond the Veil",
-          "owned": false
-        },
         {
           "id": "425029",
           "name": "Faraway: People From Below",
           "owned": true
+        },
+        {
+          "id": "471430",
+          "name": "Faraway: Beyond the Veil",
+          "owned": false
         },
         {
           "id": "451708",
@@ -2425,10 +2585,14 @@
       "age": "9+",
       "time": "15",
       "publisher": "Oink Games",
-      "category": "卡牌遊戲",
+      "categories": [
+        "卡牌遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/cf0xxkevbwTGF3VUZymKjg__original/img/vkElrRCPJxy7Q3TH9olpq20egA4=/0x0/filters:format(png)/pic6398727.png",
       "description": "",
       "note": "",
+      "bggRating": 7.8,
+      "bggWeight": 1.4,
       "expansions": [],
       "playerRange": [
         2,
@@ -2448,10 +2612,14 @@
       "age": "8+",
       "time": "15~40",
       "publisher": "(Self-Published)",
-      "category": "卡牌遊戲",
+      "categories": [
+        "卡牌遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/x9ReeH79kyuLLMu_weSezQ__original/img/cbHhdVrO2YqeTQ8ezLEgBq1ExjQ=/0x0/filters:format(png)/pic8746816.png",
       "description": "",
       "note": "",
+      "bggRating": 7,
+      "bggWeight": 1.5,
       "expansions": [],
       "playerRange": [
         2,
@@ -2471,10 +2639,14 @@
       "age": "8+",
       "time": "20~45",
       "publisher": "BGA Plus",
-      "category": "策略遊戲",
+      "categories": [
+        "策略遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/jzhXRU3pYfzmmZAFw7oM7A__original/img/gG5l3DuTX26_mu29yYkPUUB3P4o=/0x0/filters:format(jpeg)/pic3810997.jpg",
       "description": "",
       "note": "",
+      "bggRating": 7.4,
+      "bggWeight": 2,
       "expansions": [],
       "playerRange": [
         2,
@@ -2494,10 +2666,14 @@
       "age": "8+",
       "time": "20~40",
       "publisher": "Crafty Games",
-      "category": "卡牌遊戲",
+      "categories": [
+        "卡牌遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/l3Al_aTccVeGUUk_5nbk0w__original/img/-hTZ1CO9zVqEAKQKQhdtAwKOQeg=/0x0/filters:format(png)/pic6140057.png",
       "description": "",
       "note": "",
+      "bggRating": 6.6,
+      "bggWeight": 1.2,
       "expansions": [
         {
           "id": "358567",
@@ -2523,10 +2699,14 @@
       "age": "10+",
       "time": "30~60",
       "publisher": "Windrider Games",
-      "category": "策略遊戲",
+      "categories": [
+        "策略遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/sHd0jkZZLDgixHjAXtn7kA__original/img/9n76iqzSN06hlbX4DuuPD6fSkHQ=/0x0/filters:format(jpeg)/pic3119514.jpg",
       "description": "",
       "note": "",
+      "bggRating": 7.2,
+      "bggWeight": 2,
       "expansions": [
         {
           "id": "349062",
@@ -2552,11 +2732,20 @@
       "age": "12+",
       "time": "50~70",
       "publisher": "MeepleBR",
-      "category": "策略遊戲",
+      "categories": [
+        "策略遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/GGi5aUL1dVQIrytxgXow4g__original/img/ZpVBZXZhs1plAi5s4M7Db3YwBLc=/0x0/filters:format(png)/pic7604558.png",
       "description": "世界奇觀-夢都",
       "note": "",
+      "bggRating": 7.6,
+      "bggWeight": 2.3,
       "expansions": [
+        {
+          "id": "406746",
+          "name": "World Wonders: Mundo Wonders Pack",
+          "owned": true
+        },
         {
           "id": "455303",
           "name": "World Wonders: Bighorn Medicine Wheel Promo",
@@ -2583,11 +2772,6 @@
           "owned": false
         },
         {
-          "id": "406746",
-          "name": "World Wonders: Mundo Wonders Pack",
-          "owned": true
-        },
-        {
           "id": "476781",
           "name": "World Wonders: Natural Expansão",
           "owned": false
@@ -2611,10 +2795,14 @@
       "age": "10+",
       "time": "20~30",
       "publisher": "Big Potato Games",
-      "category": "派對遊戲",
+      "categories": [
+        "派對遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/06qCPGgRpeBxnur6VpChDw__original/img/65xDuBZ8HGgmjCZWIWmqNXB9he4=/0x0/filters:format(png)/pic8279574.png",
       "description": "",
       "note": "",
+      "bggRating": 6.5,
+      "bggWeight": 1,
       "expansions": [],
       "playerRange": [
         3,
@@ -2634,10 +2822,14 @@
       "age": "14+",
       "time": "30~45",
       "publisher": "Greater Than Games, LLC",
-      "category": "派對遊戲",
+      "categories": [
+        "派對遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/gaiG9Iv8S3G6ppC5AKlNIQ__original/img/Qrleq5aHqrsQEcNKin1FYtgp6-E=/0x0/filters:format(png)/pic4912833.png",
       "description": "",
       "note": "",
+      "bggRating": 6.8,
+      "bggWeight": 1.1,
       "expansions": [
         {
           "id": "322650",
@@ -2678,10 +2870,14 @@
       "age": "8+",
       "time": "20",
       "publisher": "The Op Games",
-      "category": "派對遊戲",
+      "categories": [
+        "派對遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/YrQxEB9Ef0kQorRApzG5vQ__original/img/hK6k-x_GYfooemrkkRuF0bTvKxE=/0x0/filters:format(jpeg)/pic8780246.jpg",
       "description": "",
       "note": "",
+      "bggRating": 7.2,
+      "bggWeight": 1,
       "expansions": [],
       "playerRange": [
         3,
@@ -2701,10 +2897,14 @@
       "age": "6+",
       "time": "30",
       "publisher": "CMYK",
-      "category": "派對遊戲",
+      "categories": [
+        "派對遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/1uW8t9AkuqOF0xjv_sXKgw__original/img/iBRrCDdqyVY1ckqWIjo0xQ_k70A=/0x0/filters:format(png)/pic9106864.png",
       "description": "",
       "note": "",
+      "bggRating": 7.8,
+      "bggWeight": 1.2,
       "expansions": [],
       "playerRange": [
         2,
@@ -2724,10 +2924,14 @@
       "age": "8+",
       "time": "15~20",
       "publisher": "asmodee",
-      "category": "派對遊戲",
+      "categories": [
+        "派對遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/mhNZFwA0kAS0gX2Tjh0pJw__original/img/Jn6VRUdLjUQx7mVwyupAnUPxKFk=/0x0/filters:format(jpeg)/pic9490614.jpg",
       "description": "",
       "note": "",
+      "bggRating": 7.3,
+      "bggWeight": 1.4,
       "expansions": [],
       "playerRange": [
         2,
@@ -2747,10 +2951,14 @@
       "age": "",
       "time": "45",
       "publisher": "",
-      "category": "陣營遊戲",
+      "categories": [
+        "陣營遊戲"
+      ],
       "image": "https://shoplineimg.com/57fba1b061706917080d8c00/697b0967a67a52946370d123/800x.webp?source_format=png",
       "description": "",
       "note": "",
+      "bggRating": null,
+      "bggWeight": null,
       "expansions": [],
       "playerRange": [
         3,
@@ -2770,10 +2978,14 @@
       "age": "13+",
       "time": "20~40",
       "publisher": "Big Potato Games",
-      "category": "派對遊戲",
+      "categories": [
+        "派對遊戲"
+      ],
       "image": "https://cf.geekdo-images.com/WOm-EjxK4o5XVs2t2SrSbA__original/img/Dx_BQC5TYQcJKQZkv7PCQd5XZjw=/0x0/filters:format(png)/pic4949207.png",
       "description": "",
       "note": "",
+      "bggRating": 6.2,
+      "bggWeight": 1,
       "expansions": [
         {
           "id": "317615",
@@ -2809,10 +3021,14 @@
       "age": "",
       "time": "30",
       "publisher": "",
-      "category": "派對遊戲",
+      "categories": [
+        "派對遊戲"
+      ],
       "image": "https://img.1shop.tw/17wBOWJ5kR9XOpEAQ2xbXnvY/7b8Wmjk2l59e1bBVlvD1VZrP/original-2.jpg.avif",
       "description": "",
       "note": "",
+      "bggRating": null,
+      "bggWeight": null,
       "expansions": [],
       "playerRange": [
         2,

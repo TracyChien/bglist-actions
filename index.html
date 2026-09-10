@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <title>桌遊櫃</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;900&display=swap" rel="stylesheet">
@@ -54,9 +55,7 @@
     transform: rotate(-1deg);
   }
   .subline{
-    color: var(--ink); margin-top:14px; font-size:14px; max-width:70ch; font-weight:700;
-    background: var(--violet); display:inline-block; padding:6px 12px; border:3px solid var(--ink);
-    box-shadow: 4px 4px 0 0 var(--ink); transform: rotate(-0.6deg);
+    color: rgba(0,0,0,.5); margin-top:8px; font-size:12.5px; max-width:70ch; font-weight:500;
   }
 
   /* ---------- controls ---------- */
@@ -81,6 +80,14 @@
   .btn:active{ transform: translate(4px,4px); box-shadow:none; }
   .btn.primary{ background: var(--red); }
   .btn.ghost{ background: var(--white); }
+  .controls select{
+    appearance:none; -webkit-appearance:none;
+    border:4px solid var(--ink); background: var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23000' stroke-width='2' fill='none'/%3E%3C/svg%3E") no-repeat right 12px center;
+    color: var(--ink); padding:10px 32px 10px 14px; border-radius:0; font-size:13px; cursor:pointer;
+    font-family:var(--font); font-weight:700; text-transform:uppercase; letter-spacing:.5px;
+    box-shadow: 4px 4px 0 0 var(--ink);
+  }
+  .filter-groups.collapsed{ display:none !important; }
 
   .view-toggle{ display:flex; border:4px solid var(--ink); box-shadow:4px 4px 0 0 var(--ink); background:var(--white); }
   .view-toggle button{
@@ -91,7 +98,14 @@
   .view-toggle button.active{ background: var(--yellow); }
 
   /* ---------- filter chips ---------- */
-  .filter-groups{ display:flex; flex-direction:column; gap:10px; margin-top:20px; }
+  .filter-groups{ display:none; flex-direction:column; gap:10px; margin-top:20px; }
+  .filter-groups.ready{ display:flex; }
+  #btnFilterToggle{ display:none; }
+  @media (max-width: 720px){
+    #btnFilterToggle{ display:inline-block; }
+    .filter-groups.ready{ display:none; }
+    .filter-groups.ready.expanded{ display:flex; }
+  }
   .filter-row{ display:flex; align-items:flex-start; gap:10px; flex-wrap:wrap; }
   .filter-label{
     flex:none; font-size:12px; color: var(--ink); font-weight:900; padding:8px 0;
@@ -222,15 +236,24 @@
 
   <div class="controls" id="mainControls" style="display:none;">
     <input type="text" id="searchBox" placeholder="搜尋遊戲名稱…">
+    <select id="sortSelect" class="btn ghost" style="cursor:pointer;">
+      <option value="default">預設排序</option>
+      <option value="player_asc">人數：少→多</option>
+      <option value="time_asc">時間：短→長</option>
+      <option value="rating_desc">評分：高→低</option>
+      <option value="name">名稱排序</option>
+    </select>
     <div class="view-toggle">
       <button id="btnGrid" class="active">▦ 網格</button>
       <button id="btnList">☰ 列表</button>
     </div>
+    <button class="btn primary" id="btnDice">🎲 今晚玩哪款</button>
     <button class="btn ghost" id="btnClearFilter">清除篩選</button>
+    <button class="btn ghost" id="btnFilterToggle">篩選 ▾</button>
     <button class="btn ghost" id="btnHelp">? 使用說明</button>
   </div>
 
-  <div class="filter-groups" id="filterGroups" style="display:none;">
+  <div class="filter-groups" id="filterGroups">
     <div class="filter-row"><span class="filter-label">分類</span><div class="chips" id="chipsCategory"></div></div>
     <div class="filter-row"><span class="filter-label">人數</span><div class="chips" id="chipsPlayer"></div></div>
     <div class="filter-row"><span class="filter-label">時間</span><div class="chips" id="chipsTime"></div></div>
@@ -262,7 +285,7 @@
     <table class="col-table">
       <tr><td>BGGID</td><td>BoardGameGeek 遊戲編號。填了會自動帶出圖片、人數、年齡、時間、出版商、類別、簡介與擴充列表。</td></tr>
       <tr><td>NAME</td><td>你想顯示的遊戲名稱（必填）。</td></tr>
-      <tr><td>PLAYER / AGE / PLAYTIME / PUBLISHER / GAMETYPE</td><td>手動填寫時會覆蓋自動帶出的資料。GAMETYPE 請填「派對遊戲／陣營遊戲／策略遊戲／心機遊戲／卡牌遊戲／兒童遊戲／家庭遊戲」其中之一。</td></tr>
+      <tr><td>PLAYER / AGE / PLAYTIME / PUBLISHER / GAMETYPE</td><td>手動填寫時會覆蓋自動帶出的資料。GAMETYPE 請填「派對遊戲／陣營遊戲／策略遊戲／心機遊戲／卡牌遊戲／兒童遊戲／家庭遊戲」，一款遊戲可以填多個分類，用頓號「、」分開。</td></tr>
       <tr><td>IMGUR</td><td>自訂圖片網址（任何圖床都可以），優先於 BGGID 抓到的圖。</td></tr>
       <tr><td>LINK</td><td>沒有 BGGID 的遊戲（例如台灣設計、BGG 上查不到的），可以填一個你自己的介紹網站連結，遊戲名稱會直接連過去。有 BGGID 時仍優先連到 BGG 頁面。</td></tr>
       <tr><td>RULEBOOK</td><td>線上規則書連結（PDF、圖片、網頁都可以），卡片上會多一個「規則書」按鈕。</td></tr>
@@ -276,6 +299,19 @@
     <p style="color:rgba(0,0,0,.6)">類別會依 BGG 的分類/機制標籤自動猜測，猜錯時直接在 GAMETYPE 欄手動指定即可。</p>
 
     <div class="close-row"><button class="btn primary" id="closeHelp">知道了</button></div>
+  </div>
+</div>
+
+<div class="modal-bg" id="diceModal">
+  <div class="modal" style="max-width:420px;">
+    <h2>今晚玩哪款？</h2>
+    <p id="dicePrompt">先選人數，再幫你抽一款（會套用目前的分類/時間篩選）：</p>
+    <div class="chips" id="dicePlayerChips" style="margin-bottom:16px;"></div>
+    <div id="diceResult"></div>
+    <div class="close-row" style="display:flex; justify-content:space-between; align-items:center;">
+      <button class="btn ghost" id="diceReroll" style="display:none;">🎲 再抽一次</button>
+      <button class="btn" id="closeDice">關閉</button>
+    </div>
   </div>
 </div>
 
@@ -322,19 +358,29 @@
     const [min,max] = g.timeRange;
     return min <= b.max && max >= b.min;
   }
+  // 相容新版(categories 陣列)與舊版(category 單一字串)資料
+  function gameCats(g){
+    if (Array.isArray(g.categories)) return g.categories;
+    return g.category ? [g.category] : [];
+  }
 
   let ALL_GAMES = [];
   let activeCategories = new Set();
   let activePlayers = new Set();
   let activeTimes = new Set();
   let viewMode = 'grid';
+  let sortMode = 'default';
 
   function toggleSetValue(set, val){ if(set.has(val)) set.delete(val); else set.add(val); }
   function escapeHtml(s){ return (s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 
   function renderChips(){
     const catCounts = {};
-    ALL_GAMES.forEach(g => { const k = g.category || '未分類'; catCounts[k] = (catCounts[k]||0)+1; });
+    ALL_GAMES.forEach(g => {
+      const cats = gameCats(g);
+      if(!cats.length){ catCounts['未分類'] = (catCounts['未分類']||0)+1; return; }
+      cats.forEach(k => { catCounts[k] = (catCounts[k]||0)+1; });
+    });
     let catHtml = '';
     CATEGORIES.forEach(c=>{
       if(!catCounts[c.key]) return;
@@ -367,7 +413,7 @@
     });
     document.getElementById('chipsTime').innerHTML = timeHtml;
 
-    document.getElementById('filterGroups').style.display = 'flex';
+    document.getElementById('filterGroups').classList.add('ready');
     document.getElementById('filterGroups').querySelectorAll('.chip').forEach(el=>{
       el.addEventListener('click', ()=>{
         const group = el.dataset.group;
@@ -382,16 +428,27 @@
   }
 
   function cardHtml(g, idx){
-    const st = g.category && CAT_MAP[g.category] ? CAT_MAP[g.category].style : NONE_STYLE;
-    const catLabel = g.category || '未分類';
+    const cats = gameCats(g);
+    const primaryCat = cats[0] || null;
+    const extraCats = cats.slice(1);
+    const st = primaryCat && CAT_MAP[primaryCat] ? CAT_MAP[primaryCat].style : NONE_STYLE;
+    const catLabel = primaryCat || '未分類';
     const rot = (idx % 3 === 0) ? '-3deg' : (idx % 3 === 1) ? '2deg' : '-1deg';
     const cover = g.image
       ? `<img src="${escapeHtml(g.image)}" alt="${escapeHtml(g.name)}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=fallback>${escapeHtml(g.name.slice(0,2))}</div>'">`
       : `<div class="fallback">${escapeHtml(g.name.slice(0,2))}</div>`;
+    const extraCatHtml = extraCats.length
+      ? `<div class="meta-row">${extraCats.map(c=>{
+          const s = CAT_MAP[c] ? CAT_MAP[c].style : NONE_STYLE;
+          return `<span style="background:${s.bg};color:${s.text};border:2px solid ${s.border};padding:2px 8px;font-weight:700;font-size:11px;">${c}</span>`;
+        }).join('')}</div>`
+      : '';
     const metaBits = [];
     if(g.player) metaBits.push(`<span>人數 <b>${escapeHtml(g.player)}</b></span>`);
     if(g.age) metaBits.push(`<span>年齡 <b>${escapeHtml(g.age)}</b></span>`);
     if(g.time) metaBits.push(`<span>時間 <b>${escapeHtml(g.time)}</b></span>`);
+    if(g.bggRating) metaBits.push(`<span>評分 <b>${g.bggRating}</b></span>`);
+    if(g.bggWeight) metaBits.push(`<span>複雜度 <b>${g.bggWeight}/5</b></span>`);
     const descId = 'd'+Math.random().toString(36).slice(2);
     const shortDesc = g.description.length > 90 ? g.description.slice(0,90)+'…' : g.description;
     const descHtml = g.description ? `
@@ -405,17 +462,29 @@
             ">展開全文 →</button>`:''}
       </div>` : '';
     const noteHtml = g.note ? `<div class="note">📌 ${escapeHtml(g.note)}</div>` : '';
+
+    // 擴充清單：伺服器端已把「已擁有」排在前面，這裡只需要決定初始顯示幾筆
     const expId = 'e'+Math.random().toString(36).slice(2);
     const ownedCount = g.expansions.filter(e=>e.owned).length;
+    const INITIAL_EXP_LIMIT = 8;
+    const visibleExp = g.expansions.slice(0, INITIAL_EXP_LIMIT);
+    const hiddenExp = g.expansions.slice(INITIAL_EXP_LIMIT);
+    const expLi = (e) => `<li class="${e.owned?'owned':''}"><span class="box"></span>${escapeHtml(e.name)}</li>`;
     const expHtml = g.expansions.length ? `
       <div class="exp-wrap">
         <div class="exp-summary" onclick="document.getElementById('${expId}').classList.toggle('open')">
           擴充 ${g.expansions.length} 款・已有 ${ownedCount} ▾
         </div>
         <ul class="exp-list" id="${expId}">
-          ${g.expansions.map(e=>`<li class="${e.owned?'owned':''}"><span class="box"></span>${escapeHtml(e.name)}</li>`).join('')}
+          ${visibleExp.map(expLi).join('')}
+          ${hiddenExp.length ? `<li id="${expId}-more-li" style="list-style:none;"><button class="more-btn" onclick="
+              document.getElementById('${expId}-hidden').style.display='block';
+              document.getElementById('${expId}-more-li').style.display='none';
+            ">顯示其餘 ${hiddenExp.length} 款 →</button></li>
+            <div id="${expId}-hidden" style="display:none;"><ul class="exp-list open" style="margin-top:6px;">${hiddenExp.map(expLi).join('')}</ul></div>` : ''}
         </ul>
       </div>` : '';
+
     const titleInner = g.bggid
       ? `<a href="https://boardgamegeek.com/boardgame/${g.bggid}" target="_blank" rel="noopener">${escapeHtml(g.name)}</a>`
       : g.link
@@ -430,6 +499,7 @@
       <div class="cover">${cover}</div>
       <div class="body">
         <h3>${titleInner}</h3>
+        ${extraCatHtml}
         <div class="meta-row">${metaBits.join('')}</div>
         ${g.publisher ? `<div class="publisher">出版：${escapeHtml(g.publisher)}</div>` : ''}
         ${rulebookHtml}
@@ -440,14 +510,44 @@
     </div>`;
   }
 
+  function sortGames(games){
+    const arr = [...games];
+    const collator = new Intl.Collator('zh-Hant');
+    switch(sortMode){
+      case 'player_asc':
+        arr.sort((a,b)=> (a.playerRange?a.playerRange[0]:99) - (b.playerRange?b.playerRange[0]:99));
+        break;
+      case 'time_asc':
+        arr.sort((a,b)=> (a.timeRange?a.timeRange[0]:9999) - (b.timeRange?b.timeRange[0]:9999));
+        break;
+      case 'rating_desc':
+        arr.sort((a,b)=> (b.bggRating||0) - (a.bggRating||0));
+        break;
+      case 'name':
+        arr.sort((a,b)=> collator.compare(a.name, b.name));
+        break;
+    }
+    return arr;
+  }
+
+  function filterGames(games){
+    let out = games;
+    if(activeCategories.size) out = out.filter(g => {
+      const cats = gameCats(g);
+      if(!cats.length) return activeCategories.has('未分類');
+      return cats.some(c => activeCategories.has(c));
+    });
+    if(activePlayers.size) out = out.filter(g => [...activePlayers].some(b => playerMatchesBucket(g,b)));
+    if(activeTimes.size) out = out.filter(g => [...activeTimes].some(t => timeMatchesBucket(g,t)));
+    return out;
+  }
+
   function renderGrid(){
     const grid = document.getElementById('grid');
     const q = (document.getElementById('searchBox').value || '').trim().toLowerCase();
-    let games = ALL_GAMES;
-    if(activeCategories.size) games = games.filter(g => activeCategories.has(g.category||'未分類'));
-    if(activePlayers.size) games = games.filter(g => [...activePlayers].some(b => playerMatchesBucket(g,b)));
-    if(activeTimes.size) games = games.filter(g => [...activeTimes].some(t => timeMatchesBucket(g,t)));
+    let games = filterGames(ALL_GAMES);
     if(q) games = games.filter(g => g.name.toLowerCase().includes(q));
+    games = sortGames(games);
     grid.className = viewMode === 'list' ? 'list-view' : '';
     if(!games.length){ grid.innerHTML = `<div class="empty">沒有符合條件的遊戲。</div>`; return; }
     grid.innerHTML = games.map(cardHtml).join('');
@@ -472,6 +572,7 @@
   document.getElementById('closeHelp').addEventListener('click', closeHelp);
   document.getElementById('helpModal').addEventListener('click', (e)=>{ if(e.target.id==='helpModal') closeHelp(); });
   document.getElementById('searchBox').addEventListener('input', renderGrid);
+  document.getElementById('sortSelect').addEventListener('change', (e)=>{ sortMode = e.target.value; renderGrid(); });
   document.getElementById('btnGrid').addEventListener('click', ()=>{
     viewMode='grid';
     document.getElementById('btnGrid').classList.add('active');
@@ -490,6 +591,61 @@
     renderChips();
     renderGrid();
   });
+  document.getElementById('btnFilterToggle').addEventListener('click', ()=>{
+    const el = document.getElementById('filterGroups');
+    el.classList.toggle('expanded');
+    document.getElementById('btnFilterToggle').textContent = el.classList.contains('expanded') ? '篩選 ▴' : '篩選 ▾';
+  });
+
+  // ---------------- 今晚玩哪款：隨機抽選 ----------------
+  function openDice(){
+    document.getElementById('diceModal').classList.add('open');
+    document.getElementById('diceResult').innerHTML = '';
+    document.getElementById('diceReroll').style.display = 'none';
+    document.getElementById('dicePrompt').textContent = '先選人數，再幫你抽一款（會套用目前的分類/時間篩選）：';
+    const counts = {};
+    filterGames(ALL_GAMES).forEach(g=>{
+      PLAYER_BUCKETS.forEach(b=>{ if(playerMatchesBucket(g,b)) counts[b] = (counts[b]||0)+1; });
+    });
+    let html = '';
+    PLAYER_BUCKETS.forEach(b=>{
+      if(!counts[b]) return;
+      const label = b===7 ? '7人以上' : `${b}人`;
+      html += `<div class="chip" data-player="${b}">${label} <b>${counts[b]}</b></div>`;
+    });
+    document.getElementById('dicePlayerChips').innerHTML = html || '<p style="font-size:13px;color:rgba(0,0,0,.6)">目前篩選條件下沒有可抽的遊戲，先清除篩選試試。</p>';
+    document.querySelectorAll('#dicePlayerChips .chip').forEach(el=>{
+      el.addEventListener('click', ()=>{
+        document.querySelectorAll('#dicePlayerChips .chip').forEach(c=>c.classList.remove('active'));
+        el.classList.add('active');
+        rollDice(parseInt(el.dataset.player,10));
+      });
+    });
+  }
+  function rollDice(playerCount){
+    const pool = filterGames(ALL_GAMES).filter(g=>playerMatchesBucket(g,playerCount));
+    if(!pool.length){
+      document.getElementById('diceResult').innerHTML = `<p style="font-size:13px;">沒有符合的遊戲。</p>`;
+      return;
+    }
+    const pick = pool[Math.floor(Math.random()*pool.length)];
+    document.getElementById('dicePrompt').textContent = `${playerCount===7?'7人以上':playerCount+'人'} 就決定是你了：`;
+    document.getElementById('diceResult').innerHTML = `
+      <div style="display:flex; gap:14px; align-items:center; border:3px solid var(--ink); padding:12px; background:var(--cream); box-shadow:5px 5px 0 0 var(--ink);">
+        <div style="width:80px; height:80px; flex:none; border:3px solid var(--ink); overflow:hidden; background:var(--white);">
+          ${pick.image ? `<img src="${escapeHtml(pick.image)}" style="width:100%;height:100%;object-fit:cover;">` : ''}
+        </div>
+        <div>
+          <div style="font-weight:900; font-size:18px; text-transform:uppercase;">${escapeHtml(pick.name)}</div>
+          <div style="font-size:12px; font-weight:700; margin-top:4px;">${escapeHtml(pick.player||'')} 　 ${escapeHtml(pick.time||'')}</div>
+        </div>
+      </div>`;
+    document.getElementById('diceReroll').style.display = 'inline-block';
+    document.getElementById('diceReroll').onclick = ()=> rollDice(playerCount);
+  }
+  document.getElementById('btnDice').addEventListener('click', openDice);
+  document.getElementById('closeDice').addEventListener('click', ()=> document.getElementById('diceModal').classList.remove('open'));
+  document.getElementById('diceModal').addEventListener('click', (e)=>{ if(e.target.id==='diceModal') document.getElementById('diceModal').classList.remove('open'); });
 
   renderLegend();
 
@@ -503,8 +659,13 @@
       document.getElementById('mainControls').style.display = 'flex';
       const updated = json.updatedAt ? new Date(json.updatedAt).toLocaleString('zh-TW') : '未知';
       const missing = json.missingBggIds && json.missingBggIds.length;
+      let staleWarning = '';
+      if(json.updatedAt){
+        const days = (Date.now() - new Date(json.updatedAt).getTime()) / (1000*60*60*24);
+        if(days > 3) staleWarning = `　·　<span class="err">⚠ 資料已經 ${Math.floor(days)} 天沒更新，建議到 Actions 手動 Run workflow</span>`;
+      }
       setStatus(`已載入 ${ALL_GAMES.length} 款遊戲　·　資料更新於 ${updated}` +
-        (missing ? `　·　<span class="err">${missing} 個 BGGID 查無資料</span>` : ''));
+        (missing ? `　·　<span class="err">${missing} 個 BGGID 查無資料</span>` : '') + staleWarning);
       renderChips();
       renderGrid();
     }catch(e){

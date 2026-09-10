@@ -189,6 +189,8 @@ function extractItem(item) {
   const weight = item.statistics?.ratings?.averageweight?.value
     ? parseFloat(item.statistics.ratings.averageweight.value)
     : 0;
+  const ratingRaw = item.statistics?.ratings?.average?.value;
+  const rating = ratingRaw ? parseFloat(ratingRaw) : 0;
 
   return {
     name: primary.value || '',
@@ -204,6 +206,7 @@ function extractItem(item) {
     expansions,
     rankObj,
     weight,
+    rating,
     description: decodeDescription(item.description),
   };
 }
@@ -217,12 +220,21 @@ function buildGame(rec) {
   const age = rec.AGE || (bgg && bgg.minage && bgg.minage !== '0' ? `${bgg.minage}+` : '');
   const time = rec.PLAYTIME || (bgg ? fmtRange(bgg.minplaytime, bgg.maxplaytime, '分') : '');
   const publisher = rec.PUBLISHER || (bgg && bgg.publishers.length ? bgg.publishers[0] : '');
-  let category = rec.GAMETYPE && CATEGORY_KEYS.includes(rec.GAMETYPE) ? rec.GAMETYPE : null;
-  if (!category && bgg) category = autoCategorize(bgg.categories, bgg.mechanics, bgg.rankObj, bgg.weight);
+
+  let categories = [];
+  if (rec.GAMETYPE) {
+    categories = rec.GAMETYPE.split(/[、,，;；]/).map((s) => s.trim()).filter((k) => CATEGORY_KEYS.includes(k));
+  }
+  if (!categories.length && bgg) {
+    const auto = autoCategorize(bgg.categories, bgg.mechanics, bgg.rankObj, bgg.weight);
+    if (auto) categories = [auto];
+  }
+
   const image = checkImgur(rec.IMGUR) || (bgg ? bgg.image : '');
   const name = rec.NAME || (bgg ? bgg.name : `#${rec.BGGID}`);
   const owned = ownedSet(rec.OWN);
-  const expansions = bgg ? bgg.expansions.map((e) => ({ ...e, owned: isOwned(e, owned) })) : [];
+  const expansionsRaw = bgg ? bgg.expansions.map((e) => ({ ...e, owned: isOwned(e, owned) })) : [];
+  const expansions = [...expansionsRaw].sort((a, b) => (b.owned ? 1 : 0) - (a.owned ? 1 : 0));
 
   const playerRange = rec.PLAYER
     ? parseNums(rec.PLAYER)
@@ -239,9 +251,11 @@ function buildGame(rec) {
     bggid: rec.BGGID || '',
     link: checkImgur(rec.LINK) || '',
     rulebook: checkImgur(rec.RULEBOOK) || '',
-    name, player, age, time, publisher, category, image,
+    name, player, age, time, publisher, categories, image,
     description: rec.DESCRIPTION || '',
     note: rec.NOTE || '',
+    bggRating: bgg && bgg.rating ? Math.round(bgg.rating * 10) / 10 : null,
+    bggWeight: bgg && bgg.weight ? Math.round(bgg.weight * 10) / 10 : null,
     expansions, playerRange, timeRange,
   };
 }

@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-10T06:48:31.709Z",
-  "count": 54,
+  "updatedAt": "2026-09-10T07:17:18.887Z",
+  "count": 55,
   "missingBggIds": [],
   "games": [
     {
@@ -28,7 +28,9 @@
       "timeRange": [
         15,
         15
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "158818",
@@ -61,7 +63,9 @@
       "timeRange": [
         30,
         30
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "128882",
@@ -104,7 +108,9 @@
       "timeRange": [
         20,
         30
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "67919",
@@ -131,7 +137,9 @@
       "timeRange": [
         30,
         60
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "131357",
@@ -194,7 +202,9 @@
       "timeRange": [
         15,
         15
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "256804",
@@ -242,7 +252,9 @@
       "timeRange": [
         15,
         15
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "811",
@@ -275,7 +287,9 @@
       "timeRange": [
         30,
         30
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "268275",
@@ -302,7 +316,9 @@
       "timeRange": [
         10,
         15
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "37728",
@@ -329,7 +345,9 @@
       "timeRange": [
         15,
         30
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "204734",
@@ -356,7 +374,9 @@
       "timeRange": [
         300,
         300
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "239188",
@@ -434,7 +454,9 @@
       "timeRange": [
         60,
         90
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "271460",
@@ -461,7 +483,9 @@
       "timeRange": [
         30,
         30
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "254640",
@@ -524,7 +548,9 @@
       "timeRange": [
         20,
         20
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "260605",
@@ -557,7 +583,9 @@
       "timeRange": [
         30,
         45
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "300300",
@@ -590,7 +618,9 @@
       "timeRange": [
         60,
         90
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "9220",
@@ -713,7 +743,9 @@
       "timeRange": [
         30,
         30
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "302098",
@@ -746,7 +778,9 @@
       "timeRange": [
         60,
         90
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "316287",
@@ -773,7 +807,9 @@
       "timeRange": [
         30,
         30
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "302312",
@@ -811,7 +847,9 @@
       "timeRange": [
         60,
         90
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "63268",
@@ -838,7 +876,9 @@
       "timeRange": [
         15,
         15
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "432",
@@ -891,7 +931,9 @@
       "timeRange": [
         45,
         45
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "7806",
@@ -924,7 +966,9 @@
       "timeRange": [
         30,
         30
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "822",
@@ -1952,7 +1996,9 @@
       "timeRange": [
         30,
         45
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "277085",
@@ -1979,7 +2025,9 @@
       "timeRange": [
         20,
         20
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "313301",
@@ -2006,7 +2054,9 @@
       "timeRange": [
         60,
         90
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "293296",
@@ -2039,7 +2089,9 @@
       "timeRange": [
         30,
         30
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "300905",
@@ -2066,7 +2118,9 @@
       "timeRange": [
         30,
         30
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "163930",
@@ -2093,7 +2147,9 @@
       "timeRange": [
         30,
         30
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "173346",
@@ -2156,7 +2212,9 @@
       "timeRange": [
         30,
         30
-      ]
+      ],
+      "playCount": 1,
+      "lastPlayed": "2026/8/10"
     },
     {
       "bggid": "",
@@ -2183,7 +2241,9 @@
       "timeRange": [
         60,
         90
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "286422",
@@ -2210,7 +2270,9 @@
       "timeRange": [
         20,
         40
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "346913",
@@ -2243,7 +2305,9 @@
       "timeRange": [
         15,
         40
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "377061",
@@ -2336,7 +2400,9 @@
       "timeRange": [
         30,
         30
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "232353",
@@ -2363,7 +2429,9 @@
       "timeRange": [
         30,
         30
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "270513",
@@ -2390,7 +2458,9 @@
       "timeRange": [
         30,
         30
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "399088",
@@ -2423,7 +2493,9 @@
       "timeRange": [
         30,
         30
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "21763",
@@ -2466,7 +2538,9 @@
       "timeRange": [
         30,
         30
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "245503",
@@ -2493,7 +2567,9 @@
       "timeRange": [
         15,
         15
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "174078",
@@ -2531,7 +2607,9 @@
       "timeRange": [
         20,
         30
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "385761",
@@ -2574,7 +2652,9 @@
       "timeRange": [
         15,
         30
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "291453",
@@ -2601,7 +2681,9 @@
       "timeRange": [
         15,
         15
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "433074",
@@ -2628,7 +2710,9 @@
       "timeRange": [
         15,
         40
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "237792",
@@ -2655,7 +2739,9 @@
       "timeRange": [
         20,
         45
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "319095",
@@ -2688,7 +2774,9 @@
       "timeRange": [
         20,
         40
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "205398",
@@ -2721,7 +2809,9 @@
       "timeRange": [
         30,
         60
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "365258",
@@ -2784,7 +2874,9 @@
       "timeRange": [
         50,
         70
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "423792",
@@ -2811,7 +2903,9 @@
       "timeRange": [
         20,
         30
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "242529",
@@ -2859,7 +2953,9 @@
       "timeRange": [
         30,
         45
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "420087",
@@ -2886,7 +2982,9 @@
       "timeRange": [
         20,
         20
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "454103",
@@ -2913,7 +3011,9 @@
       "timeRange": [
         30,
         30
-      ]
+      ],
+      "playCount": 2,
+      "lastPlayed": "2026/8/28"
     },
     {
       "bggid": "432456",
@@ -2940,7 +3040,9 @@
       "timeRange": [
         15,
         20
-      ]
+      ],
+      "playCount": 1,
+      "lastPlayed": "2026/8/28"
     },
     {
       "bggid": "",
@@ -2967,7 +3069,9 @@
       "timeRange": [
         45,
         45
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "286735",
@@ -3010,7 +3114,9 @@
       "timeRange": [
         20,
         40
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
     },
     {
       "bggid": "",
@@ -3037,7 +3143,38 @@
       "timeRange": [
         30,
         30
-      ]
+      ],
+      "playCount": 0,
+      "lastPlayed": null
+    },
+    {
+      "bggid": "214",
+      "link": "",
+      "rulebook": "",
+      "name": "國際咖啡館",
+      "player": "2~4人",
+      "age": "10+",
+      "time": "45~60分",
+      "publisher": "AMIGO",
+      "categories": [
+        "策略遊戲"
+      ],
+      "image": "https://cf.geekdo-images.com/VieUvCI62VUhQ9C4agum3A__original/img/qzA2t0vjkwoGm5yaTBog1ZmewS0=/0x0/filters:format(png)/pic3987975.png",
+      "description": "",
+      "note": "",
+      "bggRating": 6.2,
+      "bggWeight": 1.6,
+      "expansions": [],
+      "playerRange": [
+        2,
+        4
+      ],
+      "timeRange": [
+        45,
+        60
+      ],
+      "playCount": 1,
+      "lastPlayed": "2026/05/31"
     }
   ]
 }

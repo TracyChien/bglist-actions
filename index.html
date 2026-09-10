@@ -7,102 +7,127 @@
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Josefin+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0A0A0A;
-    --fg:#F2F0E4;
-    --card:#141414;
-    --gold:#D4AF37;
-    --gold-light:#F2E8C4;
-    --midnight:#1E3D59;
-    --muted:#888888;
-    --heading:'Marcellus', serif;
-    --body-font:'Josefin Sans', sans-serif;
+    --bg:#0a0a0f;
+    --fg:#e0e0e0;
+    --card:#12121a;
+    --muted:#1c1c2e;
+    --muted-fg:#6b7280;
+    --accent:#00ff88;
+    --accent2:#ff00ff;
+    --accent3:#00d4ff;
+    --border:#2a2a3a;
+    --danger:#ff3366;
+    --heading:'Orbitron', monospace;
+    --body-font:'JetBrains Mono', monospace;
   }
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;}
   body{
     background-color: var(--bg);
     background-image:
-      repeating-linear-gradient(45deg, rgba(212,175,55,0.035) 0px, rgba(212,175,55,0.035) 1px, transparent 1px, transparent 26px),
-      repeating-linear-gradient(-45deg, rgba(212,175,55,0.035) 0px, rgba(212,175,55,0.035) 1px, transparent 1px, transparent 26px),
-      radial-gradient(ellipse at 50% 0%, rgba(212,175,55,0.10) 0%, transparent 55%);
+      linear-gradient(rgba(0,255,136,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,136,0.04) 1px, transparent 1px);
+    background-size: 42px 42px;
     color: var(--fg);
     font-family: var(--body-font);
     font-weight:400;
     min-height:100vh;
     line-height:1.6;
+    position:relative;
   }
-  a{ color: var(--gold); text-decoration:none; }
-  a:hover{ color: var(--gold-light); }
-  ::selection{ background: var(--gold); color:#0A0A0A; }
+  body::after{
+    content:"";
+    position:fixed; inset:0; z-index:999; pointer-events:none;
+    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,.28) 2px, rgba(0,0,0,.28) 4px);
+  }
+  a{ color: var(--accent3); text-decoration:none; }
+  a:hover{ color: var(--accent); text-shadow:0 0 6px var(--accent); }
+  ::selection{ background: var(--accent); color:#0a0a0f; }
 
-  .divider{ height:1px; width:64px; background: var(--gold); opacity:.6; margin:10px 0; }
-  .diamond{
-    display:inline-flex; align-items:center; justify-content:center;
-    width:52px; height:52px; border:2px solid var(--gold); transform:rotate(45deg);
-    box-shadow: 0 0 15px rgba(212,175,55,.25);
-    flex:none;
+  @media (prefers-reduced-motion: reduce){
+    *, *::before, *::after{ animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.15s !important; }
   }
-  .diamond span{ transform:rotate(-45deg); font-size:22px; color:var(--gold); font-family:var(--heading); }
+  @keyframes blink{ 50%{ opacity:0; } }
+  @keyframes glitch{ 0%,100%{ transform:translate(0);} 20%{ transform:translate(-2px,2px);} 40%{ transform:translate(2px,-2px);} 60%{ transform:translate(-1px,-1px);} 80%{ transform:translate(1px,1px);} }
+  @keyframes rgbShift{ 0%,100%{ text-shadow:-2px 0 var(--accent2), 2px 0 var(--accent3);} 50%{ text-shadow:2px 0 var(--accent2), -2px 0 var(--accent3);} }
 
   /* ---------- header ---------- */
   header.top{
-    padding: 44px clamp(16px,4vw,56px) 28px;
-    border-bottom: 1px solid rgba(212,175,55,.4);
+    padding: 36px clamp(16px,4vw,52px) 24px;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(180deg, rgba(0,255,136,.05), transparent);
   }
-  .brand{ display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
+  .prompt-line{ color: var(--muted-fg); font-size:11.5px; letter-spacing:.1em; margin-bottom:10px; text-transform:uppercase; }
+  .prompt-line .cursor{ display:inline-block; width:.5em; background:var(--accent); animation:blink 1s step-end infinite; margin-left:2px; transform:translateY(2px); }
+  .brand{ display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+  .brand .glyph{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:46px; height:46px; border:2px solid var(--accent); color:var(--accent);
+    font-weight:900; font-size:20px; font-family:var(--heading);
+    clip-path: polygon(6px 0,100% 0,100% calc(100% - 6px),calc(100% - 6px) 100%,0 100%,0 6px);
+    box-shadow: 0 0 8px var(--accent), 0 0 16px rgba(0,255,136,.35);
+  }
   .brand h1{
-    font-family:var(--heading); font-weight:400; font-size:clamp(30px,5vw,50px); margin:0;
-    text-transform:uppercase; letter-spacing:.18em; color:var(--gold);
-    text-shadow: 0 0 18px rgba(212,175,55,.35);
+    font-family:var(--heading); font-weight:900; font-size:clamp(26px,5vw,44px); margin:0;
+    text-transform:uppercase; letter-spacing:.06em; color:var(--fg);
+    animation: rgbShift 6s ease-in-out infinite;
   }
   .subline{
-    color: rgba(242,240,228,.5); margin-top:14px; font-size:12.5px; max-width:70ch; font-weight:400; letter-spacing:.02em;
+    color: var(--muted-fg); margin-top:12px; font-size:12px; max-width:70ch; font-weight:400;
   }
+  .subline::before{ content:"// "; color:var(--accent); }
 
   /* ---------- controls ---------- */
-  .controls{ display:flex; gap:20px; flex-wrap:wrap; align-items:flex-end; margin-top:30px; }
+  .controls{ display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top:24px; }
   .controls input[type=text]{
-    flex:1 1 260px; min-width:200px;
-    background: transparent; border:none; border-bottom:2px solid var(--gold); color: var(--fg);
-    padding:10px 4px; border-radius:0; font-size:15px; font-family:var(--body-font); font-weight:400;
+    flex:1 1 280px; min-width:200px;
+    background: var(--card); border:1px solid var(--border); color: var(--accent);
+    padding:11px 14px 11px 26px; font-size:13px; font-family:var(--body-font); font-weight:400;
+    clip-path: polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px);
+    position:relative;
   }
-  .controls input[type=text]::placeholder{ color: var(--muted); letter-spacing:.03em; }
+  .search-wrap{ position:relative; flex:1 1 280px; min-width:200px; display:flex; align-items:center; }
+  .search-wrap::before{ content:">"; position:absolute; left:10px; color:var(--accent); font-weight:700; z-index:2; pointer-events:none; }
+  .search-wrap input[type=text]{ width:100%; }
+  .controls input[type=text]::placeholder{ color: var(--muted-fg); }
   .controls input[type=text]:focus{
-    outline:none; border-color: var(--gold-light); box-shadow: 0 4px 10px rgba(212,175,55,.2);
+    outline:none; border-color: var(--accent); box-shadow: 0 0 5px var(--accent), 0 0 10px rgba(0,255,136,.25);
   }
   .btn{
-    appearance:none; border:2px solid var(--gold); background: transparent; color: var(--gold);
-    padding:12px 22px; border-radius:0; font-size:11.5px; cursor:pointer;
-    font-family:var(--body-font); font-weight:600; text-transform:uppercase; letter-spacing:.2em;
-    transition: all .35s ease;
+    appearance:none; border:2px solid var(--accent); background: transparent; color: var(--accent);
+    padding:10px 18px; font-size:11.5px; cursor:pointer;
+    font-family:var(--body-font); font-weight:700; text-transform:uppercase; letter-spacing:.15em;
+    clip-path: polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px);
+    transition: all .15s steps(2);
     white-space:nowrap;
   }
-  .btn:hover{ background: var(--gold); color:#0A0A0A; box-shadow: 0 0 20px rgba(212,175,55,.4); }
-  .btn.primary{ background: var(--gold); color:#0A0A0A; }
-  .btn.primary:hover{ background: var(--gold-light); box-shadow: 0 0 24px rgba(212,175,55,.5); }
-  .btn.ghost{ border-color: rgba(212,175,55,.4); color: rgba(242,240,228,.7); }
-  .btn.ghost:hover{ background: var(--midnight); border-color:var(--midnight); color:var(--fg); }
+  .btn:hover{ background: var(--accent); color:#0a0a0f; box-shadow: 0 0 10px var(--accent), 0 0 20px rgba(0,255,136,.5); }
+  .btn.primary{ border-color: var(--accent2); color: var(--accent2); }
+  .btn.primary:hover{ background: var(--accent2); color:#0a0a0f; box-shadow: 0 0 10px var(--accent2), 0 0 20px rgba(255,0,255,.5); }
+  .btn.ghost{ border-color: var(--border); color: var(--fg); }
+  .btn.ghost:hover{ background: transparent; color: var(--accent3); border-color: var(--accent3); box-shadow: 0 0 8px var(--accent3); }
   .controls select{
     appearance:none; -webkit-appearance:none;
-    border:none; border-bottom:2px solid var(--gold); background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23D4AF37' stroke-width='2' fill='none'/%3E%3C/svg%3E") no-repeat right 4px center;
-    color: var(--fg); padding:10px 26px 10px 4px; border-radius:0; font-size:11.5px; cursor:pointer;
-    font-family:var(--body-font); font-weight:600; text-transform:uppercase; letter-spacing:.15em;
+    border:1px solid var(--border); background: var(--card) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2300ff88' stroke-width='2' fill='none'/%3E%3C/svg%3E") no-repeat right 14px center;
+    color: var(--fg); padding:10px 34px 10px 14px; font-size:11.5px; cursor:pointer;
+    font-family:var(--body-font); font-weight:500; text-transform:uppercase; letter-spacing:.1em;
+    clip-path: polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px);
   }
   .filter-groups.collapsed{ display:none !important; }
 
-  .view-toggle{ display:flex; border:1px solid var(--gold); }
+  .view-toggle{ display:flex; border:1px solid var(--border); }
   .view-toggle button{
-    border:none; background:transparent; color: rgba(242,240,228,.7); padding:11px 18px; cursor:pointer;
-    font-family:var(--body-font); font-size:11.5px; font-weight:600; text-transform:uppercase; letter-spacing:.15em;
+    border:none; background:transparent; color: var(--fg); padding:10px 16px; cursor:pointer;
+    font-family:var(--body-font); font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:.1em;
   }
-  .view-toggle button + button{ border-left:1px solid var(--gold); }
-  .view-toggle button.active{ background: var(--gold); color:#0A0A0A; }
+  .view-toggle button + button{ border-left:1px solid var(--border); }
+  .view-toggle button.active{ background: var(--accent); color:#0a0a0f; }
 
   /* ---------- filter chips ---------- */
-  .filter-groups{ display:none; flex-direction:column; gap:14px; margin-top:30px; }
+  .filter-groups{ display:none; flex-direction:column; gap:12px; margin-top:22px; }
   .filter-groups.ready{ display:flex; }
   #btnFilterToggle{ display:none; }
   @media (max-width: 720px){
@@ -110,148 +135,139 @@
     .filter-groups.ready{ display:none; }
     .filter-groups.ready.expanded{ display:flex; }
   }
-  .filter-row{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+  .filter-row{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
   .filter-label{
-    flex:none; font-size:11px; color: var(--gold); font-weight:600; padding:6px 0;
-    min-width:52px; text-transform:uppercase; letter-spacing:.25em;
+    flex:none; font-size:11px; color: var(--muted-fg); font-weight:700; padding:6px 0;
+    min-width:50px; text-transform:uppercase; letter-spacing:.2em;
   }
+  .filter-label::before{ content:"$ "; color:var(--accent); }
   .chips{ display:flex; gap:8px; flex-wrap:wrap; }
   .chip{
-    border:1px solid rgba(212,175,55,.5); background: transparent; color: rgba(242,240,228,.7);
-    padding:6px 14px; border-radius:0; font-size:11px; font-weight:600; cursor:pointer; user-select:none;
-    display:flex; align-items:center; gap:6px; text-transform:uppercase; letter-spacing:.1em;
-    transition: all .25s ease;
+    border:1px solid var(--border); background: rgba(255,255,255,.02); color: var(--fg);
+    padding:6px 13px; font-size:11.5px; font-weight:500; cursor:pointer; user-select:none;
+    display:flex; align-items:center; gap:6px;
+    clip-path: polygon(6px 0,100% 0,100% calc(100% - 6px),calc(100% - 6px) 100%,0 100%,0 6px);
+    transition: all .15s steps(2);
   }
-  .chip:hover{ border-color: var(--gold); color:var(--fg); }
-  .chip.active{ background: var(--gold); color:#0A0A0A; border-color:var(--gold); font-weight:700; }
+  .chip:hover{ border-color: currentColor; }
 
-  main{ padding: 34px clamp(16px,4vw,56px) 80px; }
+  main{ padding: 28px clamp(16px,4vw,52px) 76px; }
 
   .status{
-    color: rgba(242,240,228,.55); font-size:12px; margin-bottom:26px; display:flex; gap:14px; flex-wrap:wrap; align-items:center;
-    font-weight:400; letter-spacing:.03em;
+    color: var(--muted-fg); font-size:12px; margin-bottom:22px; display:flex; gap:14px; flex-wrap:wrap; align-items:center;
+    font-weight:400;
   }
-  .status .err{ color: var(--gold-light); font-weight:600; }
+  .status::before{ content:"$"; color:var(--accent); margin-right:2px; }
+  .status .err{ color: var(--danger); font-weight:700; }
   .spinner{
-    width:8px; height:8px; background: var(--gold); border-radius:50%;
-    animation: pulse 1s ease-in-out infinite; display:inline-block;
+    width:8px; height:8px; background: var(--accent); display:inline-block;
+    animation: blink .6s step-end infinite;
   }
-  @keyframes pulse{ 0%,100%{opacity:1;} 50%{opacity:.25;} }
 
   /* ---------- grid ---------- */
-  #grid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(250px,1fr)); gap:32px; }
+  #grid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(250px,1fr)); gap:26px; }
   .card{
-    background: var(--card); border:1px solid rgba(212,175,55,.3); border-radius:0;
+    background: var(--card); border:1px solid var(--border);
     overflow:visible; display:flex; flex-direction:column; position:relative;
-    transition: transform .5s ease, border-color .5s ease;
+    clip-path: polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px);
+    transition: transform .2s steps(3), border-color .2s ease, box-shadow .2s ease;
   }
-  .card:hover{ transform: translateY(-8px); border-color: var(--gold); }
-  .card::before, .card::after{
-    content:""; position:absolute; width:18px; height:18px; border-color:var(--gold); opacity:.5; transition:opacity .5s ease;
-  }
-  .card::before{ top:-1px; left:-1px; border-top:2px solid; border-left:2px solid; }
-  .card::after{ bottom:-1px; right:-1px; border-bottom:2px solid; border-right:2px solid; }
-  .card:hover::before, .card:hover::after{ opacity:1; }
-
-  .card .cover{ aspect-ratio:1/1; position:relative; overflow:hidden; padding:8px; background:var(--card); border-bottom:1px solid rgba(212,175,55,.25); }
-  .card .cover .frame{ width:100%; height:100%; border:1px solid var(--gold); padding:5px; box-sizing:border-box; }
-  .card .cover img{ width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(60%) contrast(1.05); transition: filter .5s ease; }
-  .card:hover .cover img{ filter:grayscale(0%) contrast(1.05); }
+  .card:hover{ transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 0 14px rgba(0,255,136,.35); }
+  .card .cover{ aspect-ratio:1/1; background:var(--bg); position:relative; overflow:hidden; border-bottom:1px solid var(--border); }
+  .card .cover img{ width:100%; height:100%; object-fit:cover; display:block; }
   .cover .fallback{
     width:100%; height:100%; display:flex; align-items:center; justify-content:center;
-    font-weight:400; font-size:42px; color: rgba(212,175,55,.5); font-family:var(--heading);
-    background: repeating-linear-gradient(45deg, #1a1a1a, #1a1a1a 12px, #141414 12px, #141414 24px);
+    font-weight:900; font-size:42px; color: var(--border); font-family:var(--heading);
+    background: repeating-linear-gradient(45deg, #15151f, #15151f 12px, var(--bg) 12px, var(--bg) 24px);
   }
   .cat-tag{
-    position:absolute; top:10px; left:10px; padding:4px 11px; border-radius:0;
-    font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.15em;
-    z-index:2;
+    position:absolute; top:10px; left:10px; padding:4px 11px;
+    font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.1em;
+    z-index:2; background:rgba(10,10,15,.85);
+    clip-path: polygon(6px 0,100% 0,100% calc(100% - 6px),calc(100% - 6px) 100%,0 100%,0 6px);
   }
-  .card .body{ padding:20px 18px 18px; display:flex; flex-direction:column; gap:11px; flex:1; }
-  .card h3{ font-family:var(--heading); font-weight:400; font-size:19px; margin:0; line-height:1.35; letter-spacing:.03em; color:var(--fg); }
+  .card .body{ padding:18px 16px 16px; display:flex; flex-direction:column; gap:10px; flex:1; }
+  .card h3{ font-family:var(--heading); font-weight:800; font-size:16px; margin:0; line-height:1.35; letter-spacing:.02em; color:var(--fg); }
   .card h3 a{ text-decoration:none; color:var(--fg); }
-  .card h3 a:hover{ color: var(--gold); }
-  .meta-row{ display:flex; flex-wrap:wrap; gap:5px 14px; font-size:11px; font-weight:500; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; }
-  .meta-row span b{ font-weight:700; color:var(--gold); }
-  .publisher{ font-size:11px; font-weight:400; color: var(--muted); font-style:italic; }
-  .desc{ font-size:13px; font-weight:400; color: rgba(242,240,228,.75); border-top:1px solid rgba(212,175,55,.25); padding-top:9px; }
-  .desc .more-btn{ background:none; border:none; color: var(--gold); cursor:pointer; font-size:11px; font-weight:600; padding:0; margin-top:5px; text-transform:uppercase; letter-spacing:.1em; }
+  .card h3 a:hover{ color: var(--accent); text-shadow:0 0 6px var(--accent); }
+  .meta-row{ display:flex; flex-wrap:wrap; gap:6px 12px; font-size:11px; font-weight:400; color:var(--muted-fg); text-transform:uppercase; letter-spacing:.05em; }
+  .meta-row span b{ font-weight:700; color:var(--accent3); }
+  .publisher{ font-size:11px; font-weight:400; color: var(--muted-fg); }
+  .publisher::before{ content:"[pub] "; color:var(--border); }
+  .desc{ font-size:12.5px; font-weight:400; color: var(--fg); background:rgba(255,255,255,.03); border-left:2px solid var(--accent3); padding:8px 10px; }
+  .desc .more-btn{ background:none; border:none; color: var(--accent2); cursor:pointer; font-size:11px; font-weight:700; padding:0; margin-top:5px; text-transform:uppercase; letter-spacing:.08em; }
   .note{
-    font-size:10.5px; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--gold); border:1px solid var(--gold);
-    padding:4px 10px; display:inline-block; align-self:flex-start;
+    font-size:10.5px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--accent2);
+    border:1px solid var(--accent2); padding:4px 10px; display:inline-block; align-self:flex-start;
   }
 
-  .exp-wrap{ margin-top:auto; padding-top:12px; border-top:1px solid rgba(212,175,55,.25); }
+  .exp-wrap{ margin-top:auto; padding-top:12px; border-top:1px dashed var(--border); }
   .exp-summary{
-    font-size:11px; font-weight:600; color: var(--gold); cursor:pointer; display:flex; align-items:center; gap:6px;
-    user-select:none; text-transform:uppercase; letter-spacing:.12em;
+    font-size:11px; font-weight:700; color: var(--accent3); cursor:pointer; display:flex; align-items:center; gap:6px;
+    user-select:none; text-transform:uppercase; letter-spacing:.08em;
   }
   .exp-list{ list-style:none; margin:9px 0 0; padding:0; display:none; flex-direction:column; gap:6px; }
   .exp-list.open{ display:flex; }
-  .exp-list li{ display:flex; align-items:center; gap:8px; font-size:11.5px; font-weight:400; color:var(--muted); }
+  .exp-list li{ display:flex; align-items:center; gap:8px; font-size:11.5px; font-weight:400; color:var(--muted-fg); }
   .exp-list .box{
-    width:14px; height:14px; border:1px solid var(--gold); flex:none; background:transparent;
+    width:14px; height:14px; border:1px solid var(--border); flex:none; background:transparent;
     display:flex; align-items:center; justify-content:center;
   }
-  .exp-list li.owned .box{ background: var(--gold); }
-  .exp-list li.owned .box::after{ content:'✓'; font-size:10px; color:#0A0A0A; font-weight:900; }
+  .exp-list li.owned .box{ background: var(--accent); border-color:var(--accent); }
+  .exp-list li.owned .box::after{ content:'✓'; font-size:10px; color:#0a0a0f; font-weight:900; }
   .exp-list li.owned{ color: var(--fg); }
 
-  #grid.list-view{ display:flex; flex-direction:column; gap:18px; }
+  #grid.list-view{ display:flex; flex-direction:column; gap:16px; }
   #grid.list-view .card{ flex-direction:row; }
-  #grid.list-view .card .cover{ width:110px; aspect-ratio:1/1; flex:none; border-bottom:none; border-right:1px solid rgba(212,175,55,.25); }
-  #grid.list-view .card .body{ padding:16px 18px; }
-  #grid.list-view .card h3{ font-size:16px; }
+  #grid.list-view .card .cover{ width:100px; aspect-ratio:1/1; flex:none; border-bottom:none; border-right:1px solid var(--border); }
+  #grid.list-view .card .body{ padding:14px 16px; }
+  #grid.list-view .card h3{ font-size:14.5px; }
 
   .empty, .error-box{
-    padding:52px 20px; text-align:center; color: var(--muted); border:1px solid rgba(212,175,55,.3);
-    border-radius:0; font-size:14px; font-weight:400; letter-spacing:.05em; text-transform:uppercase;
+    padding:48px 20px; text-align:center; color: var(--muted-fg); border:1px dashed var(--border);
+    font-size:13px; font-weight:400; text-transform:uppercase; letter-spacing:.08em;
   }
-  .error-box{ color: var(--gold-light); border-color: var(--gold); }
+  .error-box{ color: var(--danger); border-color: var(--danger); }
 
-  /* ---------- help modal ---------- */
+  /* ---------- modal ---------- */
   .modal-bg{
-    position:fixed; inset:0; background:rgba(0,0,0,.82); display:none; align-items:flex-start;
-    justify-content:center; padding:40px 16px; z-index:50; overflow:auto;
+    position:fixed; inset:0; background:rgba(5,5,10,.85); display:none; align-items:flex-start;
+    justify-content:center; padding:40px 16px; z-index:1000; overflow:auto;
   }
   .modal-bg.open{ display:flex; }
   .modal{
-    background: var(--card); border:1px solid var(--gold); border-radius:0; max-width:660px;
-    width:100%; padding:34px 36px 36px; margin-bottom:40px; box-shadow: 0 0 40px rgba(212,175,55,.15);
-    position:relative;
+    background: var(--card); border:1px solid var(--accent); max-width:660px;
+    width:100%; padding:30px 32px 34px; margin-bottom:40px; box-shadow: 0 0 20px rgba(0,255,136,.25);
+    clip-path: polygon(16px 0,100% 0,100% calc(100% - 16px),calc(100% - 16px) 100%,0 100%,0 16px);
   }
-  .modal::before, .modal::after{
-    content:""; position:absolute; width:22px; height:22px; border-color:var(--gold);
-  }
-  .modal::before{ top:8px; left:8px; border-top:2px solid; border-left:2px solid; }
-  .modal::after{ bottom:8px; right:8px; border-bottom:2px solid; border-right:2px solid; }
-  .modal h2{ font-family:var(--heading); font-weight:400; text-transform:uppercase; letter-spacing:.15em; margin-top:0; color:var(--gold); }
-  .modal h3{ font-size:12px; color: var(--gold); margin:22px 0 8px; font-weight:700; text-transform:uppercase; letter-spacing:.2em; }
-  .modal p, .modal li{ font-size:13.5px; color: rgba(242,240,228,.8); line-height:1.75; font-weight:400; }
-  .modal code{ background:rgba(212,175,55,.1); padding:2px 8px; border:1px solid rgba(212,175,55,.3); font-size:12px; color:var(--gold-light); font-weight:500; }
+  .modal h2{ font-family:var(--heading); font-weight:900; text-transform:uppercase; letter-spacing:.08em; margin-top:0; color:var(--accent); }
+  .modal h3{ font-size:12px; color: #0a0a0f; margin:20px 0 8px; font-weight:800; text-transform:uppercase; letter-spacing:.15em;
+    background:var(--accent3); display:inline-block; padding:3px 10px; }
+  .modal p, .modal li{ font-size:13.5px; color: var(--fg); line-height:1.75; font-weight:400; }
+  .modal code{ background:rgba(0,255,136,.08); padding:2px 8px; border:1px solid var(--border); font-size:12px; color:var(--accent); font-weight:500; }
   .modal .col-table{ width:100%; border-collapse:collapse; margin-top:8px; }
-  .modal .col-table td{ font-size:12px; padding:10px 4px; border-bottom:1px solid rgba(212,175,55,.2); vertical-align:top; color:rgba(242,240,228,.75); }
-  .modal .col-table td:first-child{ color: var(--gold); font-weight:700; white-space:nowrap; text-transform:uppercase; letter-spacing:.08em; }
-  .modal .cat-legend{ display:flex; align-items:flex-start; gap:12px; margin:14px 0; }
-  .modal .cat-legend .dot{ width:12px; height:12px; margin-top:4px; flex:none; border:1px solid var(--gold); }
-  .modal .close-row{ text-align:right; margin-top:26px; }
+  .modal .col-table td{ font-size:12px; padding:9px; border-bottom:1px solid var(--border); vertical-align:top; color:var(--fg); }
+  .modal .col-table td:first-child{ color: var(--accent); font-weight:700; white-space:nowrap; }
+  .modal .cat-legend{ display:flex; align-items:flex-start; gap:10px; margin:12px 0; }
+  .modal .cat-legend .dot{ width:12px; height:12px; margin-top:4px; flex:none; border:1px solid var(--border); }
+  .modal .close-row{ text-align:right; margin-top:22px; }
 
-  footer{ text-align:center; color: rgba(242,240,228,.5); font-size:11.5px; padding:40px 16px 52px; font-weight:400; border-top:1px solid rgba(212,175,55,.35); letter-spacing:.03em; }
-  footer a{ color: var(--gold); }
+  footer{ text-align:center; color: var(--muted-fg); font-size:11.5px; padding:36px 16px 48px; font-weight:400; border-top:1px solid var(--border); }
+  footer a{ color: var(--accent3); }
 </style>
 </head>
 <body>
 
 <header class="top">
+  <div class="prompt-line">user@boardgame-shelf:~$ ./launch.sh<span class="cursor">_</span></div>
   <div class="brand">
-    <span class="diamond"><span>桌</span></span>
+    <span class="glyph">桌</span>
     <h1>桌遊櫃</h1>
   </div>
-  <div class="divider"></div>
   <p class="subline">資料每天由 GitHub Actions 自動從 Google Sheet + BoardGameGeek 更新一次，網頁本身完全不對外連線。</p>
 
   <div class="controls" id="mainControls" style="display:none;">
-    <input type="text" id="searchBox" placeholder="搜尋遊戲名稱…">
+    <div class="search-wrap"><input type="text" id="searchBox" placeholder="搜尋遊戲名稱…"></div>
     <select id="sortSelect">
       <option value="default">預設排序</option>
       <option value="player_asc">人數：少→多</option>
@@ -282,8 +298,8 @@
 </main>
 
 <footer>
-  <div style="display:inline-block; border:1px solid var(--gold); color:var(--gold); padding:8px 18px; margin-bottom:16px; font-weight:600; text-transform:uppercase; letter-spacing:.2em; font-size:11px;">
-    <a href="https://boardgamegeek.com" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:none;">Powered by BGG</a>
+  <div style="display:inline-block; border:1px solid var(--accent); color:var(--accent); padding:7px 16px; margin-bottom:14px; font-weight:700; text-transform:uppercase; letter-spacing:.15em; font-size:11px; box-shadow:0 0 8px rgba(0,255,136,.3);">
+    <a href="https://boardgamegeek.com" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:none;">Powered by BGG</a>
   </div><br>
   資料來源：Google Sheet + <a href="https://boardgamegeek.com" target="_blank" rel="noopener">BoardGameGeek</a>　·　
   <a href="#" id="footerHelp">這個清單怎麼更新資料？</a>
@@ -312,7 +328,7 @@
 
     <h3>類別分類參考</h3>
     <div id="legendList"></div>
-    <p style="color:rgba(242,240,228,.5)">類別會依 BGG 的分類/機制標籤自動猜測，猜錯時直接在 GAMETYPE 欄手動指定即可。</p>
+    <p style="color:var(--muted-fg)">類別會依 BGG 的分類/機制標籤自動猜測，猜錯時直接在 GAMETYPE 欄手動指定即可。</p>
 
     <div class="close-row"><button class="btn primary" id="closeHelp">知道了</button></div>
   </div>
@@ -333,17 +349,11 @@
 
 <script>
 (function(){
-  // Art Deco 調色盤只用金色／午夜藍／鉑灰的實心/外框組合區分分類，不用彩虹色
-  const CAT_STYLES = [
-    { bg:'var(--gold)', border:'var(--gold)', text:'#0A0A0A' },                 // 實心金
-    { bg:'transparent', border:'var(--gold)', text:'var(--gold)' },             // 金色外框
-    { bg:'var(--midnight)', border:'var(--midnight)', text:'var(--fg)' },       // 實心午夜藍
-    { bg:'transparent', border:'var(--midnight)', text:'#6E9BC4' },             // 午夜藍外框
-    { bg:'var(--muted)', border:'var(--muted)', text:'#0A0A0A' },               // 實心鉑灰
-    { bg:'transparent', border:'var(--muted)', text:'var(--muted)' },           // 鉑灰外框
-    { bg:'transparent', border:'var(--gold)', text:'#6E9BC4' },                 // 金框＋藍字
-  ];
-  const NONE_STYLE = { bg:'transparent', border:'rgba(242,240,228,.4)', text:'rgba(242,240,228,.6)' };
+  // 重要：inactive 狀態一律用「霓虹色本身」當文字色（在深色底上一定看得清楚）。
+  // 只有 active／填滿底色時，才把文字換成深色（在亮色底上才需要深色字）。
+  // 不要反過來寫死深色字給 inactive 用，那樣在透明/深色背景上文字會直接消失。
+  const NEONS = ['#00ff88', '#ff00ff', '#00d4ff']; // green / magenta / cyan
+  const DARK_TEXT = '#0a0a0f';
 
   const CATEGORIES = [
     { key:'派對遊戲', en:'Party Games', desc:'派對遊戲是適合多人一起遊玩，遊戲過程著重在互動，規則簡單易上手，營造熱鬧歡樂的氣氛，玩起來有趣就好，適用各種聚會場合或是剛認識的朋友一起遊玩。' },
@@ -354,7 +364,14 @@
     { key:'兒童遊戲', en:"Children's Games", desc:'適合兒童的遊戲，一般配件比較可愛，規則簡單，還能間接訓練兒童的反應力、記憶力等等。同時也適用於各種親子聚會的場合，老少皆宜。' },
     { key:'家庭遊戲', en:'Family Games', desc:'這類游戲的特點是規則相對簡單，策略度和競爭性不是很高，鮮有爾虞我詐的成分，適合家庭聚會的時間可以闔家一起玩的遊戲，不論是大人小孩都能樂在其中。' },
   ];
-  const CAT_MAP = Object.fromEntries(CATEGORIES.map((c,i)=>[c.key, {...c, style: CAT_STYLES[i]}]));
+  // 每個分類只存「霓虹色」本身，不預先綁死文字色，文字色在渲染時依 active 狀態動態決定
+  const CAT_NEON = Object.fromEntries(CATEGORIES.map((c,i)=>[c.key, NEONS[i % NEONS.length]]));
+  const NONE_NEON = '#8a8a9a';
+
+  function chipStyle(neon, active){
+    if(active) return `background:${neon};border-color:${neon};color:${DARK_TEXT};box-shadow:0 0 8px ${neon};`;
+    return `border-color:${neon};color:${neon};`;
+  }
 
   const PLAYER_BUCKETS = [1,2,3,4,5,6,7];
   const TIME_BUCKETS = [
@@ -400,12 +417,12 @@
     CATEGORIES.forEach(c=>{
       if(!catCounts[c.key]) return;
       const active = activeCategories.has(c.key);
-      const st = CAT_MAP[c.key].style;
-      catHtml += `<div class="chip ${active?'active':''}" data-group="cat" data-val="${c.key}" style="${active?`background:${st.bg==='transparent'?st.border:st.bg};color:${st.bg==='transparent'?'#0A0A0A':st.text};border-color:${st.border}`:`border-color:${st.border};color:${st.text}`}">${c.key} <b>${catCounts[c.key]}</b></div>`;
+      const neon = CAT_NEON[c.key];
+      catHtml += `<div class="chip" data-group="cat" data-val="${c.key}" style="${chipStyle(neon, active)}">${c.key} <b>${catCounts[c.key]}</b></div>`;
     });
     if(catCounts['未分類']){
       const active = activeCategories.has('未分類');
-      catHtml += `<div class="chip ${active?'active':''}" data-group="cat" data-val="未分類">未分類 <b>${catCounts['未分類']}</b></div>`;
+      catHtml += `<div class="chip" data-group="cat" data-val="未分類" style="${chipStyle(NONE_NEON, active)}">未分類 <b>${catCounts['未分類']}</b></div>`;
     }
     document.getElementById('chipsCategory').innerHTML = catHtml;
 
@@ -415,16 +432,18 @@
       if(!count) return;
       const active = activePlayers.has(b);
       const label = b===7 ? '7人以上' : `${b}人`;
-      playerHtml += `<div class="chip ${active?'active':''}" data-group="player" data-val="${b}">${label} <b>${count}</b></div>`;
+      const neon = NEONS[b % NEONS.length];
+      playerHtml += `<div class="chip" data-group="player" data-val="${b}" style="${chipStyle(neon, active)}">${label} <b>${count}</b></div>`;
     });
     document.getElementById('chipsPlayer').innerHTML = playerHtml;
 
     let timeHtml = '';
-    TIME_BUCKETS.forEach(b=>{
+    TIME_BUCKETS.forEach((b,i)=>{
       const count = ALL_GAMES.filter(g=>timeMatchesBucket(g,b.key)).length;
       if(!count) return;
       const active = activeTimes.has(b.key);
-      timeHtml += `<div class="chip ${active?'active':''}" data-group="time" data-val="${b.key}">${b.key} <b>${count}</b></div>`;
+      const neon = NEONS[i % NEONS.length];
+      timeHtml += `<div class="chip" data-group="time" data-val="${b.key}" style="${chipStyle(neon, active)}">${b.key} <b>${count}</b></div>`;
     });
     document.getElementById('chipsTime').innerHTML = timeHtml;
 
@@ -446,16 +465,15 @@
     const cats = gameCats(g);
     const primaryCat = cats[0] || null;
     const extraCats = cats.slice(1);
-    const st = primaryCat && CAT_MAP[primaryCat] ? CAT_MAP[primaryCat].style : NONE_STYLE;
+    const neon = primaryCat ? CAT_NEON[primaryCat] : NONE_NEON;
     const catLabel = primaryCat || '未分類';
-    const catBg = st.bg === 'transparent' ? 'rgba(10,10,10,.75)' : st.bg;
     const cover = g.image
       ? `<img src="${escapeHtml(g.image)}" alt="${escapeHtml(g.name)}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=fallback>${escapeHtml(g.name.slice(0,2))}</div>'">`
       : `<div class="fallback">${escapeHtml(g.name.slice(0,2))}</div>`;
     const extraCatHtml = extraCats.length
       ? `<div class="meta-row">${extraCats.map(c=>{
-          const s = CAT_MAP[c] ? CAT_MAP[c].style : NONE_STYLE;
-          return `<span style="border:1px solid ${s.border};color:${s.bg==='transparent'?s.text:s.text};padding:2px 9px;font-weight:600;font-size:10px;letter-spacing:.08em;">${c}</span>`;
+          const n = CAT_NEON[c] || NONE_NEON;
+          return `<span style="border:1px solid ${n};color:${n};padding:2px 9px;font-weight:700;font-size:10px;letter-spacing:.08em;">${c}</span>`;
         }).join('')}</div>`
       : '';
     const metaBits = [];
@@ -505,17 +523,17 @@
         ? `<a href="${escapeHtml(g.link)}" target="_blank" rel="noopener">${escapeHtml(g.name)}</a>`
         : escapeHtml(g.name);
     const rulebookHtml = g.rulebook
-      ? `<a class="btn" style="display:inline-block; padding:7px 16px; font-size:10.5px; align-self:flex-start; text-decoration:none;" href="${escapeHtml(g.rulebook)}" target="_blank" rel="noopener">規則書</a>`
+      ? `<a class="btn" style="display:inline-block; padding:6px 14px; font-size:10.5px; align-self:flex-start; text-decoration:none;" href="${escapeHtml(g.rulebook)}" target="_blank" rel="noopener">規則書</a>`
       : '';
 
     return `<div class="card">
-      <span class="cat-tag" style="background:${catBg};color:${st.text};border:1px solid ${st.border};">${catLabel}</span>
-      <div class="cover"><div class="frame">${cover}</div></div>
+      <span class="cat-tag" style="border:1px solid ${neon};color:${neon};">${catLabel}</span>
+      <div class="cover">${cover}</div>
       <div class="body">
         <h3>${titleInner}</h3>
         ${extraCatHtml}
         <div class="meta-row">${metaBits.join('')}</div>
-        ${g.publisher ? `<div class="publisher">出版：${escapeHtml(g.publisher)}</div>` : ''}
+        ${g.publisher ? `<div class="publisher">${escapeHtml(g.publisher)}</div>` : ''}
         ${rulebookHtml}
         ${descHtml}
         ${noteHtml}
@@ -563,7 +581,7 @@
     if(q) games = games.filter(g => g.name.toLowerCase().includes(q));
     games = sortGames(games);
     grid.className = viewMode === 'list' ? 'list-view' : '';
-    if(!games.length){ grid.innerHTML = `<div class="empty">沒有符合條件的遊戲</div>`; return; }
+    if(!games.length){ grid.innerHTML = `<div class="empty">[ NO_RESULTS ]</div>`; return; }
     grid.innerHTML = games.map(cardHtml).join('');
   }
 
@@ -575,8 +593,8 @@
 
   function renderLegend(){
     document.getElementById('legendList').innerHTML = CATEGORIES.map(c=>`
-      <div class="cat-legend"><span class="dot" style="background:${CAT_MAP[c.key].style.bg==='transparent'?'transparent':CAT_MAP[c.key].style.bg}"></span>
-      <div><b style="color:var(--fg)">${c.key}</b> <span style="color:rgba(242,240,228,.5)">(${c.en})</span><br>${c.desc}</div></div>`).join('');
+      <div class="cat-legend"><span class="dot" style="background:${CAT_NEON[c.key]}"></span>
+      <div><b style="color:var(--fg)">${c.key}</b> <span style="color:var(--muted-fg)">(${c.en})</span><br>${c.desc}</div></div>`).join('');
   }
   function openHelp(){ document.getElementById('helpModal').classList.add('open'); }
   function closeHelp(){ document.getElementById('helpModal').classList.remove('open'); }
@@ -606,8 +624,7 @@
     renderGrid();
   });
   document.getElementById('btnFilterToggle').addEventListener('click', ()=>{
-    const el = document.getElementById('filterGroups');
-    el.classList.toggle('expanded');
+    document.getElementById('filterGroups').classList.toggle('expanded');
   });
 
   // ---------------- 今晚玩哪款：隨機抽選 ----------------
@@ -624,13 +641,14 @@
     PLAYER_BUCKETS.forEach(b=>{
       if(!counts[b]) return;
       const label = b===7 ? '7人以上' : `${b}人`;
-      html += `<div class="chip" data-player="${b}">${label} <b>${counts[b]}</b></div>`;
+      const neon = NEONS[b % NEONS.length];
+      html += `<div class="chip" data-player="${b}" style="border-color:${neon};color:${neon};">${label} <b>${counts[b]}</b></div>`;
     });
-    document.getElementById('dicePlayerChips').innerHTML = html || '<p style="font-size:13px;color:rgba(242,240,228,.6)">目前篩選條件下沒有可抽的遊戲，先清除篩選試試。</p>';
+    document.getElementById('dicePlayerChips').innerHTML = html || '<p style="font-size:13px;color:var(--muted-fg)">目前篩選條件下沒有可抽的遊戲，先清除篩選試試。</p>';
     document.querySelectorAll('#dicePlayerChips .chip').forEach(el=>{
       el.addEventListener('click', ()=>{
-        document.querySelectorAll('#dicePlayerChips .chip').forEach(c=>c.classList.remove('active'));
-        el.classList.add('active');
+        document.querySelectorAll('#dicePlayerChips .chip').forEach(c=>{ c.style.boxShadow='none'; });
+        el.style.boxShadow = `0 0 8px ${el.style.borderColor}`;
         rollDice(parseInt(el.dataset.player,10));
       });
     });
@@ -644,13 +662,13 @@
     const pick = pool[Math.floor(Math.random()*pool.length)];
     document.getElementById('dicePrompt').textContent = `${playerCount===7?'7人以上':playerCount+'人'} 就決定是你了：`;
     document.getElementById('diceResult').innerHTML = `
-      <div style="display:flex; gap:16px; align-items:center; border:1px solid var(--gold); padding:14px;">
-        <div style="width:80px; height:80px; flex:none; border:1px solid var(--gold); padding:3px; overflow:hidden; background:var(--card);">
+      <div style="display:flex; gap:14px; align-items:center; border:1px solid var(--accent); padding:14px; box-shadow:0 0 12px rgba(0,255,136,.25);">
+        <div style="width:80px; height:80px; flex:none; border:1px solid var(--border); overflow:hidden; background:var(--bg);">
           ${pick.image ? `<img src="${escapeHtml(pick.image)}" style="width:100%;height:100%;object-fit:cover;">` : ''}
         </div>
         <div>
-          <div style="font-weight:400; font-size:19px; font-family:var(--heading); color:var(--gold); letter-spacing:.03em;">${escapeHtml(pick.name)}</div>
-          <div style="font-size:11.5px; font-weight:400; margin-top:6px; color:rgba(242,240,228,.65); text-transform:uppercase; letter-spacing:.05em;">${escapeHtml(pick.player||'')} 　 ${escapeHtml(pick.time||'')}</div>
+          <div style="font-weight:800; font-size:17px; font-family:var(--heading); color:var(--fg);">${escapeHtml(pick.name)}</div>
+          <div style="font-size:12px; font-weight:400; margin-top:5px; color:var(--muted-fg); text-transform:uppercase;">${escapeHtml(pick.player||'')} 　 ${escapeHtml(pick.time||'')}</div>
         </div>
       </div>`;
     document.getElementById('diceReroll').style.display = 'inline-block';

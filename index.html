@@ -7,98 +7,102 @@
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Josefin+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --cream:#FFFDF5;
-    --ink:#000000;
-    --red:#FF6B6B;
-    --yellow:#FFD93D;
-    --violet:#C4B5FD;
-    --white:#FFFFFF;
-    --font:'Space Grotesk', sans-serif;
+    --bg:#0A0A0A;
+    --fg:#F2F0E4;
+    --card:#141414;
+    --gold:#D4AF37;
+    --gold-light:#F2E8C4;
+    --midnight:#1E3D59;
+    --muted:#888888;
+    --heading:'Marcellus', serif;
+    --body-font:'Josefin Sans', sans-serif;
   }
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;}
   body{
-    background-color: var(--cream);
+    background-color: var(--bg);
     background-image:
-      linear-gradient(to right, rgba(0,0,0,0.07) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(0,0,0,0.07) 1px, transparent 1px);
-    background-size: 32px 32px;
-    color: var(--ink);
-    font-family: var(--font);
-    font-weight:500;
+      repeating-linear-gradient(45deg, rgba(212,175,55,0.035) 0px, rgba(212,175,55,0.035) 1px, transparent 1px, transparent 26px),
+      repeating-linear-gradient(-45deg, rgba(212,175,55,0.035) 0px, rgba(212,175,55,0.035) 1px, transparent 1px, transparent 26px),
+      radial-gradient(ellipse at 50% 0%, rgba(212,175,55,0.10) 0%, transparent 55%);
+    color: var(--fg);
+    font-family: var(--body-font);
+    font-weight:400;
     min-height:100vh;
-    line-height:1.4;
+    line-height:1.6;
   }
-  a{ color: var(--ink); }
-  ::selection{ background: var(--yellow); color:var(--ink); }
+  a{ color: var(--gold); text-decoration:none; }
+  a:hover{ color: var(--gold-light); }
+  ::selection{ background: var(--gold); color:#0A0A0A; }
+
+  .divider{ height:1px; width:64px; background: var(--gold); opacity:.6; margin:10px 0; }
+  .diamond{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:52px; height:52px; border:2px solid var(--gold); transform:rotate(45deg);
+    box-shadow: 0 0 15px rgba(212,175,55,.25);
+    flex:none;
+  }
+  .diamond span{ transform:rotate(-45deg); font-size:22px; color:var(--gold); font-family:var(--heading); }
 
   /* ---------- header ---------- */
   header.top{
-    padding: 30px clamp(16px,4vw,48px) 22px;
-    border-bottom: 4px solid var(--ink);
-    background: var(--white);
+    padding: 44px clamp(16px,4vw,56px) 28px;
+    border-bottom: 1px solid rgba(212,175,55,.4);
   }
-  .brand{ display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
-  .brand .badge{
-    display:inline-flex; align-items:center; justify-content:center;
-    width:50px; height:50px; border:4px solid var(--ink); background: var(--red);
-    font-weight:900; font-size:22px; transform:rotate(-6deg);
-    box-shadow: 5px 5px 0 0 var(--ink);
-  }
+  .brand{ display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
   .brand h1{
-    font-weight:900; font-size:clamp(30px,5vw,46px); margin:0;
-    text-transform:uppercase; letter-spacing:-1px; color:var(--ink);
-    text-shadow: 3px 3px 0 var(--yellow);
-    transform: rotate(-1deg);
+    font-family:var(--heading); font-weight:400; font-size:clamp(30px,5vw,50px); margin:0;
+    text-transform:uppercase; letter-spacing:.18em; color:var(--gold);
+    text-shadow: 0 0 18px rgba(212,175,55,.35);
   }
   .subline{
-    color: rgba(0,0,0,.5); margin-top:8px; font-size:12.5px; max-width:70ch; font-weight:500;
+    color: rgba(242,240,228,.5); margin-top:14px; font-size:12.5px; max-width:70ch; font-weight:400; letter-spacing:.02em;
   }
 
   /* ---------- controls ---------- */
-  .controls{ display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top:22px; }
+  .controls{ display:flex; gap:20px; flex-wrap:wrap; align-items:flex-end; margin-top:30px; }
   .controls input[type=text]{
-    flex:1 1 300px; min-width:200px;
-    background: var(--white); border:4px solid var(--ink); color: var(--ink);
-    padding:11px 14px; border-radius:0; font-size:15px; font-family:var(--font); font-weight:700;
+    flex:1 1 260px; min-width:200px;
+    background: transparent; border:none; border-bottom:2px solid var(--gold); color: var(--fg);
+    padding:10px 4px; border-radius:0; font-size:15px; font-family:var(--body-font); font-weight:400;
   }
-  .controls input[type=text]::placeholder{ color: rgba(0,0,0,.45); font-weight:700; }
+  .controls input[type=text]::placeholder{ color: var(--muted); letter-spacing:.03em; }
   .controls input[type=text]:focus{
-    outline:none; background: var(--yellow); box-shadow: 4px 4px 0 0 var(--ink);
+    outline:none; border-color: var(--gold-light); box-shadow: 0 4px 10px rgba(212,175,55,.2);
   }
   .btn{
-    appearance:none; border:4px solid var(--ink); background: var(--white); color: var(--ink);
-    padding:10px 16px; border-radius:0; font-size:13px; cursor:pointer;
-    font-family:var(--font); font-weight:700; text-transform:uppercase; letter-spacing:.5px;
-    box-shadow: 4px 4px 0 0 var(--ink);
-    transition: transform .08s ease-out, box-shadow .08s ease-out;
+    appearance:none; border:2px solid var(--gold); background: transparent; color: var(--gold);
+    padding:12px 22px; border-radius:0; font-size:11.5px; cursor:pointer;
+    font-family:var(--body-font); font-weight:600; text-transform:uppercase; letter-spacing:.2em;
+    transition: all .35s ease;
     white-space:nowrap;
   }
-  .btn:active{ transform: translate(4px,4px); box-shadow:none; }
-  .btn.primary{ background: var(--red); }
-  .btn.ghost{ background: var(--white); }
+  .btn:hover{ background: var(--gold); color:#0A0A0A; box-shadow: 0 0 20px rgba(212,175,55,.4); }
+  .btn.primary{ background: var(--gold); color:#0A0A0A; }
+  .btn.primary:hover{ background: var(--gold-light); box-shadow: 0 0 24px rgba(212,175,55,.5); }
+  .btn.ghost{ border-color: rgba(212,175,55,.4); color: rgba(242,240,228,.7); }
+  .btn.ghost:hover{ background: var(--midnight); border-color:var(--midnight); color:var(--fg); }
   .controls select{
     appearance:none; -webkit-appearance:none;
-    border:4px solid var(--ink); background: var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23000' stroke-width='2' fill='none'/%3E%3C/svg%3E") no-repeat right 12px center;
-    color: var(--ink); padding:10px 32px 10px 14px; border-radius:0; font-size:13px; cursor:pointer;
-    font-family:var(--font); font-weight:700; text-transform:uppercase; letter-spacing:.5px;
-    box-shadow: 4px 4px 0 0 var(--ink);
+    border:none; border-bottom:2px solid var(--gold); background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23D4AF37' stroke-width='2' fill='none'/%3E%3C/svg%3E") no-repeat right 4px center;
+    color: var(--fg); padding:10px 26px 10px 4px; border-radius:0; font-size:11.5px; cursor:pointer;
+    font-family:var(--body-font); font-weight:600; text-transform:uppercase; letter-spacing:.15em;
   }
   .filter-groups.collapsed{ display:none !important; }
 
-  .view-toggle{ display:flex; border:4px solid var(--ink); box-shadow:4px 4px 0 0 var(--ink); background:var(--white); }
+  .view-toggle{ display:flex; border:1px solid var(--gold); }
   .view-toggle button{
-    border:none; background:transparent; color: var(--ink); padding:10px 16px; cursor:pointer;
-    font-family:var(--font); font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.5px;
+    border:none; background:transparent; color: rgba(242,240,228,.7); padding:11px 18px; cursor:pointer;
+    font-family:var(--body-font); font-size:11.5px; font-weight:600; text-transform:uppercase; letter-spacing:.15em;
   }
-  .view-toggle button + button{ border-left:4px solid var(--ink); }
-  .view-toggle button.active{ background: var(--yellow); }
+  .view-toggle button + button{ border-left:1px solid var(--gold); }
+  .view-toggle button.active{ background: var(--gold); color:#0A0A0A; }
 
   /* ---------- filter chips ---------- */
-  .filter-groups{ display:none; flex-direction:column; gap:10px; margin-top:20px; }
+  .filter-groups{ display:none; flex-direction:column; gap:14px; margin-top:30px; }
   .filter-groups.ready{ display:flex; }
   #btnFilterToggle{ display:none; }
   @media (max-width: 720px){
@@ -106,137 +110,149 @@
     .filter-groups.ready{ display:none; }
     .filter-groups.ready.expanded{ display:flex; }
   }
-  .filter-row{ display:flex; align-items:flex-start; gap:10px; flex-wrap:wrap; }
+  .filter-row{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
   .filter-label{
-    flex:none; font-size:12px; color: var(--ink); font-weight:900; padding:8px 0;
-    min-width:56px; text-transform:uppercase; letter-spacing:1.5px;
+    flex:none; font-size:11px; color: var(--gold); font-weight:600; padding:6px 0;
+    min-width:52px; text-transform:uppercase; letter-spacing:.25em;
   }
-  .chips{ display:flex; gap:9px; flex-wrap:wrap; }
+  .chips{ display:flex; gap:8px; flex-wrap:wrap; }
   .chip{
-    border:3px solid var(--ink); background: var(--white); color: var(--ink);
-    padding:6px 13px; border-radius:99px; font-size:12.5px; font-weight:700; cursor:pointer; user-select:none;
-    display:flex; align-items:center; gap:6px; box-shadow:3px 3px 0 0 var(--ink);
-    transition: transform .08s ease-out, box-shadow .08s ease-out;
+    border:1px solid rgba(212,175,55,.5); background: transparent; color: rgba(242,240,228,.7);
+    padding:6px 14px; border-radius:0; font-size:11px; font-weight:600; cursor:pointer; user-select:none;
+    display:flex; align-items:center; gap:6px; text-transform:uppercase; letter-spacing:.1em;
+    transition: all .25s ease;
   }
-  .chip:hover{ transform: translate(-1px,-1px); box-shadow:4px 4px 0 0 var(--ink); }
-  .chip.active{ background: var(--yellow); transform: translate(2px,2px); box-shadow:1px 1px 0 0 var(--ink); }
+  .chip:hover{ border-color: var(--gold); color:var(--fg); }
+  .chip.active{ background: var(--gold); color:#0A0A0A; border-color:var(--gold); font-weight:700; }
 
-  main{ padding: 26px clamp(16px,4vw,48px) 70px; }
+  main{ padding: 34px clamp(16px,4vw,56px) 80px; }
 
   .status{
-    color: var(--ink); font-size:13px; margin-bottom:20px; display:flex; gap:14px; flex-wrap:wrap; align-items:center;
-    font-weight:700;
+    color: rgba(242,240,228,.55); font-size:12px; margin-bottom:26px; display:flex; gap:14px; flex-wrap:wrap; align-items:center;
+    font-weight:400; letter-spacing:.03em;
   }
-  .status .err{ color: var(--red); background:var(--white); border:2px solid var(--red); padding:2px 8px; }
+  .status .err{ color: var(--gold-light); font-weight:600; }
   .spinner{
-    width:11px; height:11px; background: var(--red); border:2px solid var(--ink);
-    animation: blink .7s steps(1) infinite; display:inline-block;
+    width:8px; height:8px; background: var(--gold); border-radius:50%;
+    animation: pulse 1s ease-in-out infinite; display:inline-block;
   }
-  @keyframes blink{ 50%{ opacity:.15; } }
+  @keyframes pulse{ 0%,100%{opacity:1;} 50%{opacity:.25;} }
 
   /* ---------- grid ---------- */
-  #grid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(240px,1fr)); gap:26px; }
+  #grid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(250px,1fr)); gap:32px; }
   .card{
-    background: var(--white); border:4px solid var(--ink); border-radius:0;
+    background: var(--card); border:1px solid rgba(212,175,55,.3); border-radius:0;
     overflow:visible; display:flex; flex-direction:column; position:relative;
-    box-shadow: 8px 8px 0 0 var(--ink);
-    transition: transform .15s ease-out, box-shadow .15s ease-out;
+    transition: transform .5s ease, border-color .5s ease;
   }
-  .card:hover{ transform: translate(-3px,-5px); box-shadow: 12px 12px 0 0 var(--ink); }
-  .card .cover{ aspect-ratio:1/1; background:var(--cream); position:relative; overflow:hidden; border-bottom:4px solid var(--ink); }
-  .card .cover img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .card:hover{ transform: translateY(-8px); border-color: var(--gold); }
+  .card::before, .card::after{
+    content:""; position:absolute; width:18px; height:18px; border-color:var(--gold); opacity:.5; transition:opacity .5s ease;
+  }
+  .card::before{ top:-1px; left:-1px; border-top:2px solid; border-left:2px solid; }
+  .card::after{ bottom:-1px; right:-1px; border-bottom:2px solid; border-right:2px solid; }
+  .card:hover::before, .card:hover::after{ opacity:1; }
+
+  .card .cover{ aspect-ratio:1/1; position:relative; overflow:hidden; padding:8px; background:var(--card); border-bottom:1px solid rgba(212,175,55,.25); }
+  .card .cover .frame{ width:100%; height:100%; border:1px solid var(--gold); padding:5px; box-sizing:border-box; }
+  .card .cover img{ width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(60%) contrast(1.05); transition: filter .5s ease; }
+  .card:hover .cover img{ filter:grayscale(0%) contrast(1.05); }
   .cover .fallback{
     width:100%; height:100%; display:flex; align-items:center; justify-content:center;
-    font-weight:900; font-size:46px; color: var(--ink);
-    background: repeating-linear-gradient(45deg, var(--violet), var(--violet) 14px, var(--cream) 14px, var(--cream) 28px);
+    font-weight:400; font-size:42px; color: rgba(212,175,55,.5); font-family:var(--heading);
+    background: repeating-linear-gradient(45deg, #1a1a1a, #1a1a1a 12px, #141414 12px, #141414 24px);
   }
   .cat-tag{
-    position:absolute; top:-12px; left:-10px; padding:4px 12px; border-radius:0;
-    font-size:11px; font-weight:900; text-transform:uppercase; letter-spacing:.5px;
-    border:3px solid var(--ink); box-shadow:3px 3px 0 0 var(--ink); transform: rotate(-4deg); z-index:2;
+    position:absolute; top:10px; left:10px; padding:4px 11px; border-radius:0;
+    font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.15em;
+    z-index:2;
   }
-  .card .body{ padding:16px 14px 15px; display:flex; flex-direction:column; gap:9px; flex:1; }
-  .card h3{ font-family:var(--font); font-weight:900; font-size:17px; margin:0; line-height:1.25; text-transform:uppercase; letter-spacing:-.3px; }
-  .card h3 a{ text-decoration:none; }
-  .card h3 a:hover{ text-decoration:underline; text-decoration-thickness:3px; }
-  .meta-row{ display:flex; flex-wrap:wrap; gap:6px 12px; font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:.3px; }
-  .meta-row span b{ font-weight:900; }
-  .publisher{ font-size:11.5px; font-weight:700; color: rgba(0,0,0,.65); }
-  .desc{ font-size:13px; font-weight:500; color: var(--ink); background:var(--cream); border:2px solid var(--ink); padding:7px 9px; }
-  .desc .more-btn{ background:none; border:none; color: var(--red); cursor:pointer; font-size:11.5px; font-weight:900; padding:0; margin-top:4px; text-transform:uppercase; }
+  .card .body{ padding:20px 18px 18px; display:flex; flex-direction:column; gap:11px; flex:1; }
+  .card h3{ font-family:var(--heading); font-weight:400; font-size:19px; margin:0; line-height:1.35; letter-spacing:.03em; color:var(--fg); }
+  .card h3 a{ text-decoration:none; color:var(--fg); }
+  .card h3 a:hover{ color: var(--gold); }
+  .meta-row{ display:flex; flex-wrap:wrap; gap:5px 14px; font-size:11px; font-weight:500; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; }
+  .meta-row span b{ font-weight:700; color:var(--gold); }
+  .publisher{ font-size:11px; font-weight:400; color: var(--muted); font-style:italic; }
+  .desc{ font-size:13px; font-weight:400; color: rgba(242,240,228,.75); border-top:1px solid rgba(212,175,55,.25); padding-top:9px; }
+  .desc .more-btn{ background:none; border:none; color: var(--gold); cursor:pointer; font-size:11px; font-weight:600; padding:0; margin-top:5px; text-transform:uppercase; letter-spacing:.1em; }
   .note{
-    font-size:11.5px; font-weight:900; text-transform:uppercase; color:var(--ink); background:var(--yellow);
-    border:2px solid var(--ink); padding:4px 8px; display:inline-block; transform:rotate(-1deg); align-self:flex-start;
+    font-size:10.5px; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--gold); border:1px solid var(--gold);
+    padding:4px 10px; display:inline-block; align-self:flex-start;
   }
 
-  .exp-wrap{ margin-top:auto; padding-top:10px; border-top:3px dashed var(--ink); }
+  .exp-wrap{ margin-top:auto; padding-top:12px; border-top:1px solid rgba(212,175,55,.25); }
   .exp-summary{
-    font-size:11.5px; font-weight:900; color: var(--ink); cursor:pointer; display:flex; align-items:center; gap:6px;
-    user-select:none; text-transform:uppercase; letter-spacing:.3px;
+    font-size:11px; font-weight:600; color: var(--gold); cursor:pointer; display:flex; align-items:center; gap:6px;
+    user-select:none; text-transform:uppercase; letter-spacing:.12em;
   }
   .exp-list{ list-style:none; margin:9px 0 0; padding:0; display:none; flex-direction:column; gap:6px; }
   .exp-list.open{ display:flex; }
-  .exp-list li{ display:flex; align-items:center; gap:8px; font-size:12px; font-weight:700; }
+  .exp-list li{ display:flex; align-items:center; gap:8px; font-size:11.5px; font-weight:400; color:var(--muted); }
   .exp-list .box{
-    width:16px; height:16px; border:3px solid var(--ink); flex:none; background:var(--white);
+    width:14px; height:14px; border:1px solid var(--gold); flex:none; background:transparent;
     display:flex; align-items:center; justify-content:center;
   }
-  .exp-list li.owned .box{ background: var(--red); }
-  .exp-list li.owned .box::after{ content:'✓'; font-size:11px; color:#fff; font-weight:900; }
-  .exp-list li:not(.owned){ color: rgba(0,0,0,.45); }
+  .exp-list li.owned .box{ background: var(--gold); }
+  .exp-list li.owned .box::after{ content:'✓'; font-size:10px; color:#0A0A0A; font-weight:900; }
+  .exp-list li.owned{ color: var(--fg); }
 
-  #grid.list-view{ display:flex; flex-direction:column; gap:16px; }
-  #grid.list-view .card{ flex-direction:row; box-shadow:6px 6px 0 0 var(--ink); }
-  #grid.list-view .card:hover{ box-shadow:9px 9px 0 0 var(--ink); }
-  #grid.list-view .card .cover{ width:100px; aspect-ratio:1/1; flex:none; border-bottom:none; border-right:4px solid var(--ink); }
-  #grid.list-view .card .body{ padding:13px 16px; }
+  #grid.list-view{ display:flex; flex-direction:column; gap:18px; }
+  #grid.list-view .card{ flex-direction:row; }
+  #grid.list-view .card .cover{ width:110px; aspect-ratio:1/1; flex:none; border-bottom:none; border-right:1px solid rgba(212,175,55,.25); }
+  #grid.list-view .card .body{ padding:16px 18px; }
   #grid.list-view .card h3{ font-size:16px; }
-  #grid.list-view .cat-tag{ top:-10px; left:-8px; }
 
   .empty, .error-box{
-    padding:44px 20px; text-align:center; color: var(--ink); border:4px dashed var(--ink);
-    border-radius:0; font-size:14px; font-weight:700; background:var(--white);
+    padding:52px 20px; text-align:center; color: var(--muted); border:1px solid rgba(212,175,55,.3);
+    border-radius:0; font-size:14px; font-weight:400; letter-spacing:.05em; text-transform:uppercase;
   }
-  .error-box{ color: var(--red); border-color: var(--red); }
+  .error-box{ color: var(--gold-light); border-color: var(--gold); }
 
   /* ---------- help modal ---------- */
   .modal-bg{
-    position:fixed; inset:0; background:rgba(0,0,0,.55); display:none; align-items:flex-start;
+    position:fixed; inset:0; background:rgba(0,0,0,.82); display:none; align-items:flex-start;
     justify-content:center; padding:40px 16px; z-index:50; overflow:auto;
   }
   .modal-bg.open{ display:flex; }
   .modal{
-    background: var(--white); border:4px solid var(--ink); border-radius:0; max-width:660px;
-    width:100%; padding:28px 30px 32px; margin-bottom:40px; box-shadow:12px 12px 0 0 var(--ink);
+    background: var(--card); border:1px solid var(--gold); border-radius:0; max-width:660px;
+    width:100%; padding:34px 36px 36px; margin-bottom:40px; box-shadow: 0 0 40px rgba(212,175,55,.15);
+    position:relative;
   }
-  .modal h2{ font-family:var(--font); font-weight:900; text-transform:uppercase; margin-top:0; }
-  .modal h3{ font-size:14px; color: var(--ink); margin:20px 0 8px; font-weight:900; text-transform:uppercase;
-    background:var(--violet); display:inline-block; padding:2px 8px; border:2px solid var(--ink); }
-  .modal p, .modal li{ font-size:13.5px; color: var(--ink); line-height:1.7; font-weight:500; }
-  .modal code{ background:var(--cream); padding:2px 6px; border:2px solid var(--ink); font-size:12.5px; font-weight:700; }
-  .modal .col-table{ width:100%; border-collapse:collapse; margin-top:8px; border:3px solid var(--ink); }
-  .modal .col-table td{ font-size:12.5px; padding:8px; border:1px solid var(--ink); vertical-align:top; }
-  .modal .col-table td:first-child{ color: var(--ink); font-weight:900; white-space:nowrap; background:var(--yellow); }
-  .modal .cat-legend{ display:flex; align-items:flex-start; gap:10px; margin:12px 0; }
-  .modal .cat-legend .dot{ width:16px; height:16px; margin-top:2px; flex:none; border:2px solid var(--ink); }
-  .modal .close-row{ text-align:right; margin-top:22px; }
+  .modal::before, .modal::after{
+    content:""; position:absolute; width:22px; height:22px; border-color:var(--gold);
+  }
+  .modal::before{ top:8px; left:8px; border-top:2px solid; border-left:2px solid; }
+  .modal::after{ bottom:8px; right:8px; border-bottom:2px solid; border-right:2px solid; }
+  .modal h2{ font-family:var(--heading); font-weight:400; text-transform:uppercase; letter-spacing:.15em; margin-top:0; color:var(--gold); }
+  .modal h3{ font-size:12px; color: var(--gold); margin:22px 0 8px; font-weight:700; text-transform:uppercase; letter-spacing:.2em; }
+  .modal p, .modal li{ font-size:13.5px; color: rgba(242,240,228,.8); line-height:1.75; font-weight:400; }
+  .modal code{ background:rgba(212,175,55,.1); padding:2px 8px; border:1px solid rgba(212,175,55,.3); font-size:12px; color:var(--gold-light); font-weight:500; }
+  .modal .col-table{ width:100%; border-collapse:collapse; margin-top:8px; }
+  .modal .col-table td{ font-size:12px; padding:10px 4px; border-bottom:1px solid rgba(212,175,55,.2); vertical-align:top; color:rgba(242,240,228,.75); }
+  .modal .col-table td:first-child{ color: var(--gold); font-weight:700; white-space:nowrap; text-transform:uppercase; letter-spacing:.08em; }
+  .modal .cat-legend{ display:flex; align-items:flex-start; gap:12px; margin:14px 0; }
+  .modal .cat-legend .dot{ width:12px; height:12px; margin-top:4px; flex:none; border:1px solid var(--gold); }
+  .modal .close-row{ text-align:right; margin-top:26px; }
 
-  footer{ text-align:center; color: var(--ink); font-size:12px; padding:32px 16px 44px; font-weight:700; border-top:4px solid var(--ink); background:var(--white); }
-  footer a{ color: var(--ink); text-decoration:underline; text-decoration-thickness:2px; }
+  footer{ text-align:center; color: rgba(242,240,228,.5); font-size:11.5px; padding:40px 16px 52px; font-weight:400; border-top:1px solid rgba(212,175,55,.35); letter-spacing:.03em; }
+  footer a{ color: var(--gold); }
 </style>
 </head>
 <body>
 
 <header class="top">
   <div class="brand">
-    <span class="badge">★</span>
+    <span class="diamond"><span>桌</span></span>
     <h1>桌遊櫃</h1>
   </div>
+  <div class="divider"></div>
   <p class="subline">資料每天由 GitHub Actions 自動從 Google Sheet + BoardGameGeek 更新一次，網頁本身完全不對外連線。</p>
 
   <div class="controls" id="mainControls" style="display:none;">
     <input type="text" id="searchBox" placeholder="搜尋遊戲名稱…">
-    <select id="sortSelect" class="btn ghost" style="cursor:pointer;">
+    <select id="sortSelect">
       <option value="default">預設排序</option>
       <option value="player_asc">人數：少→多</option>
       <option value="time_asc">時間：短→長</option>
@@ -244,13 +260,13 @@
       <option value="name">名稱排序</option>
     </select>
     <div class="view-toggle">
-      <button id="btnGrid" class="active">▦ 網格</button>
-      <button id="btnList">☰ 列表</button>
+      <button id="btnGrid" class="active">網格</button>
+      <button id="btnList">列表</button>
     </div>
     <button class="btn primary" id="btnDice">🎲 今晚玩哪款</button>
     <button class="btn ghost" id="btnClearFilter">清除篩選</button>
-    <button class="btn ghost" id="btnFilterToggle">篩選 ▾</button>
-    <button class="btn ghost" id="btnHelp">? 使用說明</button>
+    <button class="btn ghost" id="btnFilterToggle">篩選</button>
+    <button class="btn ghost" id="btnHelp">使用說明</button>
   </div>
 
   <div class="filter-groups" id="filterGroups">
@@ -266,8 +282,8 @@
 </main>
 
 <footer>
-  <div style="display:inline-block; background:var(--ink); color:#fff; border:3px solid var(--ink); padding:6px 14px; margin-bottom:14px; font-weight:900; text-transform:uppercase; letter-spacing:1px; font-size:12px; transform:rotate(-1deg); box-shadow:4px 4px 0 0 var(--yellow);">
-    <a href="https://boardgamegeek.com" target="_blank" rel="noopener" style="color:#fff; text-decoration:none;">🎲 Powered by BGG</a>
+  <div style="display:inline-block; border:1px solid var(--gold); color:var(--gold); padding:8px 18px; margin-bottom:16px; font-weight:600; text-transform:uppercase; letter-spacing:.2em; font-size:11px;">
+    <a href="https://boardgamegeek.com" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:none;">Powered by BGG</a>
   </div><br>
   資料來源：Google Sheet + <a href="https://boardgamegeek.com" target="_blank" rel="noopener">BoardGameGeek</a>　·　
   <a href="#" id="footerHelp">這個清單怎麼更新資料？</a>
@@ -296,7 +312,7 @@
 
     <h3>類別分類參考</h3>
     <div id="legendList"></div>
-    <p style="color:rgba(0,0,0,.6)">類別會依 BGG 的分類/機制標籤自動猜測，猜錯時直接在 GAMETYPE 欄手動指定即可。</p>
+    <p style="color:rgba(242,240,228,.5)">類別會依 BGG 的分類/機制標籤自動猜測，猜錯時直接在 GAMETYPE 欄手動指定即可。</p>
 
     <div class="close-row"><button class="btn primary" id="closeHelp">知道了</button></div>
   </div>
@@ -317,17 +333,17 @@
 
 <script>
 (function(){
-  // 依 Neo-brutalism 三主色（紅/黃/紫）+ 黑 + 白 排列組合出 8 種可辨識配色，取代單純的自由配色
+  // Art Deco 調色盤只用金色／午夜藍／鉑灰的實心/外框組合區分分類，不用彩虹色
   const CAT_STYLES = [
-    { bg:'var(--red)',    border:'var(--ink)', text:'var(--ink)' },
-    { bg:'var(--yellow)', border:'var(--ink)', text:'var(--ink)' },
-    { bg:'var(--violet)', border:'var(--ink)', text:'var(--ink)' },
-    { bg:'var(--ink)',    border:'var(--ink)', text:'#fff' },
-    { bg:'var(--white)',  border:'var(--red)', text:'var(--red)' },
-    { bg:'var(--white)',  border:'var(--yellow)', text:'var(--ink)' },
-    { bg:'var(--white)',  border:'var(--violet)', text:'#7C3AED' },
+    { bg:'var(--gold)', border:'var(--gold)', text:'#0A0A0A' },                 // 實心金
+    { bg:'transparent', border:'var(--gold)', text:'var(--gold)' },             // 金色外框
+    { bg:'var(--midnight)', border:'var(--midnight)', text:'var(--fg)' },       // 實心午夜藍
+    { bg:'transparent', border:'var(--midnight)', text:'#6E9BC4' },             // 午夜藍外框
+    { bg:'var(--muted)', border:'var(--muted)', text:'#0A0A0A' },               // 實心鉑灰
+    { bg:'transparent', border:'var(--muted)', text:'var(--muted)' },           // 鉑灰外框
+    { bg:'transparent', border:'var(--gold)', text:'#6E9BC4' },                 // 金框＋藍字
   ];
-  const NONE_STYLE = { bg:'var(--white)', border:'var(--ink)', text:'var(--ink)' };
+  const NONE_STYLE = { bg:'transparent', border:'rgba(242,240,228,.4)', text:'rgba(242,240,228,.6)' };
 
   const CATEGORIES = [
     { key:'派對遊戲', en:'Party Games', desc:'派對遊戲是適合多人一起遊玩，遊戲過程著重在互動，規則簡單易上手，營造熱鬧歡樂的氣氛，玩起來有趣就好，適用各種聚會場合或是剛認識的朋友一起遊玩。' },
@@ -358,7 +374,6 @@
     const [min,max] = g.timeRange;
     return min <= b.max && max >= b.min;
   }
-  // 相容新版(categories 陣列)與舊版(category 單一字串)資料
   function gameCats(g){
     if (Array.isArray(g.categories)) return g.categories;
     return g.category ? [g.category] : [];
@@ -386,7 +401,7 @@
       if(!catCounts[c.key]) return;
       const active = activeCategories.has(c.key);
       const st = CAT_MAP[c.key].style;
-      catHtml += `<div class="chip ${active?'active':''}" data-group="cat" data-val="${c.key}" style="${active?`background:${st.bg};color:${st.text};border-color:${st.border}`:''}">${c.key} <b>${catCounts[c.key]}</b></div>`;
+      catHtml += `<div class="chip ${active?'active':''}" data-group="cat" data-val="${c.key}" style="${active?`background:${st.bg==='transparent'?st.border:st.bg};color:${st.bg==='transparent'?'#0A0A0A':st.text};border-color:${st.border}`:`border-color:${st.border};color:${st.text}`}">${c.key} <b>${catCounts[c.key]}</b></div>`;
     });
     if(catCounts['未分類']){
       const active = activeCategories.has('未分類');
@@ -433,14 +448,14 @@
     const extraCats = cats.slice(1);
     const st = primaryCat && CAT_MAP[primaryCat] ? CAT_MAP[primaryCat].style : NONE_STYLE;
     const catLabel = primaryCat || '未分類';
-    const rot = (idx % 3 === 0) ? '-3deg' : (idx % 3 === 1) ? '2deg' : '-1deg';
+    const catBg = st.bg === 'transparent' ? 'rgba(10,10,10,.75)' : st.bg;
     const cover = g.image
       ? `<img src="${escapeHtml(g.image)}" alt="${escapeHtml(g.name)}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=fallback>${escapeHtml(g.name.slice(0,2))}</div>'">`
       : `<div class="fallback">${escapeHtml(g.name.slice(0,2))}</div>`;
     const extraCatHtml = extraCats.length
       ? `<div class="meta-row">${extraCats.map(c=>{
           const s = CAT_MAP[c] ? CAT_MAP[c].style : NONE_STYLE;
-          return `<span style="background:${s.bg};color:${s.text};border:2px solid ${s.border};padding:2px 8px;font-weight:700;font-size:11px;">${c}</span>`;
+          return `<span style="border:1px solid ${s.border};color:${s.bg==='transparent'?s.text:s.text};padding:2px 9px;font-weight:600;font-size:10px;letter-spacing:.08em;">${c}</span>`;
         }).join('')}</div>`
       : '';
     const metaBits = [];
@@ -457,13 +472,12 @@
         <span class="d-full" id="${descId}-f" style="display:none;">${escapeHtml(g.description)}</span>
         ${g.description.length>90 ? `<button class="more-btn" id="${descId}-btn" onclick="
             var s=document.getElementById('${descId}-s'), f=document.getElementById('${descId}-f'), b=document.getElementById('${descId}-btn');
-            if(f.style.display==='none'){ s.style.display='none'; f.style.display='inline'; b.textContent='收合 ↑'; }
-            else { s.style.display='inline'; f.style.display='none'; b.textContent='展開全文 →'; }
-            ">展開全文 →</button>`:''}
+            if(f.style.display==='none'){ s.style.display='none'; f.style.display='inline'; b.textContent='收合'; }
+            else { s.style.display='inline'; f.style.display='none'; b.textContent='展開全文'; }
+            ">展開全文</button>`:''}
       </div>` : '';
-    const noteHtml = g.note ? `<div class="note">📌 ${escapeHtml(g.note)}</div>` : '';
+    const noteHtml = g.note ? `<div class="note">${escapeHtml(g.note)}</div>` : '';
 
-    // 擴充清單：伺服器端已把「已擁有」排在前面，這裡只需要決定初始顯示幾筆
     const expId = 'e'+Math.random().toString(36).slice(2);
     const ownedCount = g.expansions.filter(e=>e.owned).length;
     const INITIAL_EXP_LIMIT = 8;
@@ -473,14 +487,14 @@
     const expHtml = g.expansions.length ? `
       <div class="exp-wrap">
         <div class="exp-summary" onclick="document.getElementById('${expId}').classList.toggle('open')">
-          擴充 ${g.expansions.length} 款・已有 ${ownedCount} ▾
+          擴充 ${g.expansions.length} 款・已有 ${ownedCount}
         </div>
         <ul class="exp-list" id="${expId}">
           ${visibleExp.map(expLi).join('')}
           ${hiddenExp.length ? `<li id="${expId}-more-li" style="list-style:none;"><button class="more-btn" onclick="
               document.getElementById('${expId}-hidden').style.display='block';
               document.getElementById('${expId}-more-li').style.display='none';
-            ">顯示其餘 ${hiddenExp.length} 款 →</button></li>
+            ">顯示其餘 ${hiddenExp.length} 款</button></li>
             <div id="${expId}-hidden" style="display:none;"><ul class="exp-list open" style="margin-top:6px;">${hiddenExp.map(expLi).join('')}</ul></div>` : ''}
         </ul>
       </div>` : '';
@@ -491,12 +505,12 @@
         ? `<a href="${escapeHtml(g.link)}" target="_blank" rel="noopener">${escapeHtml(g.name)}</a>`
         : escapeHtml(g.name);
     const rulebookHtml = g.rulebook
-      ? `<a class="btn" style="display:inline-block; padding:5px 12px; font-size:11px; align-self:flex-start; text-decoration:none;" href="${escapeHtml(g.rulebook)}" target="_blank" rel="noopener">📖 規則書</a>`
+      ? `<a class="btn" style="display:inline-block; padding:7px 16px; font-size:10.5px; align-self:flex-start; text-decoration:none;" href="${escapeHtml(g.rulebook)}" target="_blank" rel="noopener">規則書</a>`
       : '';
 
     return `<div class="card">
-      <span class="cat-tag" style="background:${st.bg};color:${st.text};border-color:${st.border};transform:rotate(${rot})">${catLabel}</span>
-      <div class="cover">${cover}</div>
+      <span class="cat-tag" style="background:${catBg};color:${st.text};border:1px solid ${st.border};">${catLabel}</span>
+      <div class="cover"><div class="frame">${cover}</div></div>
       <div class="body">
         <h3>${titleInner}</h3>
         ${extraCatHtml}
@@ -549,7 +563,7 @@
     if(q) games = games.filter(g => g.name.toLowerCase().includes(q));
     games = sortGames(games);
     grid.className = viewMode === 'list' ? 'list-view' : '';
-    if(!games.length){ grid.innerHTML = `<div class="empty">沒有符合條件的遊戲。</div>`; return; }
+    if(!games.length){ grid.innerHTML = `<div class="empty">沒有符合條件的遊戲</div>`; return; }
     grid.innerHTML = games.map(cardHtml).join('');
   }
 
@@ -561,8 +575,8 @@
 
   function renderLegend(){
     document.getElementById('legendList').innerHTML = CATEGORIES.map(c=>`
-      <div class="cat-legend"><span class="dot" style="background:${CAT_MAP[c.key].style.bg}"></span>
-      <div><b>${c.key}</b> <span style="color:rgba(0,0,0,.55)">(${c.en})</span><br>${c.desc}</div></div>`).join('');
+      <div class="cat-legend"><span class="dot" style="background:${CAT_MAP[c.key].style.bg==='transparent'?'transparent':CAT_MAP[c.key].style.bg}"></span>
+      <div><b style="color:var(--fg)">${c.key}</b> <span style="color:rgba(242,240,228,.5)">(${c.en})</span><br>${c.desc}</div></div>`).join('');
   }
   function openHelp(){ document.getElementById('helpModal').classList.add('open'); }
   function closeHelp(){ document.getElementById('helpModal').classList.remove('open'); }
@@ -594,7 +608,6 @@
   document.getElementById('btnFilterToggle').addEventListener('click', ()=>{
     const el = document.getElementById('filterGroups');
     el.classList.toggle('expanded');
-    document.getElementById('btnFilterToggle').textContent = el.classList.contains('expanded') ? '篩選 ▴' : '篩選 ▾';
   });
 
   // ---------------- 今晚玩哪款：隨機抽選 ----------------
@@ -613,7 +626,7 @@
       const label = b===7 ? '7人以上' : `${b}人`;
       html += `<div class="chip" data-player="${b}">${label} <b>${counts[b]}</b></div>`;
     });
-    document.getElementById('dicePlayerChips').innerHTML = html || '<p style="font-size:13px;color:rgba(0,0,0,.6)">目前篩選條件下沒有可抽的遊戲，先清除篩選試試。</p>';
+    document.getElementById('dicePlayerChips').innerHTML = html || '<p style="font-size:13px;color:rgba(242,240,228,.6)">目前篩選條件下沒有可抽的遊戲，先清除篩選試試。</p>';
     document.querySelectorAll('#dicePlayerChips .chip').forEach(el=>{
       el.addEventListener('click', ()=>{
         document.querySelectorAll('#dicePlayerChips .chip').forEach(c=>c.classList.remove('active'));
@@ -631,13 +644,13 @@
     const pick = pool[Math.floor(Math.random()*pool.length)];
     document.getElementById('dicePrompt').textContent = `${playerCount===7?'7人以上':playerCount+'人'} 就決定是你了：`;
     document.getElementById('diceResult').innerHTML = `
-      <div style="display:flex; gap:14px; align-items:center; border:3px solid var(--ink); padding:12px; background:var(--cream); box-shadow:5px 5px 0 0 var(--ink);">
-        <div style="width:80px; height:80px; flex:none; border:3px solid var(--ink); overflow:hidden; background:var(--white);">
+      <div style="display:flex; gap:16px; align-items:center; border:1px solid var(--gold); padding:14px;">
+        <div style="width:80px; height:80px; flex:none; border:1px solid var(--gold); padding:3px; overflow:hidden; background:var(--card);">
           ${pick.image ? `<img src="${escapeHtml(pick.image)}" style="width:100%;height:100%;object-fit:cover;">` : ''}
         </div>
         <div>
-          <div style="font-weight:900; font-size:18px; text-transform:uppercase;">${escapeHtml(pick.name)}</div>
-          <div style="font-size:12px; font-weight:700; margin-top:4px;">${escapeHtml(pick.player||'')} 　 ${escapeHtml(pick.time||'')}</div>
+          <div style="font-weight:400; font-size:19px; font-family:var(--heading); color:var(--gold); letter-spacing:.03em;">${escapeHtml(pick.name)}</div>
+          <div style="font-size:11.5px; font-weight:400; margin-top:6px; color:rgba(242,240,228,.65); text-transform:uppercase; letter-spacing:.05em;">${escapeHtml(pick.player||'')} 　 ${escapeHtml(pick.time||'')}</div>
         </div>
       </div>`;
     document.getElementById('diceReroll').style.display = 'inline-block';
@@ -662,14 +675,14 @@
       let staleWarning = '';
       if(json.updatedAt){
         const days = (Date.now() - new Date(json.updatedAt).getTime()) / (1000*60*60*24);
-        if(days > 3) staleWarning = `　·　<span class="err">⚠ 資料已經 ${Math.floor(days)} 天沒更新，建議到 Actions 手動 Run workflow</span>`;
+        if(days > 3) staleWarning = `　·　<span class="err">資料已經 ${Math.floor(days)} 天沒更新，建議到 Actions 手動 Run workflow</span>`;
       }
       setStatus(`已載入 ${ALL_GAMES.length} 款遊戲　·　資料更新於 ${updated}` +
         (missing ? `　·　<span class="err">${missing} 個 BGGID 查無資料</span>` : '') + staleWarning);
       renderChips();
       renderGrid();
     }catch(e){
-      setStatus(`<span class="err">⚠ 讀不到 data/games.json（${e.message}）。請先到 repo 的 Actions 分頁手動執行一次工作流程。</span>`);
+      setStatus(`<span class="err">讀不到 data/games.json（${e.message}）。請先到 repo 的 Actions 分頁手動執行一次工作流程。</span>`);
     }
   }
   boot();

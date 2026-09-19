@@ -21,7 +21,21 @@ data/games.json                  ← 產生出來的資料（一開始是空的�
 2. **開權限**：repo 的 `Settings → Actions → General → Workflow permissions`，選「Read and write permissions」並存檔（Action 需要這個權限才能把抓好的資料寫回 repo）。
 3. **開 GitHub Pages**：`Settings → Pages`，Source 選 `Deploy from a branch`，Branch 選 `main`、資料夾選 `/ (root)`。
 4. **手動跑第一次**：到 `Actions` 分頁，左側選 `Update board game data`，右邊按 `Run workflow`。等 1～2 分鐘跑完，`data/games.json` 就會被自動 commit 回 repo。
-5. 打開你的 GitHub Pages 網址，應該就能看到資料了。之後每天 UTC 18:00（台灣時間凌晨 2 點）會自動重新抓一次，也可以隨時手動 `Run workflow` 更新。
+5. 打開你的 GitHub Pages 網址，應該就能看到資料了。目前沒有每天自動更新，之後想更新資料時，可以按網頁上的「🔄 觸發更新」按鈕（第一次需要輸入一組 GitHub Token，只存在你自己的瀏覽器裡），或到 `Actions` 分頁手動按 `Run workflow`。
+
+### 本機執行（在自己電腦手動跑 build-data.mjs）
+
+```
+npm install
+BGG_TOKEN=你的token npm run build-data
+```
+
+（Windows PowerShell 的話環境變數語法改成 `$env:BGG_TOKEN="你的token"; npm run build-data`）
+
+> 註：抓 BGG 資料是打 `api.geekdo.com/xmlapi2`，而不是 `boardgamegeek.com/xmlapi2`。
+> 兩者是同一套 API，但後者有掛 Cloudflare 機器人驗證，非瀏覽器的請求會收到
+> 403 +「Just a moment...」挑戰頁，改 User-Agent 之類的 header 也過不了；
+> 前者沒有那道關卡，帶著 token 就能正常取得資料。
 
 ## Google Sheet 欄位
 

@@ -131,31 +131,29 @@ const ids = [...new Set(records.map((r) => r.BGGID).filter(Boolean))];
 const xmlParser = new XMLParser({ ignoreAttributes: false, attributeNamePrefix: '' });
 const bggData = {};
 
+// ---------------------------------------------------------------
+// 重要：這裡用 api.geekdo.com 而不是 boardgamegeek.com。
+// 兩者提供同一套 XML API2，但 boardgamegeek.com 有掛 Cloudflare 的機器人
+// 驗證（非瀏覽器請求會收到 403 +「Just a moment...」挑戰頁，改 header 也過不了），
+// 而 api.geekdo.com 沒有那道關卡，帶著 Authorization token 就能正常取得資料。
+// ---------------------------------------------------------------
+const BGG_API_BASE = 'https://api.geekdo.com/xmlapi2';
+
 const BGG_HEADERS = {
   'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
-  'Accept': 'text/xml,application/xml,text/html,application/xhtml+xml,*/*;q=0.9',
-  'Accept-Language': 'en-US,en;q=0.9,zh-TW;q=0.8',
-  'Accept-Encoding': 'gzip, deflate, br',
-  'Referer': 'https://boardgamegeek.com/',
-  'Origin': 'https://boardgamegeek.com',
-  'sec-ch-ua': '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
-  'sec-ch-ua-mobile': '?0',
-  'sec-ch-ua-platform': '"Windows"',
-  'Sec-Fetch-Dest': 'empty',
-  'Sec-Fetch-Mode': 'cors',
-  'Sec-Fetch-Site': 'same-origin',
-  'Connection': 'keep-alive',
+  'Accept': 'text/xml,application/xml,*/*;q=0.9',
+  'Accept-Language': 'en-US,en;q=0.9',
 };
 if (process.env.BGG_TOKEN) {
   BGG_HEADERS['Authorization'] = `Bearer ${process.env.BGG_TOKEN}`;
   console.log('已帶入 BGG_TOKEN 授權標頭');
 } else {
-  console.warn('未設定 BGG_TOKEN 環境變數 —— BGG 從 2025/7 起 XML API 需要註冊授權，沒有 token 幾乎必定收到 401。');
+  console.warn('未設定 BGG_TOKEN 環境變數 —— BGG 從 2025/7 起 XML API 需要註冊授權，沒有 token 會收到 401。');
 }
 
 for (let i = 0; i < ids.length; i += 20) {
   const chunk = ids.slice(i, i + 20);
-  const url = `https://boardgamegeek.com/xmlapi2/thing?id=${chunk.join(',')}&stats=1`;
+  const url = `${BGG_API_BASE}/thing?id=${chunk.join(',')}&stats=1`;
   console.log(`查詢 BGG (${i + 1}~${i + chunk.length}/${ids.length})...`);
   let xml = '';
   for (let attempt = 0; attempt < 5; attempt++) {

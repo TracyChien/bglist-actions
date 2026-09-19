@@ -278,6 +278,7 @@
     <button class="btn primary" id="btnDice">🎲 今晚玩哪款</button>
     <button class="btn ghost" id="btnClearFilter">清除篩選</button>
     <button class="btn ghost" id="btnFilterToggle">篩選</button>
+    <button class="btn ghost" id="btnTriggerUpdate">🔄 觸發更新</button>
     <button class="btn ghost" id="btnHelp">使用說明</button>
   </div>
 
@@ -307,7 +308,7 @@
     <p>這個網頁不會自己去打 Google Sheet 或 BGG 的 API——資料是由 repo 裡的 GitHub Actions 定期在 GitHub 自己的伺服器上抓好，寫成 <code>data/games.json</code>，網頁只讀這個檔案，完全不受你電腦或網路環境的限制影響。</p>
 
     <h3>想更新資料怎麼辦</h3>
-    <p>到 repo 的 <code>Actions</code> 分頁，選左側的工作流程，按 <code>Run workflow</code> 手動觸發一次，等它跑完（通常 1～2 分鐘）刷新這個網頁即可。也設定了每天自動跑一次。</p>
+    <p>按頁首的「🔄 觸發更新」按鈕即可（第一次會請你輸入一組 GitHub Token，之後就記住了，只存在你自己的瀏覽器裡）。也可以到 repo 的 <code>Actions</code> 分頁，選左側的工作流程，按 <code>Run workflow</code> 手動觸發。目前沒有每天自動更新，需要的時候自己觸發一次即可，通常 1～2 分鐘後刷新頁面就會看到最新資料。</p>
 
     <h3>Google Sheet 欄位</h3>
     <table class="col-table">
@@ -631,6 +632,54 @@
     document.getElementById('filterGroups').classList.toggle('expanded');
   });
 
+  // ---------------- 觸發 GitHub Actions 更新資料 ----------------
+  // Token 只存在使用者自己瀏覽器的 localStorage，絕對不會寫進這份原始碼或 git 歷史紀錄。
+  const GH_OWNER = 'TracyChien';
+  const GH_REPO = 'bglist-actions';
+  const GH_WORKFLOW = 'update-data.yml';
+  const GH_TOKEN_KEY = 'bglist_gh_pat';
+
+  async function triggerUpdate(){
+    let token = localStorage.getItem(GH_TOKEN_KEY);
+    if(!token){
+      token = prompt('第一次使用需要輸入 GitHub Token（只會存在你的瀏覽器裡，不會上傳到任何地方）：');
+      if(!token) return;
+      localStorage.setItem(GH_TOKEN_KEY, token.trim());
+      token = token.trim();
+    }
+    const btn = document.getElementById('btnTriggerUpdate');
+    const originalText = btn.textContent;
+    btn.textContent = '⏳ 觸發中…';
+    btn.disabled = true;
+    try{
+      const res = await fetch(`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/actions/workflows/${GH_WORKFLOW}/dispatches`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Accept': 'application/vnd.github+json',
+          'X-GitHub-Api-Version': '2022-11-28',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ ref: 'main' }),
+      });
+      if(res.status === 204){
+        setStatus(`<span style="color:var(--accent, inherit);">✅ 已觸發更新，通常 1～2 分鐘後完成，稍後重新整理頁面即可看到最新資料。</span>`);
+      } else if(res.status === 401 || res.status === 403){
+        localStorage.removeItem(GH_TOKEN_KEY);
+        alert('Token 無效或權限不足，已清除，請重新按一次按鈕輸入新的 Token。');
+      } else {
+        const text = await res.text();
+        alert(`觸發失敗（HTTP ${res.status}）：${text.slice(0,200)}`);
+      }
+    }catch(e){
+      alert('觸發失敗：' + e.message);
+    }finally{
+      btn.textContent = originalText;
+      btn.disabled = false;
+    }
+  }
+  document.getElementById('btnTriggerUpdate').addEventListener('click', triggerUpdate);
+
   // ---------------- 今晚玩哪款：隨機抽選 ----------------
   function openDice(){
     document.getElementById('diceModal').classList.add('open');
@@ -694,13 +743,8 @@
       document.getElementById('mainControls').style.display = 'flex';
       const updated = json.updatedAt ? new Date(json.updatedAt).toLocaleString('zh-TW') : '未知';
       const missing = json.missingBggIds && json.missingBggIds.length;
-      let staleWarning = '';
-      if(json.updatedAt){
-        const days = (Date.now() - new Date(json.updatedAt).getTime()) / (1000*60*60*24);
-        if(days > 3) staleWarning = `　·　<span class="err">資料已經 ${Math.floor(days)} 天沒更新，建議到 Actions 手動 Run workflow</span>`;
-      }
       setStatus(`已載入 ${ALL_GAMES.length} 款遊戲　·　資料更新於 ${updated}` +
-        (missing ? `　·　<span class="err">${missing} 個 BGGID 查無資料</span>` : '') + staleWarning);
+        (missing ? `　·　<span class="err">${missing} 個 BGGID 查無資料</span>` : ''));
       renderChips();
       renderGrid();
     }catch(e){

@@ -2,11 +2,9 @@ name: Update board game data
 
 on:
   workflow_dispatch: {}
-  # 每日自動排程已停用：BGG 目前會擋 GitHub Actions 的伺服器 IP（Cloudflare 驗證失敗），
-  # 資料改成在自己電腦上手動執行 build-data.mjs 後 push 回來。
-  # 如果之後 BGG 那邊放行了，可以把下面兩行的註解拿掉，恢復每天自動跑一次。
-  # schedule:
-  #   - cron: '0 18 * * *'  # 每天 UTC 18:00（台灣時間凌晨 2:00）
+  schedule:
+    # 每週一 UTC 18:00（台灣時間週二凌晨 2:00）自動跑一次
+    - cron: '0 18 * * 1'
 
 permissions:
   contents: write

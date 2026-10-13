@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-05T23:48:34.623Z",
+  "updatedAt": "2026-10-13T00:13:31.134Z",
   "count": 55,
   "missingBggIds": [],
   "games": [
@@ -124,7 +124,7 @@
       "categories": [
         "陣營遊戲"
       ],
-      "image": "https://cf.geekdo-images.com/fFxl3l28aEiQ4kuTLfFmeA__original/img/VFlxMxWR-xOfEcVrraCUsWDJtZ4=/0x0/filters:format(jpeg)/pic745949.jpg",
+      "image": "https://cf.geekdo-images.com/JaSuU3X1yjlfYpJnW0AVyQ__original/img/5rmoYyvDZozBOE0l23auq9sOCoE=/0x0/filters:format(png)/pic9850355.png",
       "description": "",
       "note": "",
       "bggRating": 7,
@@ -836,7 +836,7 @@
         },
         {
           "id": "381331",
-          "name": "Chronicles of Crime: 2400 – Man vs. Meeple 2022 Promo Cards",
+          "name": "Chronicles of Crime: 2400 – Man vs Meeple 2022 Promo Cards",
           "owned": false
         }
       ],
@@ -3001,7 +3001,7 @@
       "image": "https://cf.geekdo-images.com/1uW8t9AkuqOF0xjv_sXKgw__original/img/iBRrCDdqyVY1ckqWIjo0xQ_k70A=/0x0/filters:format(png)/pic9106864.png",
       "description": "",
       "note": "",
-      "bggRating": 7.8,
+      "bggRating": 7.7,
       "bggWeight": 1.2,
       "expansions": [],
       "playerRange": [
@@ -3030,7 +3030,7 @@
       "image": "https://cf.geekdo-images.com/mhNZFwA0kAS0gX2Tjh0pJw__original/img/Jn6VRUdLjUQx7mVwyupAnUPxKFk=/0x0/filters:format(jpeg)/pic9490614.jpg",
       "description": "",
       "note": "",
-      "bggRating": 7.3,
+      "bggRating": 7.2,
       "bggWeight": 1.4,
       "expansions": [],
       "playerRange": [

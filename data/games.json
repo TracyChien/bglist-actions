@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-13T00:13:31.134Z",
+  "updatedAt": "2026-10-19T22:03:32.464Z",
   "count": 55,
   "missingBggIds": [],
   "games": [
@@ -3031,7 +3031,7 @@
       "description": "",
       "note": "",
       "bggRating": 7.2,
-      "bggWeight": 1.4,
+      "bggWeight": 1.3,
       "expansions": [],
       "playerRange": [
         2,

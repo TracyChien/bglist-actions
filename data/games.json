@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-26T22:21:49.049Z",
+  "updatedAt": "2026-11-03T00:37:06.902Z",
   "count": 55,
   "missingBggIds": [],
   "games": [
@@ -1094,11 +1094,6 @@
           "owned": false
         },
         {
-          "id": "31784",
-          "name": "Carcassonne: Abbey & Mayor",
-          "owned": false
-        },
-        {
           "id": "167744",
           "name": "Carcassonne: Bonusplättchen Spiel 2014",
           "owned": false
@@ -1156,6 +1151,11 @@
         {
           "id": "456854",
           "name": "Carcassonne: Bonusplättchen Spiel 2025",
+          "owned": false
+        },
+        {
+          "id": "482548",
+          "name": "Carcassonne: Bonusplättchen Spiel 2026",
           "owned": false
         },
         {
@@ -1241,6 +1241,11 @@
         {
           "id": "184578",
           "name": "Carcassonne: Easter in Carcassonne",
+          "owned": false
+        },
+        {
+          "id": "31784",
+          "name": "Carcassonne: Expansion 5 – Abbey & Mayor",
           "owned": false
         },
         {

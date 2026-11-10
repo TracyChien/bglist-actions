@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-03T00:37:06.902Z",
+  "updatedAt": "2026-11-10T01:14:10.313Z",
   "count": 55,
   "missingBggIds": [],
   "games": [
@@ -2705,7 +2705,7 @@
       "image": "https://cf.geekdo-images.com/x9ReeH79kyuLLMu_weSezQ__original/img/cbHhdVrO2YqeTQ8ezLEgBq1ExjQ=/0x0/filters:format(png)/pic8746816.png",
       "description": "",
       "note": "",
-      "bggRating": 6.9,
+      "bggRating": 7,
       "bggWeight": 1.5,
       "expansions": [],
       "playerRange": [
